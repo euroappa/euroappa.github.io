@@ -8,9 +8,9 @@ See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa
 
 As part of our [https://en.wikipedia.org/wiki/Requirements_management](requirements management) process.
 
-P1.R1. generate list of pollinators for a specific geospatial/taxonomic range
+P1.R1. generate a list of plant - pollinator interaction records for a specific geospatial/taxonomic range
 
-P1.R2. generate a list of plant - pollinator interaction records for a specific geospatial/taxonomic range
+P1.R2. generate list of pollinators for a specific geospatial/taxonomic range
 
 P1.R3  allows for a way to provide feedback (not yet implemented) 
 
