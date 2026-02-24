@@ -4,4 +4,4 @@ This repository contains (early) prototypes of the European Atlas of Plant Polli
 
 work in progress.
 
-[euroappa.p1](euroappa.p1) - 2026-02-23 prototypes
+[euroappa.p1](p1/) - 2026-02-23 P1 prototypes
