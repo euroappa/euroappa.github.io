@@ -10,7 +10,7 @@ P1.R1. generate list of pollinators for a specific geospatial/taxonomic range
 
 P1.R2. generate a list of plant - pollinator interaction records for a specific geospatial/taxonomic range
 
-P2.R3  allows for a way to provide feedback (not yet implemented) 
+P1.R3  allows for a way to provide feedback (not yet implemented) 
 
 ### Features
 
