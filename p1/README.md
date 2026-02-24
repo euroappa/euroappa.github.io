@@ -14,15 +14,15 @@ P1.R2. generate a list of plant - pollinator interaction records for a specific 
 
 P1.R3  allows for a way to provide feedback (not yet implemented) 
 
-Note that there's a difference between functional (e.g., generate a list of pollinators) and non-functional (e.g., solution should outlive the lifetime of the project, web accessible) requirements. 
+Note that there's a difference between functional (e.g., generate a list of pollinators) and non-functional (e.g., solution should outlive the lifetime of the project, web accessible, data is versioned) requirements. 
 
 ### Features
 
-A [feature](https://en.wikipedia.org/wiki/Software_feature) is "a prominent or distinctive user-visible aspect, quality, or characteristic of a software system or systems", as defined by Kang et al. 1990.
+A [feature](https://en.wikipedia.org/wiki/Software_feature) is "a prominent or distinctive user-visible aspect, quality, or characteristic of a software system or systems", as defined by Kang et al. 1990. A feature implements one or more requirements.
 
-P1.F1. offers a [bash script](make.sh) to generate euroappa data products ```euroappa.gpkg```, [euroappa.parquet](euroappa.parquet) from a recent snapshot of [GloBI indexed interactions](https://globalbioticinteractions.org/data). 
+P1.F1. offers a [bash script](make.sh) to generate euroappa data products ```euroappa.gpkg```, [euroappa.parquet](euroappa.parquet) from a recent snapshot of [GloBI indexed interactions](https://globalbioticinteractions.org/data) using methods similar to [https://www.globalbioticinteractions.org/2026/01/22/euroappa/](https://www.globalbioticinteractions.org/2026/01/22/euroappa/). 
 
-P1.F2. offers data workflows and data products for generating of insect pollinators by country
+P1.F2. offers data workflows and data products for generating of insect pollinators by country using SQL and [DuckDB](https://duckdb.org) 
  * [insect-pollinators-of-europe.sql](insect-pollinators-of-europe.sql) ```-[generated]->``` [insect-pollinators-of-europe.csv](insect-pollinators-of-europe.csv), 
  * [insect-pollinators-of-ireland.sql](insect-pollinators-of-ireland.sql) ```-[generated]->``` [insect-pollinators-of-ireland.csv](insect-pollinators-of-ireland.csv) 
  *  [insect-pollinators-of-netherlands.sql](insect-pollinators-of-netherlands.sql)) ```-[:generated]->``` [insect-pollinators-of-netherlands.csv](insect-pollinators-of-netherlands.csv)
@@ -51,8 +51,6 @@ first 5 records:
 | Andrenidae | Andrena cineraria |
 | Andrenidae | Andrena fucata |
 | Andrenidae | Andrena haemorrhoa |
-
-
 
 P1.F3. offers data products containing country specific pollinator-plant association record datasets:
  * [insect-pollinator-plant-associations-of-europe.sql](insect-pollinator-plant-associations-of-europe.sql) ```-[:generated]``` -> [insect-pollinator-plant-associations-of-europe.csv](insect-pollinator-plant-associations-of-europe.csv)
@@ -86,8 +84,6 @@ first 5 records:
 | Andrenidae | Andrena haemorrhoa | Asteraceae | Taraxacum |
 | Andrenidae | Andrena lapponica | Asteraceae | Taraxacum |
 | Andrenidae | Andrena | Brassicaceae | Brassica napus |
-
-
 
 P1.F4. allows for online queries through [```https://shell.duckdb.org/```](https://shell.duckdb.org) via top 10 most used programming language: SQL and [```euroappa.parquet```](euroappa.parquet) (< 20MiB). 
 
