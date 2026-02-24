@@ -24,10 +24,10 @@ P1.F3. offers data products containing country specific pollinator-plant associa
  * [insect-pollinators-of-ireland.csv](insect-pollinators-associations-of-ireland.sql) ```-[:generated]->``` [insect-pollinators-of-ireland.csv](insect-pollinators-associations-of-ireland.csv)
  * [insect-pollinators-associations-of-netherlands.sql](insect-pollinators-associations-of-netherlands.sql) ```-[:generated]->``` [insect-pollinators-associations-of-netherlands.csv](insect-pollinators-associations-of-netherlands.csv))
 
-P1.F4. allows for online queries through https://shell.duckdb.org/ via well documented SQL language and [```euroappa.parquet```](euroappa.parquet) (< 20MiB). 
+P1.F4. allows for online queries through [```https://shell.duckdb.org/```](https://shell.duckdb.org) via top 10 most used programming language: SQL and [```euroappa.parquet```](euroappa.parquet) (< 20MiB). 
 
 P1.F5. allows for spatial queries through QGIS and ```euroappa.gpkg``` (bigish dataset ~500MiB) data product.
 
-P1.F6. data products (parquet files) are compatible with commercial data exploration platforms such as ArcGIS, MotherDuck, etc.  
+P1.F6. data products (parquet files) are compatible with commercial data exploration platforms such as ArcGIS, MotherDuck, and have support for integration into R and Python.   
 
 P1.F7. data products (csv files) are compatible with Excel and Google Sheet etc. 
