@@ -1,10 +1,12 @@
 2026-02-23
 
-EuroAPPA prototype P1.
+# EuroAPPA prototype P1.
 
 See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa/euroappa.github.io/tree/main/p1) for associated files. Also, for other examples using these methods (e.g. duckdb, QGIS) see [https://www.globalbioticinteractions.org/2026/01/22/euroappa/](https://www.globalbioticinteractions.org/2026/01/22/euroappa/) . 
 
 ## Requirements
+
+As part of our [https://en.wikipedia.org/wiki/Requirements_management](requirements management) process.
 
 P1.R1. generate list of pollinators for a specific geospatial/taxonomic range
 
@@ -12,9 +14,13 @@ P1.R2. generate a list of plant - pollinator interaction records for a specific 
 
 P1.R3  allows for a way to provide feedback (not yet implemented) 
 
+Note that there's a difference between functional (e.g., generate a list of pollinators) and non-functional (e.g., solution should outlive the lifetime of the project, web accessible) requirements. 
+
 ### Features
 
-P1.F1. offers a [bash script](make.sh) to generate euroappa data products [euroappa.gpkg](euroappa.gpkg), [euroappa.parquet](euroappa.parquet) from a recent snapshot of [GloBI indexed interactions](https://globalbioticinteractions.org/data). 
+A [feature](https://en.wikipedia.org/wiki/Software_feature) is "a prominent or distinctive user-visible aspect, quality, or characteristic of a software system or systems", as defined by Kang et al. 1990.
+
+P1.F1. offers a [bash script](make.sh) to generate euroappa data products ```euroappa.gpkg```, [euroappa.parquet](euroappa.parquet) from a recent snapshot of [GloBI indexed interactions](https://globalbioticinteractions.org/data). 
 
 P1.F2. offers data workflows and data products for generating of insect pollinators by country
  * [insect-pollinators-of-europe.sql](insect-pollinators-of-europe.sql) ```-[generated]->``` [insect-pollinators-of-europe.csv](insect-pollinators-of-europe.csv), 
