@@ -2,7 +2,7 @@
 
 EuroAPPA prototype P1.
 
-See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa/euroappa.github.io) for associated files. Also, for other examples using these methods (e.g. duckdb, QGIS) see https://www.globalbioticinteractions.org/2026/01/22/euroappa/ . 
+See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa/euroappa.github.io) for associated files. Also, for other examples using these methods (e.g. duckdb, QGIS) see [https://www.globalbioticinteractions.org/2026/01/22/euroappa/](https://www.globalbioticinteractions.org/2026/01/22/euroappa/) . 
 
 ## Requirements
 
@@ -14,7 +14,7 @@ P1.R3  allows for a way to provide feedback (not yet implemented)
 
 ### Features
 
-P1.F1. offers a [bash script](make.sh) to generate euroappa data products [euroappa.gpkg](euroappa.gpkg), [euroappa.parquet](euroappa.parquet) from a recent snapshot of GloBI indexed interactions. 
+P1.F1. offers a [bash script](make.sh) to generate euroappa data products [euroappa.gpkg](euroappa.gpkg), [euroappa.parquet](euroappa.parquet) from a recent snapshot of [GloBI indexed interactions](https://globalbioticinteractions.org/data). 
 
 P1.F2. offers data workflows and data products for generating of insect pollinators by country
  * [insect-pollinators-of-europe.sql](insect-pollinators-of-europe.sql) ```-[generated]->``` [insect-pollinators-of-europe.csv](insect-pollinators-of-europe.csv), 
