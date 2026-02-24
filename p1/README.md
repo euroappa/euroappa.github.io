@@ -2,7 +2,7 @@
 
 EuroAPPA prototype P1.
 
-See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa/euroappa.github.io) for associated files.
+See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa/euroappa.github.io) for associated files. Also, for other examples using these methods (e.g. duckdb, QGIS) see https://www.globalbioticinteractions.org/2026/01/22/euroappa/ . 
 
 ## Requirements
 
@@ -36,6 +36,16 @@ GROUP BY sourceTaxonFamilyName, sourceTaxonName
 ORDER BY sourceTaxonFamilyName, sourceTaxonName;
 ```
 
+first 5 records:
+
+| sourceTaxonFamilyName | sourceTaxonName |
+| --- | --- |
+| Andrenidae | Andrena |
+| Andrenidae | Andrena carantonica |
+| Andrenidae | Andrena cineraria |
+| Andrenidae | Andrena fucata |
+| Andrenidae | Andrena haemorrhoa |
+
 
 
 P1.F3. offers data products containing country specific pollinator-plant association record datasets:
@@ -60,6 +70,18 @@ WHERE
 GROUP BY sourceTaxonFamilyName, sourceTaxonName, targetTaxonFamilyName, targetTaxonName
 ORDER BY sourceTaxonFamilyName, targetTaxonFamilyName, sourceTaxonName, targetTaxonName;
 ```
+
+first 5 records:
+
+| pollinatorFamily | pollinatorName | plantFamily | plantName |
+| --- | --- | --- | --- |
+| Andrenidae | Andrena haemorrhoa | Adoxaceae | Viburnum tinus |
+| Andrenidae | Andrena carantonica | Asteraceae | Taraxacum |
+| Andrenidae | Andrena haemorrhoa | Asteraceae | Taraxacum |
+| Andrenidae | Andrena lapponica | Asteraceae | Taraxacum |
+| Andrenidae | Andrena | Brassicaceae | Brassica napus |
+
+
 
 P1.F4. allows for online queries through [```https://shell.duckdb.org/```](https://shell.duckdb.org) via top 10 most used programming language: SQL and [```euroappa.parquet```](euroappa.parquet) (< 20MiB). 
 

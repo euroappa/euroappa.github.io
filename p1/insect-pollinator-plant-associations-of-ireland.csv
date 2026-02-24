@@ -1,0 +1,989 @@
+pollinatorFamily,pollinatorName,plantFamily,plantName
+Andrenidae,Andrena haemorrhoa,Adoxaceae,Viburnum tinus
+Andrenidae,Andrena carantonica,Asteraceae,Taraxacum
+Andrenidae,Andrena haemorrhoa,Asteraceae,Taraxacum
+Andrenidae,Andrena lapponica,Asteraceae,Taraxacum
+Andrenidae,Andrena,Brassicaceae,Brassica napus
+Andrenidae,Andrena cineraria,Fabaceae,Trifolium repens
+Andrenidae,Andrena wilkella,Fabaceae,Trifolium pratense
+Andrenidae,Andrena cineraria,Plantaginaceae,Veronica chamaedrys
+Andrenidae,Andrena,Rosaceae,Malus domestica
+Andrenidae,Andrena cineraria,Rosaceae,Malus domestica
+Andrenidae,Andrena haemorrhoa,Rosaceae,Cotoneaster hybr
+Andrenidae,Andrena haemorrhoa,Rosaceae,Crataegus monogyna
+Andrenidae,Andrena haemorrhoa,Rosaceae,Malus domestica
+Andrenidae,Andrena haemorrhoa,Rosaceae,Pyracantha
+Andrenidae,Andrena lapponica,Rosaceae,Malus domestica
+Andrenidae,Andrena fucata,Scrophulariaceae,Scrophularia nodosa
+Apidae,Apis mellifera,Adoxaceae,Sambucus nigra
+Apidae,Bombus pascuorum,Amaryllidaceae,Allium schoenoprasum
+Apidae,Bombus pascuorum,Amaryllidaceae,Allium triquetrum
+Apidae,Bombus terrestris,Amaryllidaceae,Agapanthus
+Apidae,Apis mellifera,Apiaceae,Aegopodium podagraria
+Apidae,Apis mellifera,Apiaceae,Anethum ridolfia
+Apidae,Apis mellifera,Apiaceae,Astrantia major
+Apidae,Apis mellifera,Apiaceae,Heracleum sphondylium
+Apidae,Bombus lucorum,Apiaceae,Angelica sylvestris
+Apidae,Bombus lucorum,Apiaceae,Daucus carota
+Apidae,Bombus lucorum,Apiaceae,Heracleum sphondylium
+Apidae,Bombus pascuorum,Apiaceae,Aegopodium podagraria
+Apidae,Bombus pratorum,Apiaceae,Heracleum sphondylium
+Apidae,Bombus terrestris audax,Apidae,Bombus terrestris audax
+Apidae,Bombus lapidarius,Asparagaceae,Hyacinthoides non-scripta
+Apidae,Bombus pascuorum,Asparagaceae,Hyacinthoides non-scripta
+Apidae,Apis mellifera,Asteraceae,Arctium minus
+Apidae,Apis mellifera,Asteraceae,Centaurea nigra
+Apidae,Apis mellifera,Asteraceae,Cirsium arvense
+Apidae,Apis mellifera,Asteraceae,Cirsium vulgare
+Apidae,Apis mellifera,Asteraceae,Echinops bannaticus
+Apidae,Apis mellifera,Asteraceae,Hypochaeris radicata
+Apidae,Apis mellifera,Asteraceae,Jacobaea vulgaris
+Apidae,Apis mellifera,Asteraceae,Leontodon crispus
+Apidae,Apis mellifera,Asteraceae,Leucanthemum vulgare
+Apidae,Apis mellifera,Asteraceae,Rudbeckia hirta
+Apidae,Apis mellifera,Asteraceae,Scorzoneroides autumnalis
+Apidae,Apis mellifera,Asteraceae,Sonchus arvensis
+Apidae,Apis mellifera,Asteraceae,Tagetes erecta
+Apidae,Apis mellifera,Asteraceae,Tanacetum vulgare
+Apidae,Apis mellifera,Asteraceae,Taraxacum
+Apidae,Apis mellifera,Asteraceae,Tripleurospermum maritimum
+Apidae,Bombus hortorum,Asteraceae,Centaurea nigra
+Apidae,Bombus hortorum,Asteraceae,Cirsium arvense
+Apidae,Bombus hortorum,Asteraceae,Cirsium vulgare
+Apidae,Bombus hortorum,Asteraceae,Jacobaea vulgaris
+Apidae,Bombus hortorum,Asteraceae,Lapsana communis
+Apidae,Bombus hortorum,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Apidae,Bombus jonellus,Asteraceae,Centaurea nigra
+Apidae,Bombus jonellus,Asteraceae,Cirsium vulgare
+Apidae,Bombus lapidarius,Asteraceae,Centaurea nigra
+Apidae,Bombus lapidarius,Asteraceae,Cirsium arvense
+Apidae,Bombus lapidarius,Asteraceae,Cirsium vulgare
+Apidae,Bombus lapidarius,Asteraceae,Echinops bannaticus
+Apidae,Bombus lapidarius,Asteraceae,Jacobaea vulgaris
+Apidae,Bombus lapidarius,Asteraceae,Lapsana communis
+Apidae,Bombus lapidarius,Asteraceae,Leontodon crispus
+Apidae,Bombus lapidarius,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Apidae,Bombus lapidarius,Asteraceae,Scorzoneroides autumnalis
+Apidae,Bombus lapidarius,Asteraceae,Sonchus arvensis
+Apidae,Bombus lapidarius,Asteraceae,Sonchus asper
+Apidae,Bombus lapidarius,Asteraceae,Tanacetum vulgare
+Apidae,Bombus lucorum,Asteraceae,Centaurea nigra
+Apidae,Bombus lucorum,Asteraceae,Cirsium arvense
+Apidae,Bombus lucorum,Asteraceae,Cirsium vulgare
+Apidae,Bombus lucorum,Asteraceae,Crepis biennis
+Apidae,Bombus lucorum,Asteraceae,Jacobaea vulgaris
+Apidae,Bombus lucorum,Asteraceae,Lapsana communis
+Apidae,Bombus lucorum,Asteraceae,Leontodon crispus
+Apidae,Bombus lucorum,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Apidae,Bombus lucorum,Asteraceae,Scorzoneroides autumnalis
+Apidae,Bombus lucorum,Asteraceae,Sonchus asper
+Apidae,Bombus lucorum,Asteraceae,Tagetes erecta
+Apidae,Bombus lucorum,Asteraceae,Taraxacum
+Apidae,Bombus muscorum,Asteraceae,Centaurea nigra
+Apidae,Bombus muscorum,Asteraceae,Cirsium vulgare
+Apidae,Bombus muscorum,Asteraceae,Jacobaea vulgaris
+Apidae,Bombus muscorum,Asteraceae,Tagetes erecta
+Apidae,Bombus pascuorum,Asteraceae,Arctium minus
+Apidae,Bombus pascuorum,Asteraceae,Centaurea nigra
+Apidae,Bombus pascuorum,Asteraceae,Cirsium arvense
+Apidae,Bombus pascuorum,Asteraceae,Cirsium palustre
+Apidae,Bombus pascuorum,Asteraceae,Cirsium vulgare
+Apidae,Bombus pascuorum,Asteraceae,Jacobaea vulgaris
+Apidae,Bombus pascuorum,Asteraceae,Lapsana communis
+Apidae,Bombus pascuorum,Asteraceae,Leontodon crispus
+Apidae,Bombus pascuorum,Asteraceae,Scorzoneroides autumnalis
+Apidae,Bombus pratorum,Asteraceae,Brachyglottis greyi
+Apidae,Bombus pratorum,Asteraceae,Centaurea cyanus
+Apidae,Bombus pratorum,Asteraceae,Centaurea nigra
+Apidae,Bombus pratorum,Asteraceae,Cirsium arvense
+Apidae,Bombus pratorum,Asteraceae,Cirsium vulgare
+Apidae,Bombus pratorum,Asteraceae,Lapsana communis
+Apidae,Bombus pratorum,Asteraceae,Sonchus arvensis
+Apidae,Bombus rupestris,Asteraceae,Centaurea scabiosa
+Apidae,Bombus sylvarum,Asteraceae,Centaurea nigra
+Apidae,Bombus terrestris,Asteraceae,Cirsium arvense
+Apidae,Bombus terrestris,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Apidae,Bombus terrestris,Asteraceae,Tagetes erecta
+Apidae,Bombus terrestris,Asteraceae,Taraxacum
+Apidae,Bombus terrestris audax,Asteraceae,Echinops bannaticus
+Apidae,Bombus lapidarius,Begoniaceae,Begonia urticae
+Apidae,Bombus bohemicus,Berberidaceae,Berberis vulgaris
+Apidae,Bombus hortorum,Berberidaceae,Berberis vulgaris
+Apidae,Bombus lucorum,Berberidaceae,Berberis
+Apidae,Bombus muscorum,Berberidaceae,Berberis vulgaris
+Apidae,Bombus pascuorum,Berberidaceae,Berberis vulgaris
+Apidae,Bombus pratorum,Berberidaceae,Berberis vulgaris
+Apidae,Bombus terrestris,Berberidaceae,Berberis darwinii
+Apidae,Bombus lapidarius,Boraginaceae,Phacelia
+Apidae,Bombus pascuorum,Boraginaceae,"Symphytum × uplandicum"
+Apidae,Apis mellifera,Brassicaceae,Brassica napus
+Apidae,Apis mellifera,Brassicaceae,Moricandia arvensis
+Apidae,Bombus hortorum,Brassicaceae,Brassica napus
+Apidae,Bombus hortorum,Brassicaceae,Moricandia arvensis
+Apidae,Bombus jonellus,Brassicaceae,Brassica napus
+Apidae,Bombus lapidarius,Brassicaceae,Brassica napus
+Apidae,Bombus lapidarius,Brassicaceae,Moricandia arvensis
+Apidae,Bombus lapidarius,Brassicaceae,Sisymbrium officinale
+Apidae,Bombus lucorum,Brassicaceae,Brassica napus
+Apidae,Bombus lucorum,Brassicaceae,Moricandia arvensis
+Apidae,Bombus pascuorum,Brassicaceae,Barbarea vulgaris
+Apidae,Bombus pascuorum,Brassicaceae,Brassica napus
+Apidae,Bombus pascuorum,Brassicaceae,Cardamine pratensis
+Apidae,Bombus pascuorum,Brassicaceae,Erysimum
+Apidae,Bombus pascuorum,Brassicaceae,Moricandia arvensis
+Apidae,Bombus pratorum,Brassicaceae,Brassica napus
+Apidae,Bombus pratorum,Brassicaceae,Erysimum
+Apidae,Bombus sp.,Brassicaceae,Brassica napus
+Apidae,Bombus terrestris,Brassicaceae,Brassica napus
+Apidae,Apis mellifera,Buxaceae,Buxus sempervirens
+Apidae,Bombus lucorum,Buxaceae,Buxus sempervirens
+Apidae,Bombus pascuorum,Buxaceae,Buxus sempervirens
+Apidae,Bombus terrestris,Buxaceae,Buxus sempervirens
+Apidae,Apis mellifera,Campanulaceae,Campanula portenschlagiana
+Apidae,Apis mellifera,Campanulaceae,Campanula rotundifolia
+Apidae,Bombus lapidarius,Campanulaceae,Campanula portenschlagiana
+Apidae,Bombus lucorum,Campanulaceae,Campanula portenschlagiana
+Apidae,Bombus lucorum,Campanulaceae,Campanula rotundifolia
+Apidae,Bombus pascuorum,Campanulaceae,Campanula portenschlagiana
+Apidae,Bombus pratorum,Campanulaceae,Campanula portenschlagiana
+Apidae,Apis mellifera,Caprifoliaceae,Centranthus ruber subsp. ruber
+Apidae,Apis mellifera,Caprifoliaceae,Knautia arvensis
+Apidae,Apis mellifera,Caprifoliaceae,Lonicera ligustrina
+Apidae,Apis mellifera,Caprifoliaceae,Symphoricarpos albus
+Apidae,Bombus hortorum,Caprifoliaceae,Knautia arvensis
+Apidae,Bombus jonellus,Caprifoliaceae,Knautia arvensis
+Apidae,Bombus lapidarius,Caprifoliaceae,Knautia arvensis
+Apidae,Bombus lucorum,Caprifoliaceae,Knautia arvensis
+Apidae,Bombus lucorum,Caprifoliaceae,Symphoricarpos albus
+Apidae,Bombus muscorum,Caprifoliaceae,Knautia arvensis
+Apidae,Bombus pascuorum,Caprifoliaceae,Centranthus ruber subsp. ruber
+Apidae,Bombus pascuorum,Caprifoliaceae,Knautia arvensis
+Apidae,Bombus pascuorum,Caprifoliaceae,Lonicera ligustrina
+Apidae,Bombus pascuorum,Caprifoliaceae,Lonicera periclymenum
+Apidae,Bombus pascuorum,Caryophyllaceae,Dianthus caryophyllus
+Apidae,Bombus pascuorum,Caryophyllaceae,Rabelera holostea
+Apidae,Bombus pascuorum,Caryophyllaceae,Stellaria graminea
+Apidae,Apis mellifera,Convolvulaceae,Calystegia sepium
+Apidae,Bombus hortorum,Convolvulaceae,Calystegia sepium
+Apidae,Bombus lucorum,Convolvulaceae,Calystegia sepium
+Apidae,Bombus pascuorum,Convolvulaceae,Calystegia sepium
+Apidae,Apis mellifera,Crassulaceae,Sedum
+Apidae,Bombus lucorum,Crassulaceae,Sedum
+Apidae,Bombus lucorum,Ericaceae,Rhododendron davidi
+Apidae,Bombus magnus,Ericaceae,Calluna
+Apidae,Bombus magnus,Ericaceae,Erica
+Apidae,Bombus pascuorum,Ericaceae,Calluna vulgaris
+Apidae,Bombus pascuorum,Ericaceae,Rhododendron
+Apidae,Apis mellifera,Escalloniaceae,Escallonia illinita
+Apidae,Bombus lucorum,Escalloniaceae,Escallonia illinita
+Apidae,Bombus pascuorum,Escalloniaceae,Escallonia illinita
+Apidae,Apis mellifera,Fabaceae,Lotus corniculatus
+Apidae,Apis mellifera,Fabaceae,Trifolium repens
+Apidae,Apis mellifera,Fabaceae,Vicia faba
+Apidae,Bombus hortorum,Fabaceae,Anthyllis vulneraria
+Apidae,Bombus hortorum,Fabaceae,Trifolium pratense
+Apidae,Bombus hortorum,Fabaceae,Trifolium repens
+Apidae,Bombus hortorum,Fabaceae,Vicia cracca
+Apidae,Bombus hortorum,Fabaceae,Vicia faba
+Apidae,Bombus hortorum,Fabaceae,Vicia sativa
+Apidae,Bombus hortorum,Fabaceae,Vicia sepium
+Apidae,Bombus jonellus,Fabaceae,Trifolium pratense
+Apidae,Bombus jonellus,Fabaceae,Trifolium repens
+Apidae,Bombus lapidarius,Fabaceae,Lotus corniculatus
+Apidae,Bombus lapidarius,Fabaceae,Trifolium pratense
+Apidae,Bombus lapidarius,Fabaceae,Trifolium repens
+Apidae,Bombus lapidarius,Fabaceae,Ulex europaeus
+Apidae,Bombus lapidarius,Fabaceae,Vicia faba
+Apidae,Bombus lapidarius,Fabaceae,Vicia sepium
+Apidae,Bombus lucorum,Fabaceae,Anthyllis vulneraria
+Apidae,Bombus lucorum,Fabaceae,Lathyrus pratensis
+Apidae,Bombus lucorum,Fabaceae,Lotus corniculatus
+Apidae,Bombus lucorum,Fabaceae,Trifolium pratense
+Apidae,Bombus lucorum,Fabaceae,Trifolium repens
+Apidae,Bombus lucorum,Fabaceae,Ulex europaeus
+Apidae,Bombus lucorum,Fabaceae,Vicia cracca
+Apidae,Bombus lucorum,Fabaceae,Vicia faba
+Apidae,Bombus lucorum,Fabaceae,Vicia sativa
+Apidae,Bombus lucorum,Fabaceae,Vicia sepium
+Apidae,Bombus muscorum,Fabaceae,Lotus corniculatus
+Apidae,Bombus muscorum,Fabaceae,Trifolium pratense
+Apidae,Bombus muscorum,Fabaceae,Trifolium repens
+Apidae,Bombus pascuorum,Fabaceae,Anthyllis vulneraria
+Apidae,Bombus pascuorum,Fabaceae,"Laburnum × watereri"
+Apidae,Bombus pascuorum,Fabaceae,Lathyrus pratensis
+Apidae,Bombus pascuorum,Fabaceae,Lotus corniculatus
+Apidae,Bombus pascuorum,Fabaceae,Trifolium pratense
+Apidae,Bombus pascuorum,Fabaceae,Trifolium repens
+Apidae,Bombus pascuorum,Fabaceae,Ulex europaeus
+Apidae,Bombus pascuorum,Fabaceae,Vicia cracca
+Apidae,Bombus pascuorum,Fabaceae,Vicia faba
+Apidae,Bombus pascuorum,Fabaceae,Vicia sepium
+Apidae,Bombus pratorum,Fabaceae,Cytisus scoparius
+Apidae,Bombus pratorum,Fabaceae,"Laburnum × watereri"
+Apidae,Bombus pratorum,Fabaceae,Trifolium repens
+Apidae,Bombus pratorum,Fabaceae,Vicia cracca
+Apidae,Bombus pratorum,Fabaceae,Vicia faba
+Apidae,Bombus pratorum,Fabaceae,Vicia sepium
+Apidae,Bombus ruderarius,Fabaceae,Lotus corniculatus
+Apidae,Bombus sylvarum,Fabaceae,Trifolium pratense
+Apidae,Bombus terrestris,Fabaceae,"Laburnum × watereri"
+Apidae,Bombus terrestris,Fabaceae,Trifolium repens
+Apidae,Bombus terrestris,Fabaceae,Ulex europaeus
+Apidae,Apis mellifera,Geraniaceae,Geranium pratense
+Apidae,Apis mellifera,Geraniaceae,Geranium wallichianum
+Apidae,Bombus pascuorum,Geraniaceae,Geranium
+Apidae,Bombus pascuorum,Geraniaceae,Geranium pratense
+Apidae,Bombus pascuorum,Geraniaceae,Geranium robertianum
+Apidae,Bombus pascuorum,Geraniaceae,Geranium wallichianum
+Apidae,Bombus pratorum,Geraniaceae,Geranium
+Apidae,Bombus pratorum,Geraniaceae,Geranium pratense
+Apidae,Bombus pratorum,Geraniaceae,Geranium pyrenaicum
+Apidae,Bombus pratorum,Geraniaceae,Geranium robertianum
+Apidae,Bombus lucorum,Grossulariaceae,Ribes sanguineum
+Apidae,Bombus pratorum,Grossulariaceae,Ribes sanguineum
+Apidae,Apis mellifera,Hydrangeaceae,Hydrangea
+Apidae,Bombus lucorum,Hydrangeaceae,Hydrangea
+Apidae,Apis mellifera,Hypericaceae,Hypericum androsaemum
+Apidae,Bombus lucorum,Hypericaceae,Hypericum androsaemum
+Apidae,Bombus muscorum,Hypericaceae,Hypericum androsaemum
+Apidae,Bombus pascuorum,Hypericaceae,Hypericum androsaemum
+Apidae,Apis mellifera,Lamiaceae,Lavandula angustifolia
+Apidae,Apis mellifera,Lamiaceae,Salvia microphylla
+Apidae,Apis mellifera,Lamiaceae,Salvia verbenaca
+Apidae,Bombus hortorum,Lamiaceae,Prunella vulgaris
+Apidae,Bombus hortorum,Lamiaceae,Stachys palustris
+Apidae,Bombus hortorum,Lamiaceae,Stachys sylvatica
+Apidae,Bombus lapidarius,Lamiaceae,Lavandula angustifolia
+Apidae,Bombus lucorum,Lamiaceae,Lamium purpureum
+Apidae,Bombus lucorum,Lamiaceae,Lavandula angustifolia
+Apidae,Bombus lucorum,Lamiaceae,Lavandula latifolia
+Apidae,Bombus lucorum,Lamiaceae,"Mentha × piperita"
+Apidae,Bombus lucorum,Lamiaceae,Prunella vulgaris
+Apidae,Bombus lucorum,Lamiaceae,Salvia microphylla
+Apidae,Bombus lucorum,Lamiaceae,Salvia verbenaca
+Apidae,Bombus lucorum,Lamiaceae,Stachys byzantina
+Apidae,Bombus lucorum,Lamiaceae,Stachys palustris
+Apidae,Bombus lucorum,Lamiaceae,Stachys sylvatica
+Apidae,Bombus muscorum,Lamiaceae,Lavandula angustifolia
+Apidae,Bombus muscorum,Lamiaceae,Prunella vulgaris
+Apidae,Bombus muscorum,Lamiaceae,Salvia rosmarinus
+Apidae,Bombus pascuorum,Lamiaceae,Agastache foeniculum
+Apidae,Bombus pascuorum,Lamiaceae,Ajuga reptans
+Apidae,Bombus pascuorum,Lamiaceae,Glechoma hederacea
+Apidae,Bombus pascuorum,Lamiaceae,Lamium purpureum
+Apidae,Bombus pascuorum,Lamiaceae,Lavandula
+Apidae,Bombus pascuorum,Lamiaceae,Lavandula angustifolia
+Apidae,Bombus pascuorum,Lamiaceae,Nepeta
+Apidae,Bombus pascuorum,Lamiaceae,Prunella vulgaris
+Apidae,Bombus pascuorum,Lamiaceae,Salvia microphylla
+Apidae,Bombus pascuorum,Lamiaceae,Salvia rosmarinus
+Apidae,Bombus pascuorum,Lamiaceae,Stachys byzantina
+Apidae,Bombus pascuorum,Lamiaceae,Stachys palustris
+Apidae,Bombus pascuorum,Lamiaceae,Stachys sylvatica
+Apidae,Bombus pascuorum,Lamiaceae,Teucrium scorodonia
+Apidae,Bombus pratorum,Lamiaceae,Ajuga reptans
+Apidae,Bombus pratorum,Lamiaceae,Salvia microphylla
+Apidae,Bombus pratorum,Lamiaceae,Salvia rosmarinus
+Apidae,Bombus pratorum,Lamiaceae,Stachys sylvatica
+Apidae,Bombus terrestris,Lamiaceae,Lavandula
+Apidae,Bombus terrestris,Lamiaceae,Lavandula angustifolia
+Apidae,Bombus pascuorum,Linaceae,Linum usitatissimum
+Apidae,Apis mellifera,Lythraceae,Lythrum salicaria
+Apidae,Bombus lucorum,Lythraceae,Lythrum salicaria
+Apidae,Bombus pascuorum,Lythraceae,Lythrum salicaria
+Apidae,Apis mellifera,Malvaceae,Malva sylvestris
+Apidae,Apis mellifera,Malvaceae,Tilia europaea
+Apidae,Bombus lapidarius,Malvaceae,Alcea rosea
+Apidae,Bombus lapidarius,Malvaceae,Malva sylvestris
+Apidae,Bombus lapidarius,Malvaceae,Tilia europaea
+Apidae,Bombus lucorum,Malvaceae,Malva arborea
+Apidae,Bombus lucorum,Malvaceae,Malva sylvestris
+Apidae,Bombus lucorum,Malvaceae,Tilia europaea
+Apidae,Bombus muscorum,Malvaceae,Tilia europaea
+Apidae,Bombus pascuorum,Malvaceae,Alcea rosea
+Apidae,Bombus pascuorum,Malvaceae,Malva sylvestris
+Apidae,Bombus pratorum,Malvaceae,Malva sylvestris
+Apidae,Bombus pratorum,Malvaceae,Tilia europaea
+Apidae,Bombus terrestris,Malvaceae,Tilia europaea
+Apidae,Apis mellifera,Oleaceae,Ligustrum vulgare
+Apidae,Bombus hortorum,Oleaceae,Ligustrum vulgare
+Apidae,Bombus lapidarius,Oleaceae,Ligustrum vulgare
+Apidae,Bombus lucorum,Oleaceae,Ligustrum vulgare
+Apidae,Bombus pascuorum,Oleaceae,Ligustrum vulgare
+Apidae,Bombus pratorum,Oleaceae,Ligustrum vulgare
+Apidae,Apis mellifera,Onagraceae,Chamaenerion angustifolium
+Apidae,Apis mellifera,Onagraceae,Epilobium hirsutum
+Apidae,Apis mellifera,Onagraceae,Epilobium montanum
+Apidae,Apis mellifera,Onagraceae,Fuchsia magellanica
+Apidae,Bombus hortorum,Onagraceae,Chamaenerion angustifolium
+Apidae,Bombus lapidarius,Onagraceae,Chamaenerion angustifolium
+Apidae,Bombus lucorum,Onagraceae,Chamaenerion angustifolium
+Apidae,Bombus lucorum,Onagraceae,Epilobium hirsutum
+Apidae,Bombus lucorum,Onagraceae,Epilobium montanum
+Apidae,Bombus lucorum,Onagraceae,Fuchsia magellanica
+Apidae,Bombus muscorum,Onagraceae,Fuchsia magellanica
+Apidae,Bombus pascuorum,Onagraceae,Chamaenerion angustifolium
+Apidae,Bombus pascuorum,Onagraceae,Epilobium hirsutum
+Apidae,Bombus pascuorum,Onagraceae,Epilobium parviflorum
+Apidae,Bombus pascuorum,Onagraceae,Fuchsia magellanica
+Apidae,Bombus pratorum,Onagraceae,Epilobium hirsutum
+Apidae,Bombus terrestris,Onagraceae,Fuchsia magellanica
+Apidae,Bombus hortorum,Orobanchaceae,Rhinanthus minor
+Apidae,Bombus lucorum,Orobanchaceae,Euphrasia
+Apidae,Bombus lucorum,Orobanchaceae,Odontites vernus
+Apidae,Bombus lucorum,Orobanchaceae,Rhinanthus minor
+Apidae,Bombus pascuorum,Orobanchaceae,Euphrasia
+Apidae,Bombus pascuorum,Orobanchaceae,Odontites vernus
+Apidae,Bombus pascuorum,Orobanchaceae,Rhinanthus minor
+Apidae,Bombus pratorum,Orobanchaceae,Rhinanthus minor
+Apidae,Bombus sylvarum,Orobanchaceae,Rhinanthus minor
+Apidae,Apis mellifera,Oxalidaceae,Oxalis debilis
+Apidae,Bombus lapidarius,Oxalidaceae,Oxalis debilis
+Apidae,Bombus pascuorum,Oxalidaceae,Oxalis debilis
+Apidae,Bombus lucorum,Papaveraceae,Papaver rhoeas
+Apidae,Apis mellifera,Plantaginaceae,Hebe
+Apidae,Apis mellifera,Plantaginaceae,Penstemon
+Apidae,Apis mellifera,Plantaginaceae,Veronica persica
+Apidae,Bombus lapidarius,Plantaginaceae,Hebe
+Apidae,Bombus lucorum,Plantaginaceae,Hebe
+Apidae,Bombus lucorum,Plantaginaceae,Veronica chamaedrys
+Apidae,Bombus pascuorum,Plantaginaceae,Antirrhinum majus
+Apidae,Bombus pascuorum,Plantaginaceae,Digitalis purpurea
+Apidae,Bombus pascuorum,Plantaginaceae,Hebe
+Apidae,Bombus pascuorum,Plantaginaceae,Linaria purpurea
+Apidae,Bombus pascuorum,Plantaginaceae,Penstemon
+Apidae,Bombus terrestris,Plantaginaceae,Antirrhinum
+Apidae,Bombus terrestris,Plantaginaceae,Hebe
+Apidae,Bombus terrestris,Plantaginaceae,Linaria purpurea
+Apidae,Bombus terrestris,Plantaginaceae,Penstemon
+Apidae,Apis mellifera,Polygonaceae,Fallopia baldschuanica
+Apidae,Bombus lapidarius,Polygonaceae,Persicaria maculosa
+Apidae,Bombus lucorum,Polygonaceae,Persicaria maculosa
+Apidae,Bombus pascuorum,Primulaceae,Primula veris
+Apidae,Apis mellifera,Ranunculaceae,Ranunculus acris
+Apidae,Apis mellifera,Ranunculaceae,Ranunculus repens
+Apidae,Bombus hortorum,Ranunculaceae,Aconitum napellus
+Apidae,Bombus lapidarius,Ranunculaceae,Ranunculus acris
+Apidae,Bombus lapidarius,Ranunculaceae,Ranunculus bulbosus
+Apidae,Bombus lapidarius,Ranunculaceae,Ranunculus repens
+Apidae,Bombus lucorum,Ranunculaceae,Ranunculus acris
+Apidae,Bombus lucorum,Ranunculaceae,Ranunculus bulbosus
+Apidae,Bombus lucorum,Ranunculaceae,Ranunculus repens
+Apidae,Bombus pascuorum,Ranunculaceae,Ranunculus acris
+Apidae,Bombus pratorum,Ranunculaceae,Aconitum napellus
+Apidae,Bombus pratorum,Ranunculaceae,Ranunculus acris
+Apidae,Bombus pratorum,Ranunculaceae,Ranunculus bulbosus
+Apidae,Bombus pratorum,Ranunculaceae,Ranunculus repens
+Apidae,Bombus lapidarius,Resedaceae,Reseda luteola
+Apidae,Bombus lucorum,Resedaceae,Reseda luteola
+Apidae,Apis mellifera,Rhamnaceae,Ceanothus
+Apidae,Bombus lucorum,Rhamnaceae,Ceanothus
+Apidae,Bombus pascuorum,Rhamnaceae,Ceanothus
+Apidae,Bombus pratorum,Rhamnaceae,Ceanothus
+Apidae,Apis mellifera,Rosaceae,Argentina anserina
+Apidae,Apis mellifera,Rosaceae,Cotoneaster franchetii
+Apidae,Apis mellifera,Rosaceae,Crataegus monogyna
+Apidae,Apis mellifera,Rosaceae,Filipendula ulmaria
+Apidae,Apis mellifera,Rosaceae,Malus domestica
+Apidae,Apis mellifera,Rosaceae,Malus prunifolia
+Apidae,Apis mellifera,Rosaceae,Prunus spinosa
+Apidae,Apis mellifera,Rosaceae,Rosa
+Apidae,Apis mellifera,Rosaceae,Rubus fruticosus
+Apidae,Apis mellifera,Rosaceae,Spiraea cantoniensis
+Apidae,Bombus hortorum,Rosaceae,Malus domestica
+Apidae,Bombus hortorum,Rosaceae,Rosa canina
+Apidae,Bombus hortorum,Rosaceae,Rubus fruticosus
+Apidae,Bombus lapidarius,Rosaceae,Malus domestica
+Apidae,Bombus lapidarius,Rosaceae,Potentilla reptans
+Apidae,Bombus lapidarius,Rosaceae,Rubus fruticosus
+Apidae,Bombus lapidarius,Rosaceae,Spiraea cantoniensis
+Apidae,Bombus lucorum,Rosaceae,Cotoneaster franchetii
+Apidae,Bombus lucorum,Rosaceae,Cotoneaster frigidus
+Apidae,Bombus lucorum,Rosaceae,Cotoneaster hybr
+Apidae,Bombus lucorum,Rosaceae,Crataegus monogyna
+Apidae,Bombus lucorum,Rosaceae,Filipendula ulmaria
+Apidae,Bombus lucorum,Rosaceae,Malus domestica
+Apidae,Bombus lucorum,Rosaceae,Potentilla reptans
+Apidae,Bombus lucorum,Rosaceae,Rosa
+Apidae,Bombus lucorum,Rosaceae,Rubus fruticosus
+Apidae,Bombus lucorum,Rosaceae,Spiraea cantoniensis
+Apidae,Bombus lucorum,Rosaceae,"Spiraea × billardii"
+Apidae,Bombus pascuorum,Rosaceae,Cotoneaster frigidus
+Apidae,Bombus pascuorum,Rosaceae,Filipendula ulmaria
+Apidae,Bombus pascuorum,Rosaceae,Malus domestica
+Apidae,Bombus pascuorum,Rosaceae,Potentilla anserina
+Apidae,Bombus pascuorum,Rosaceae,Rosa
+Apidae,Bombus pascuorum,Rosaceae,Rubus fruticosus
+Apidae,Bombus pascuorum,Rosaceae,Spiraea cantoniensis
+Apidae,Bombus pratorum,Rosaceae,Cotoneaster franchetii
+Apidae,Bombus pratorum,Rosaceae,Malus domestica
+Apidae,Bombus pratorum,Rosaceae,Malus prunifolia
+Apidae,Bombus pratorum,Rosaceae,Pyracantha
+Apidae,Bombus pratorum,Rosaceae,Rosa
+Apidae,Bombus pratorum,Rosaceae,Rosa canina
+Apidae,Bombus pratorum,Rosaceae,Rubus fruticosus
+Apidae,Bombus pratorum,Rosaceae,Spiraea cantoniensis
+Apidae,Bombus sylvarum,Rosaceae,Potentilla anserina
+Apidae,Bombus terrestris,Rosaceae,Cotoneaster franchetii
+Apidae,Bombus terrestris,Rosaceae,Cotoneaster frigidus
+Apidae,Bombus terrestris,Rosaceae,Rubus fruticosus
+Apidae,Bombus terrestris,Rosaceae,Spiraea cantoniensis
+Apidae,Nomada,Rosaceae,Malus domestica
+Apidae,Nomada marshamella,Rosaceae,Malus domestica
+Apidae,Nomada ruficornis,Rosaceae,Malus domestica
+Apidae,Bombus lucorum,Saxifragaceae,Heuchera
+Apidae,Apis mellifera,Scrophulariaceae,Buddleja davidii
+Apidae,Apis mellifera,Scrophulariaceae,Buddleja globosa
+Apidae,Bombus lucorum,Scrophulariaceae,Buddleja davidii
+Apidae,Bombus lucorum,Scrophulariaceae,Buddleja globosa
+Apidae,Bombus muscorum,Scrophulariaceae,Buddleja globosa
+Apidae,Bombus pascuorum,Scrophulariaceae,Buddleja davidii
+Apidae,Bombus pascuorum,Scrophulariaceae,Buddleja globosa
+Apidae,Bombus terrestris,Scrophulariaceae,Buddleja globosa
+Apidae,Bombus terrestris audax,Scrophulariaceae,Buddleja davidii
+Apidae,Bombus pascuorum,Solanaceae,"Petunia × atkinsiana"
+Apidae,Bombus pascuorum,Verbenaceae,Verbena bonariensis
+Apidae,Bombus lucorum,Violaceae,Viola arvensis
+Apidae,Bombus pascuorum,Violaceae,Viola odorata
+Apidae,Bombus pratorum,NULL,Queen
+Cantharidae,Rhagonycha,Apiaceae,Heracleum sphondylium
+Colletidae,Hylaeus communis,Apiaceae,Heracleum sphondylium
+Colletidae,Hylaeus communis,Asteraceae,Cirsium arvense
+Colletidae,Hylaeus communis,Asteraceae,"Leucanthemum × superbum"
+Colletidae,Colletes succinctus,Ericaceae,Calluna vulgaris
+Colletidae,Hylaeus communis,Oleaceae,Ligustrum vulgare
+Colletidae,Hylaeus communis,Plantaginaceae,Antirrhinum
+Colletidae,Hylaeus communis,Plantaginaceae,Hebe
+Colletidae,Colletes succinctus,Rosaceae,Malus domestica
+Colletidae,Hylaeus communis,Scrophulariaceae,Buddleja globosa
+Conopidae,Conops quadrifasciatus,Lamiaceae,Mentha
+Halictidae,Halictus rubicundus,Asteraceae,Centaurea nigra
+Halictidae,Halictus rubicundus,Asteraceae,Cirsium arvense
+Halictidae,Halictus rubicundus,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Halictidae,Halictus rubicundus,Asteraceae,Leucanthemum vulgare
+Halictidae,Halictus tumulorum,Asteraceae,Achillea millefolium
+Halictidae,Halictus tumulorum,Asteraceae,Centaurea nigra
+Halictidae,Halictus tumulorum,Asteraceae,Dimorphotheca ecklonis
+Halictidae,Halictus tumulorum,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Halictidae,Lasioglossum,Asteraceae,Leontodon crispus
+Halictidae,Lasioglossum,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Halictidae,Lasioglossum,Asteraceae,Scorzoneroides autumnalis
+Halictidae,Lasioglossum albipes,Asteraceae,Cirsium arvense
+Halictidae,Lasioglossum albipes,Asteraceae,Jacobaea vulgaris
+Halictidae,Lasioglossum calceatum,Asteraceae,Taraxacum
+Halictidae,Lasioglossum nitidiusculum,Asteraceae,Centaurea nigra
+Halictidae,Lasioglossum villosulum,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Halictidae,Lasioglossum calceatum,Convolvulaceae,Calystegia silvatica
+Halictidae,Lasioglossum,Fabaceae,Trifolium repens
+Halictidae,Lasioglossum,Geraniaceae,Geranium sanguineum
+Halictidae,Halictus,Orobanchaceae,Euphrasia
+Halictidae,Lasioglossum,Plantaginaceae,Veronica chamaedrys
+Halictidae,Lasioglossum,Ranunculaceae,Ranunculus acris
+Halictidae,Lasioglossum,Ranunculaceae,Ranunculus bulbosus
+Halictidae,Lasioglossum,Ranunculaceae,Ranunculus repens
+Halictidae,Halictidae,Rosaceae,Malus domestica
+Halictidae,Halictus rubicundus,Rosaceae,Malus domestica
+Halictidae,Halictus tumulorum,Rosaceae,Rubus fruticosus
+Halictidae,Lasioglossum,Rosaceae,Malus domestica
+Halictidae,Lasioglossum,Rosaceae,Potentilla erecta
+Halictidae,Sphecodes,Rosaceae,Malus domestica
+Halictidae,Lasioglossum,Rubiaceae,Galium verum
+Lycaenidae,Polyommatus icarus,Apiaceae,Daucus carota
+Lycaenidae,Lycaena phlaeas,Asteraceae,Leucanthemum vulgare
+Lycaenidae,Polyommatus icarus,Asteraceae,Centaurea nigra
+Lycaenidae,Polyommatus icarus,Asteraceae,Cirsium arvense
+Lycaenidae,Thecla betulae,Caprifoliaceae,Succisa pratensis
+Lycaenidae,Polyommatus icarus,Fabaceae,Lotus corniculatus
+Megachilidae,Megachile centuncularis,Asteraceae,Cirsium vulgare
+Megachilidae,Megachile versicolor,Asteraceae,Cirsium vulgare
+Megachilidae,Megachile versicolor,Asteraceae,Jacobaea vulgaris
+Megachilidae,Megachile centuncularis,Lamiaceae,Lavandula angustifolia
+Megachilidae,Megachile versicolor,Rosaceae,Rubus fruticosus
+Megachilidae,Osmia bicornis,Rosaceae,Malus prunifolia
+Megachilidae,Osmia bicornis,NULL,Borage in my garden
+Micropterigidae,Micropterix calthella,Plantaginaceae,Veronica anagallis-aquatica subsp. anagallis-aquatica
+Micropterigidae,Micropterix calthella,Ranunculaceae,Ranunculus
+Miridae,Plagiognathus arbustorum,Rosaceae,Dasiphora fruticosa
+Muscidae,Neomyia cornicina,Asteraceae,Taraxacum officinale
+Muscidae,Coenosia tigrina,Brassicaceae,Nasturtium officinale
+Muscidae,Muscidae,Fabaceae,Vicia faba
+Muscidae,Mesembrina,Rosaceae,Malus domestica
+Muscidae,Muscidae,Rosaceae,Malus domestica
+Nitidulidae,Brachypterus glaber,Urticaceae,Urtica dioica
+Nymphalidae,Aglais io,Asteraceae,Cirsium arvense
+Nymphalidae,Aglais urticae,Asteraceae,Arctium minus
+Nymphalidae,Aglais urticae,Asteraceae,Cirsium arvense
+Nymphalidae,Aphantopus hyperantus,Asteraceae,Cirsium arvense
+Nymphalidae,Cynthia cardui,Asteraceae,Cirsium arvense
+Nymphalidae,Cynthia cardui,Asteraceae,Cirsium vulgare
+Nymphalidae,Maniola jurtina,Asteraceae,Cirsium arvense
+Nymphalidae,Vanessa atalanta,Asteraceae,Cirsium arvense
+Nymphalidae,Vanessa cardui,Asteraceae,Cirsium arvense
+Nymphalidae,Cynthia cardui,Brassicaceae,Brassica napus
+Nymphalidae,Pararge aegeria,Brassicaceae,Brassica napus
+Nymphalidae,Vanessa cardui,Brassicaceae,Brassica napus
+Nymphalidae,Maniola jurtina,Caprifoliaceae,Centranthus ruber
+Nymphalidae,Speyeria aglaja,Eulophidae,Thymus
+Nymphalidae,Cynthia cardui,Lythraceae,Lythrum salicaria
+Nymphalidae,Aglais urticae,Plantaginaceae,Hebe
+Nymphalidae,Aglais urticae,Rosaceae,Rubus fruticosus
+Nymphalidae,Cynthia cardui,Rosaceae,Rubus fruticosus
+Nymphalidae,Pararge aegeria,Rosaceae,Rubus fruticosus
+Nymphalidae,Vanessa atalanta,Rosaceae,Malus domestica
+Nymphalidae,Aglais io,Scrophulariaceae,Buddleja davidii
+Nymphalidae,Aglais io io,Scrophulariaceae,Buddleja davidii
+Nymphalidae,Aglais urticae,Scrophulariaceae,Buddleja davidii
+Nymphalidae,Vanessa atalanta,Scrophulariaceae,Buddleja
+Nymphalidae,Vanessa atalanta,Scrophulariaceae,Buddleja davidii
+Pieridae,Pieris brassicae,Asteraceae,Cirsium arvense
+Pieridae,Anthocharis cardamines,Fabaceae,Vicia sepium
+Pieridae,Pieris brassicae,Geraniaceae,Geranium robertianum
+Pieridae,Pieris napi,Geraniaceae,Geranium robertianum
+Pieridae,Pieris brassicae,Lamiaceae,Lavandula angustifolia
+Pieridae,Pieris napi,Lamiaceae,Lavandula angustifolia
+Pieridae,Pieris brassicae,Polygonaceae,Persicaria maculosa
+Pieridae,Pieris napi,Rosaceae,Rubus fruticosus
+Pieridae,Pieris brassicae,Scrophulariaceae,Buddleja
+Pieridae,Pieris brassicae,Scrophulariaceae,Buddleja davidii
+Satyridae,Aphantopus hyperantus,Asteraceae,Cirsium vulgare
+Satyridae,Maniola jurtina,Asteraceae,Cirsium arvense
+Satyridae,Maniola jurtina,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Satyridae,Maniola jurtina,Fabaceae,Trifolium repens
+Satyridae,Maniola jurtina,Onagraceae,Epilobium hirsutum
+Satyridae,Maniola jurtina,Ranunculaceae,Ranunculus acris
+Satyridae,Maniola jurtina,Ranunculaceae,Ranunculus repens
+Satyridae,Aphantopus hyperantus,Rosaceae,Rubus fruticosus
+Satyridae,Maniola jurtina,Rosaceae,Rubus fruticosus
+Scathophagidae,Scathophaga,Rosaceae,Malus domestica
+Syrphidae,Syrphus,Adoxaceae,Sambucus nigra
+Syrphidae,Eupeodes luniger,Amaryllidaceae,Agapanthus
+Syrphidae,Sphaerophoria,Amaryllidaceae,Agapanthus
+Syrphidae,Cheilosia illustrata,Apiaceae,Heracleum sphondylium
+Syrphidae,Episyrphus balteatus,Apiaceae,Aethusa cynapium
+Syrphidae,Episyrphus balteatus,Apiaceae,Angelica sylvestris
+Syrphidae,Episyrphus balteatus,Apiaceae,Heracleum sphondylium
+Syrphidae,Eristalis,Apiaceae,Angelica sylvestris
+Syrphidae,Eristalis,Apiaceae,Anthriscus sylvestris
+Syrphidae,Eristalis,Apiaceae,Heracleum sphondylium
+Syrphidae,Eristalis arbustorum,Apiaceae,Heracleum sphondylium
+Syrphidae,Eristalis tenax,Apiaceae,Heracleum sphondylium
+Syrphidae,Helophilus,Apiaceae,Angelica sylvestris
+Syrphidae,Helophilus,Apiaceae,Anthriscus sylvestris
+Syrphidae,Helophilus,Apiaceae,Heracleum sphondylium
+Syrphidae,Melanostoma,Apiaceae,Aethusa cynapium
+Syrphidae,Melanostoma,Apiaceae,Angelica sylvestris
+Syrphidae,Melanostoma,Apiaceae,Anthriscus sylvestris
+Syrphidae,Melanostoma,Apiaceae,Heracleum sphondylium
+Syrphidae,Melanostoma scalare,Apiaceae,Anthriscus sylvestris
+Syrphidae,Platycheirus albimanus,Apiaceae,Anthriscus sylvestris
+Syrphidae,Pyrophaena granditarsa,Apiaceae,Conopodium majus
+Syrphidae,Rhingia campestris,Apiaceae,Anthriscus sylvestris
+Syrphidae,Sericomyia silentis,Apiaceae,Heracleum sphondylium
+Syrphidae,Sphaerophoria,Apiaceae,Daucus carota
+Syrphidae,Syritta pipiens,Apiaceae,Heracleum sphondylium
+Syrphidae,Syrphus,Apiaceae,Heracleum sphondylium
+Syrphidae,Syrphus ribesii,Apiaceae,Anthriscus sylvestris
+Syrphidae,Syrphus vitripennis,Apiaceae,Conopodium majus
+Syrphidae,Syrphus vitripennis,Apiaceae,Heracleum sphondylium
+Syrphidae,Volucella,Apiaceae,Heracleum sphondylium
+Syrphidae,Volucella pellucens,Apiaceae,Heracleum sphondylium
+Syrphidae,Syrphus vitripennis,Apocynaceae,Trachelospermum jasminoides
+Syrphidae,Melanostoma,Asparagaceae,Hyacinthoides non-scripta
+Syrphidae,Platycheirus albimanus,Asparagaceae,Hyacinthoides non-scripta
+Syrphidae,Rhingia campestris,Asparagaceae,Hyacinthoides non-scripta
+Syrphidae,Cheilosia latifrons,Asteraceae,Taraxacum
+Syrphidae,Chrysotoxum bicincta,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Syrphidae,Dasysyrphus albostriatus,Asteraceae,Cirsium vulgare
+Syrphidae,Dasysyrphus albostriatus,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Syrphidae,Episyrphus balteatus,Asteraceae,Achillea millefolium
+Syrphidae,Episyrphus balteatus,Asteraceae,Arctium minus
+Syrphidae,Episyrphus balteatus,Asteraceae,Centaurea nigra
+Syrphidae,Episyrphus balteatus,Asteraceae,Cirsium arvense
+Syrphidae,Episyrphus balteatus,Asteraceae,Cirsium vulgare
+Syrphidae,Episyrphus balteatus,Asteraceae,Jacobaea vulgaris
+Syrphidae,Episyrphus balteatus,Asteraceae,Lapsana communis
+Syrphidae,Episyrphus balteatus,Asteraceae,Leontodon crispus
+Syrphidae,Episyrphus balteatus,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Syrphidae,Episyrphus balteatus,Asteraceae,Leucanthemum vulgare
+Syrphidae,Episyrphus balteatus,Asteraceae,Sonchus arvensis
+Syrphidae,Episyrphus balteatus,Asteraceae,Sonchus asper
+Syrphidae,Eristalis,Asteraceae,Achillea ptarmica
+Syrphidae,Eristalis,Asteraceae,Centaurea nigra
+Syrphidae,Eristalis,Asteraceae,Cirsium arvense
+Syrphidae,Eristalis,Asteraceae,Cirsium vulgare
+Syrphidae,Eristalis,Asteraceae,Hypochaeris radicata
+Syrphidae,Eristalis,Asteraceae,Jacobaea vulgaris
+Syrphidae,Eristalis,Asteraceae,Lapsana communis
+Syrphidae,Eristalis,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Syrphidae,Eristalis,Asteraceae,Sonchus arvensis
+Syrphidae,Eristalis,Asteraceae,Sonchus asper
+Syrphidae,Eristalis,Asteraceae,Taraxacum
+Syrphidae,Eristalis arbustorum,Asteraceae,Cirsium arvense
+Syrphidae,Eristalis arbustorum,Asteraceae,Jacobaea vulgaris
+Syrphidae,Eristalis arbustorum,Asteraceae,Taraxacum
+Syrphidae,Eristalis nemorum,Asteraceae,Scorzoneroides autumnalis
+Syrphidae,Eristalis pertinax,Asteraceae,Jacobaea vulgaris
+Syrphidae,Eristalis pertinax,Asteraceae,Taraxacum
+Syrphidae,Eristalis tenax,Asteraceae,Bellis perennis
+Syrphidae,Eristalis tenax,Asteraceae,Centaurea nigra
+Syrphidae,Eristalis tenax,Asteraceae,Cirsium arvense
+Syrphidae,Eristalis tenax,Asteraceae,Jacobaea vulgaris
+Syrphidae,Eristalis tenax,Asteraceae,Leontodon crispus
+Syrphidae,Eristalis tenax,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Syrphidae,Eristalis tenax,Asteraceae,Leucanthemum vulgare
+Syrphidae,Eristalis tenax,Asteraceae,Rudbeckia hirta
+Syrphidae,Eristalis tenax,Asteraceae,Scorzoneroides autumnalis
+Syrphidae,Eristalis tenax,Asteraceae,Sonchus arvensis
+Syrphidae,Eristalis tenax,Asteraceae,Taraxacum officinale
+Syrphidae,Eristalis tenax,Asteraceae,Tripleurospermum maritimum
+Syrphidae,Eupeodes corollae,Asteraceae,Jacobaea vulgaris
+Syrphidae,Eupeodes corollae,Asteraceae,Scorzoneroides autumnalis
+Syrphidae,Eupeodes latifasciatus,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Syrphidae,Eupeodes luniger,Asteraceae,Centaurea nigra
+Syrphidae,Eupeodes luniger,Asteraceae,Jacobaea vulgaris
+Syrphidae,Eupeodes luniger,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Syrphidae,Eupeodes luniger,Asteraceae,Sonchus asper
+Syrphidae,Ferdinandea cuprea,Asteraceae,Bellis perennis
+Syrphidae,Helophilus,Asteraceae,Centaurea nigra
+Syrphidae,Helophilus,Asteraceae,Cirsium arvense
+Syrphidae,Helophilus,Asteraceae,Cirsium vulgare
+Syrphidae,Helophilus,Asteraceae,Jacobaea vulgaris
+Syrphidae,Helophilus,Asteraceae,Lapsana communis
+Syrphidae,Helophilus,Asteraceae,Leontodon crispus
+Syrphidae,Helophilus,Asteraceae,Sonchus asper
+Syrphidae,Helophilus pendulus,Asteraceae,Achillea millefolium
+Syrphidae,Helophilus pendulus,Asteraceae,Brachyglottis greyi
+Syrphidae,Helophilus pendulus,Asteraceae,Jacobaea vulgaris
+Syrphidae,Helophilus pendulus,Asteraceae,Leontodon crispus
+Syrphidae,Helophilus pendulus,Asteraceae,Taraxacum
+Syrphidae,Melanostoma,Asteraceae,Achillea ptarmica
+Syrphidae,Melanostoma,Asteraceae,Bellis perennis
+Syrphidae,Melanostoma,Asteraceae,Cirsium arvense
+Syrphidae,Melanostoma,Asteraceae,Jacobaea vulgaris
+Syrphidae,Melanostoma,Asteraceae,Lapsana communis
+Syrphidae,Melanostoma,Asteraceae,Sonchus asper
+Syrphidae,Melanostoma mellinum,Asteraceae,Leontodon crispus
+Syrphidae,Melanostoma mellinum,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Syrphidae,Melanostoma scalare,Asteraceae,Taraxacum
+Syrphidae,Meligramma guttata,Asteraceae,Leontodon crispus
+Syrphidae,Myathropa florea,Asteraceae,Achillea millefolium
+Syrphidae,Myathropa florea,Asteraceae,Centaurea kerneriana subsp. kerneriana
+Syrphidae,Myathropa florea,Asteraceae,"Leucanthemum × superbum"
+Syrphidae,Neoascia podagrica,Asteraceae,Taraxacum
+Syrphidae,Parasyrphus nigritarsis,Asteraceae,Cirsium arvense
+Syrphidae,Platycheirus albimanus,Asteraceae,Bellis perennis
+Syrphidae,Platycheirus albimanus,Asteraceae,Centaurea nigra
+Syrphidae,Platycheirus albimanus,Asteraceae,Scorzoneroides autumnalis
+Syrphidae,Platycheirus albimanus,Asteraceae,Taraxacum
+Syrphidae,Platycheirus angustatus,Asteraceae,Scorzoneroides autumnalis
+Syrphidae,Platycheirus manicatus,Asteraceae,Scorzoneroides autumnalis
+Syrphidae,Platycheirus manicatus,Asteraceae,Taraxacum
+Syrphidae,Platycheirus ramsarensis,Asteraceae,Scorzoneroides autumnalis
+Syrphidae,Platycheirus scutatus,Asteraceae,Bellis perennis
+Syrphidae,Rhingia campestris,Asteraceae,Bellis perennis
+Syrphidae,Rhingia campestris,Asteraceae,Centaurea nigra
+Syrphidae,Rhingia campestris,Asteraceae,Centaurea scabiosa
+Syrphidae,Rhingia campestris,Asteraceae,Cirsium vulgare
+Syrphidae,Rhingia campestris,Asteraceae,Jacobaea vulgaris
+Syrphidae,Rhingia campestris,Asteraceae,Leontodon crispus
+Syrphidae,Rhingia campestris,Asteraceae,Taraxacum
+Syrphidae,Scaeva pyrastri,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Syrphidae,Scaeva selenitica,Asteraceae,Centaurea nigra
+Syrphidae,Sericomyia lappona,Asteraceae,Cirsium arvense
+Syrphidae,Sericomyia silentis,Asteraceae,Cirsium arvense
+Syrphidae,Sphaerophoria,Asteraceae,Achillea millefolium
+Syrphidae,Sphaerophoria,Asteraceae,Cirsium arvense
+Syrphidae,Sphaerophoria,Asteraceae,Jacobaea vulgaris
+Syrphidae,Sphaerophoria,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Syrphidae,Sphaerophoria,Asteraceae,"Leucanthemum × superbum"
+Syrphidae,Sphaerophoria,Asteraceae,Scorzoneroides autumnalis
+Syrphidae,Sphaerophoria,Asteraceae,Tanacetum vulgare
+Syrphidae,Syritta pipiens,Asteraceae,Achillea millefolium
+Syrphidae,Syritta pipiens,Asteraceae,Cirsium arvense
+Syrphidae,Syritta pipiens,Asteraceae,Jacobaea vulgaris
+Syrphidae,Syritta pipiens,Asteraceae,Leontodon hispidus subsp. bourgaeanus
+Syrphidae,Syritta pipiens,Asteraceae,"Leucanthemum × superbum"
+Syrphidae,Syritta pipiens,Asteraceae,Tanacetum parthenium
+Syrphidae,Syritta pipiens,Asteraceae,Taraxacum
+Syrphidae,Syrphus,Asteraceae,Cirsium arvense
+Syrphidae,Syrphus,Asteraceae,Cirsium vulgare
+Syrphidae,Syrphus,Asteraceae,Dahlia pinnata
+Syrphidae,Syrphus,Asteraceae,Jacobaea vulgaris
+Syrphidae,Syrphus,Asteraceae,Lapsana communis
+Syrphidae,Syrphus ribesii,Asteraceae,Achillea millefolium
+Syrphidae,Syrphus ribesii,Asteraceae,Cirsium arvense
+Syrphidae,Syrphus ribesii,Asteraceae,Cirsium vulgare
+Syrphidae,Syrphus ribesii,Asteraceae,Sonchus asper
+Syrphidae,Syrphus ribesii,Asteraceae,Sonchus oleraceus
+Syrphidae,Syrphus ribesii,Asteraceae,Taraxacum
+Syrphidae,Syrphus vitripennis,Asteraceae,Bellis perennis
+Syrphidae,Syrphus vitripennis,Asteraceae,Brachyglottis greyi
+Syrphidae,Syrphus vitripennis,Asteraceae,Hypochaeris radicata
+Syrphidae,Syrphus vitripennis,Asteraceae,Jacobaea vulgaris
+Syrphidae,Syrphus vitripennis,Asteraceae,Leontodon crispus
+Syrphidae,Syrphus vitripennis,Asteraceae,Scorzoneroides autumnalis
+Syrphidae,Syrphus vitripennis,Asteraceae,Tanacetum parthenium
+Syrphidae,Volucella,Asteraceae,Cirsium arvense
+Syrphidae,Volucella,Asteraceae,Sonchus asper
+Syrphidae,Volucella bombylans,Asteraceae,Leontodon crispus
+Syrphidae,Episyrphus balteatus,Begoniaceae,Begonia urticae
+Syrphidae,Eupeodes latifasciatus,Begoniaceae,Begonia urticae
+Syrphidae,Sphaerophoria,Boraginaceae,Pentaglottis sempervirens
+Syrphidae,Episyrphus balteatus,Brassicaceae,Moricandia arvensis
+Syrphidae,Eristalis,Brassicaceae,Brassica napus
+Syrphidae,Eristalis,Brassicaceae,Moricandia arvensis
+Syrphidae,Eristalis tenax,Brassicaceae,Brassicaceae
+Syrphidae,Helophilus,Brassicaceae,Brassica napus
+Syrphidae,Helophilus,Brassicaceae,Moricandia arvensis
+Syrphidae,Helophilus pendulus,Brassicaceae,Barbarea vulgaris
+Syrphidae,Helophilus pendulus,Brassicaceae,Cardamine pratensis
+Syrphidae,Melanostoma,Brassicaceae,Brassica napus
+Syrphidae,Melanostoma,Brassicaceae,Cardamine pratensis
+Syrphidae,Melanostoma mellinum,Brassicaceae,Cardamine pratensis
+Syrphidae,Melanostoma scalare,Brassicaceae,Cardamine pratensis
+Syrphidae,Meliscaeva auricollis,Brassicaceae,Diplotaxis tenuifolia
+Syrphidae,Neoascia podagrica,Brassicaceae,Cardamine pratensis
+Syrphidae,Platycheirus albimanus,Brassicaceae,Brassica rapa
+Syrphidae,Platycheirus albimanus,Brassicaceae,Bunias orientalis
+Syrphidae,Platycheirus albimanus,Brassicaceae,Cardamine hirsuta
+Syrphidae,Platycheirus albimanus,Brassicaceae,Cardamine pratensis
+Syrphidae,Platycheirus manicatus,Brassicaceae,Cardamine pratensis
+Syrphidae,Rhingia campestris,Brassicaceae,Brassica napus
+Syrphidae,Rhingia campestris,Brassicaceae,Cardamine pratensis
+Syrphidae,Sphaerophoria,Brassicaceae,Brassica rapa
+Syrphidae,Syrphus ribesii,Brassicaceae,Moricandia arvensis
+Syrphidae,Volucella,Brassicaceae,Moricandia arvensis
+Syrphidae,Myathropa florea,Campanulaceae,Jasione montana
+Syrphidae,Platycheirus scutatus,Campanulaceae,Campanula portenschlagiana
+Syrphidae,Syritta pipiens,Campanulaceae,Campanula rotundifolia
+Syrphidae,Volucella pellucens,Campanulaceae,Jasione montana
+Syrphidae,Episyrphus balteatus,Caprifoliaceae,Centranthus ruber subsp. ruber
+Syrphidae,Episyrphus balteatus,Caprifoliaceae,Lonicera periclymenum
+Syrphidae,Eristalis,Caprifoliaceae,Knautia arvensis
+Syrphidae,Eupeodes luniger,Caprifoliaceae,Lonicera periclymenum
+Syrphidae,Helophilus,Caprifoliaceae,Knautia arvensis
+Syrphidae,Platycheirus albimanus,Caprifoliaceae,Symphoricarpos albus
+Syrphidae,Platycheirus scutatus,Caprifoliaceae,Centranthus ruber subsp. ruber
+Syrphidae,Sphaerophoria,Caprifoliaceae,Symphoricarpos albus
+Syrphidae,Helophilus,Caryophyllaceae,Rabelera holostea
+Syrphidae,Helophilus,Caryophyllaceae,Stellaria graminea
+Syrphidae,Melanostoma,Caryophyllaceae,Stellaria graminea
+Syrphidae,Platycheirus albimanus,Caryophyllaceae,Stellaria graminea
+Syrphidae,Platycheirus rosarum,Caryophyllaceae,Stellaria graminea
+Syrphidae,Pyrophaena granditarsa,Caryophyllaceae,Stellaria graminea
+Syrphidae,Helophilus pendulus,Celastraceae,Parnassia palustris
+Syrphidae,Melanostoma,Celastraceae,Parnassia palustris
+Syrphidae,Platycheirus scutatus,Cistaceae,Cistus
+Syrphidae,Episyrphus balteatus,Convolvulaceae,Calystegia sepium
+Syrphidae,Helophilus,Convolvulaceae,Calystegia sepium
+Syrphidae,Melanostoma,Convolvulaceae,Calystegia sepium
+Syrphidae,Rhingia campestris,Convolvulaceae,Calystegia sepium
+Syrphidae,Syrphus,Convolvulaceae,Calystegia sepium
+Syrphidae,Eupeodes latifasciatus,Crassulaceae,Sedum
+Syrphidae,Syritta pipiens,Crassulaceae,Sedum
+Syrphidae,Eristalis tenax,Escalloniaceae,Escallonia illinita
+Syrphidae,Eristalis,Fabaceae,Vicia cracca
+Syrphidae,Eristalis pertinax,Fabaceae,Ulex europaeus
+Syrphidae,Eristalis tenax,Fabaceae,Trifolium repens
+Syrphidae,Helophilus,Fabaceae,Lotus corniculatus
+Syrphidae,Melanostoma,Fabaceae,Lotus corniculatus
+Syrphidae,Pipiza noctiluca,Fabaceae,Trifolium pratense
+Syrphidae,Rhingia campestris,Fabaceae,Trifolium pratense
+Syrphidae,Rhingia campestris,Fabaceae,Trifolium repens
+Syrphidae,Rhingia campestris,Fabaceae,Vicia sepium
+Syrphidae,Volucella bombylans,Fabaceae,Trifolium repens
+Syrphidae,Episyrphus balteatus,Geraniaceae,Geranium robertianum
+Syrphidae,Helophilus pendulus,Geraniaceae,Geranium robertianum
+Syrphidae,Melanostoma,Geraniaceae,Geranium robertianum
+Syrphidae,Melanostoma mellinum,Geraniaceae,Geranium robertianum
+Syrphidae,Platycheirus albimanus,Geraniaceae,Geranium robertianum
+Syrphidae,Rhingia campestris,Geraniaceae,Geranium pratense
+Syrphidae,Rhingia campestris,Geraniaceae,Geranium robertianum
+Syrphidae,Sphaerophoria,Geraniaceae,Geranium pyrenaicum
+Syrphidae,Eristalis tenax,Hydrangeaceae,Hydrangea
+Syrphidae,Eupeodes latifasciatus,Hydrangeaceae,Hydrangea
+Syrphidae,Episyrphus balteatus,Hypericaceae,Hypericum perforatum
+Syrphidae,Eristalis pertinax,Hypericaceae,Hypericum calycinum
+Syrphidae,Melanostoma,Hypericaceae,Hypericum perforatum
+Syrphidae,Sphaerophoria,Hypericaceae,Hypericum perforatum
+Syrphidae,Episyrphus balteatus,Lamiaceae,Stachys palustris
+Syrphidae,Eristalis tenax,Lamiaceae,Lavandula angustifolia
+Syrphidae,Eristalis tenax,Lamiaceae,Mentha
+Syrphidae,Melanostoma,Lamiaceae,Stachys palustris
+Syrphidae,Platycheirus albimanus,Lamiaceae,Salvia microphylla
+Syrphidae,Platycheirus scutatus,Lamiaceae,Salvia officinalis
+Syrphidae,Rhingia campestris,Lamiaceae,Agastache foeniculum
+Syrphidae,Rhingia campestris,Lamiaceae,Lamium purpureum
+Syrphidae,Rhingia campestris,Lamiaceae,Prunella vulgaris
+Syrphidae,Rhingia campestris,Lamiaceae,Stachys palustris
+Syrphidae,Rhingia campestris,Lamiaceae,Stachys sylvatica
+Syrphidae,Syrphus vitripennis,Lamiaceae,Nepeta
+Syrphidae,Platycheirus albimanus,Linaceae,Linum usitatissimum
+Syrphidae,Episyrphus balteatus,Lythraceae,Lythrum salicaria
+Syrphidae,Helophilus,Lythraceae,Lythrum salicaria
+Syrphidae,Melanostoma,Lythraceae,Lythrum salicaria
+Syrphidae,Rhingia campestris,Lythraceae,Lythrum salicaria
+Syrphidae,Eupeodes luniger,Malvaceae,Tilia europaea
+Syrphidae,Helophilus pendulus,Malvaceae,Tilia europaea
+Syrphidae,Eristalis arbustorum,Oleaceae,Ligustrum vulgare
+Syrphidae,Eristalis tenax,Oleaceae,Ligustrum vulgare
+Syrphidae,Volucella pellucens,Oleaceae,Ligustrum vulgare
+Syrphidae,Episyrphus balteatus,Onagraceae,Chamaenerion angustifolium
+Syrphidae,Episyrphus balteatus,Onagraceae,Circaea lutetiana
+Syrphidae,Episyrphus balteatus,Onagraceae,Epilobium hirsutum
+Syrphidae,Episyrphus balteatus,Onagraceae,Epilobium montanum
+Syrphidae,Helophilus,Onagraceae,Epilobium hirsutum
+Syrphidae,Helophilus,Onagraceae,Epilobium montanum
+Syrphidae,Helophilus pendulus,Onagraceae,Epilobium montanum
+Syrphidae,Melanostoma,Onagraceae,Chamaenerion angustifolium
+Syrphidae,Melanostoma,Onagraceae,Epilobium hirsutum
+Syrphidae,Melanostoma,Onagraceae,Epilobium montanum
+Syrphidae,Neoascia podagrica,Onagraceae,Circaea lutetiana
+Syrphidae,Neoascia podagrica,Onagraceae,Epilobium parviflorum
+Syrphidae,Platycheirus manicatus,Onagraceae,Epilobium parviflorum
+Syrphidae,Sphaerophoria,Onagraceae,Chamaenerion angustifolium
+Syrphidae,Syritta pipiens,Onagraceae,Epilobium parviflorum
+Syrphidae,Rhingia campestris,Orobanchaceae,Euphrasia
+Syrphidae,Rhingia campestris,Orobanchaceae,Odontites vernus
+Syrphidae,Rhingia campestris,Orobanchaceae,Rhinanthus minor
+Syrphidae,Sphaerophoria,Orobanchaceae,Odontites vernus
+Syrphidae,Syrphus ribesii,Orobanchaceae,Odontites vernus
+Syrphidae,Episyrphus balteatus,Papaveraceae,Papaver rhoeas
+Syrphidae,Episyrphus balteatus,Plantaginaceae,Hebe
+Syrphidae,Episyrphus balteatus,Plantaginaceae,Veronica persica
+Syrphidae,Eupeodes luniger,Plantaginaceae,Plantago lanceolata
+Syrphidae,Melanostoma,Plantaginaceae,Veronica persica
+Syrphidae,Melanostoma mellinum,Plantaginaceae,Veronica chamaedrys
+Syrphidae,Melanostoma scalare,Plantaginaceae,Plantago lanceolata
+Syrphidae,Platycheirus albimanus,Plantaginaceae,Plantago lanceolata
+Syrphidae,Platycheirus clypeatus,Plantaginaceae,Plantago lanceolata
+Syrphidae,Sphaerophoria,Plantaginaceae,Hebe
+Syrphidae,Sphaerophoria,Plantaginaceae,Plantago lanceolata
+Syrphidae,Syrphus vitripennis,Plantaginaceae,Plantago lanceolata
+Syrphidae,Cheilosia albitarsis,Poaceae,Anthoxanthum odoratum
+Syrphidae,Pyrophaena granditarsa,Poaceae,Poa annua
+Syrphidae,Rhingia campestris,Poaceae,Holcus lanatus
+Syrphidae,Episyrphus balteatus,Polygonaceae,Persicaria maculosa
+Syrphidae,Eristalis,Polygonaceae,Persicaria maculosa
+Syrphidae,Eristalis arbustorum,Polygonaceae,Persicaria maculosa
+Syrphidae,Eristalis pertinax,Polygonaceae,Persicaria maculosa
+Syrphidae,Eristalis tenax,Polygonaceae,Persicaria maculosa
+Syrphidae,Eupeodes goeldlini,Polygonaceae,Persicaria maculosa
+Syrphidae,Helophilus pendulus,Polygonaceae,Persicaria maculosa
+Syrphidae,Neoascia podagrica,Polygonaceae,Persicaria maculosa
+Syrphidae,Platycheirus albimanus,Polygonaceae,Persicaria maculosa
+Syrphidae,Pyrophaena granditarsa,Polygonaceae,Persicaria maculosa
+Syrphidae,Syritta pipiens,Polygonaceae,Fallopia baldschuanica
+Syrphidae,Syritta pipiens,Polygonaceae,Persicaria maculosa
+Syrphidae,Syrphus ribesii,Polygonaceae,Persicaria maculosa
+Syrphidae,Syrphus vitripennis,Polygonaceae,Persicaria maculosa
+Syrphidae,Rhingia campestris,Primulaceae,Primula veris
+Syrphidae,Rhingia campestris,Primulaceae,Primula vulgaris
+Syrphidae,Cheilosia albitarsis,Ranunculaceae,Ranunculus acris
+Syrphidae,Cheilosia albitarsis,Ranunculaceae,Ranunculus repens
+Syrphidae,Cheilosia vernalis,Ranunculaceae,Ranunculus acris
+Syrphidae,Episyrphus balteatus,Ranunculaceae,Ranunculus ficaria
+Syrphidae,Episyrphus balteatus,Ranunculaceae,Ranunculus repens
+Syrphidae,Eristalis,Ranunculaceae,Ranunculus repens
+Syrphidae,Eristalis tenax,Ranunculaceae,Ranunculus acris
+Syrphidae,Eristalis tenax,Ranunculaceae,Ranunculus repens
+Syrphidae,Eupeodes corollae,Ranunculaceae,Ranunculus acris
+Syrphidae,Helophilus,Ranunculaceae,Ranunculus repens
+Syrphidae,Helophilus pendulus,Ranunculaceae,Ranunculus acris
+Syrphidae,Helophilus pendulus,Ranunculaceae,Ranunculus repens
+Syrphidae,Melanostoma,Ranunculaceae,Ranunculus repens
+Syrphidae,Melanostoma mellinum,Ranunculaceae,Ranunculus acris
+Syrphidae,Melanostoma mellinum,Ranunculaceae,Ranunculus repens
+Syrphidae,Melanostoma scalare,Ranunculaceae,Ranunculus acris
+Syrphidae,Melanostoma scalare,Ranunculaceae,Ranunculus repens
+Syrphidae,Meligramma guttata,Ranunculaceae,Ranunculus acris
+Syrphidae,Meligramma guttata,Ranunculaceae,Ranunculus repens
+Syrphidae,Neoascia geniculata,Ranunculaceae,Ranunculus repens
+Syrphidae,Platycheirus,Ranunculaceae,Ranunculus acris
+Syrphidae,Platycheirus,Ranunculaceae,Ranunculus repens
+Syrphidae,Platycheirus albimanus,Ranunculaceae,Ranunculus acris
+Syrphidae,Platycheirus albimanus,Ranunculaceae,Ranunculus repens
+Syrphidae,Platycheirus manicatus,Ranunculaceae,Ranunculus bulbosus
+Syrphidae,Platycheirus manicatus,Ranunculaceae,Ranunculus repens
+Syrphidae,Platycheirus rosarum,Ranunculaceae,Ranunculus acris
+Syrphidae,Platycheirus scambus,Ranunculaceae,Ranunculus repens
+Syrphidae,Platycheirus scutatus,Ranunculaceae,Ranunculus repens
+Syrphidae,Pyrophaena granditarsa,Ranunculaceae,Ranunculus acris
+Syrphidae,Pyrophaena granditarsa,Ranunculaceae,Ranunculus repens
+Syrphidae,Rhingia campestris,Ranunculaceae,Ranunculus acris
+Syrphidae,Rhingia campestris,Ranunculaceae,Ranunculus repens
+Syrphidae,Sphaerophoria,Ranunculaceae,Ranunculus acris
+Syrphidae,Sphaerophoria,Ranunculaceae,Ranunculus bulbosus
+Syrphidae,Sphaerophoria,Ranunculaceae,Ranunculus repens
+Syrphidae,Syrphus vitripennis,Ranunculaceae,Ranunculus repens
+Syrphidae,Volucella bombylans,Ranunculaceae,Ranunculus repens
+Syrphidae,Volucella pellucens,Ranunculaceae,Anemoneae
+Syrphidae,Baccha elongata,Rosaceae,Rubus fruticosus
+Syrphidae,Cheilosia albitarsis,Rosaceae,Potentilla anserina
+Syrphidae,Episyrphus balteatus,Rosaceae,Filipendula ulmaria
+Syrphidae,Episyrphus balteatus,Rosaceae,Potentilla reptans
+Syrphidae,Episyrphus balteatus,Rosaceae,Rubus fruticosus
+Syrphidae,Eristalis,Rosaceae,Filipendula ulmaria
+Syrphidae,Eristalis,Rosaceae,Malus domestica
+Syrphidae,Eristalis,Rosaceae,Rubus fruticosus
+Syrphidae,Eristalis arbustorum,Rosaceae,Malus domestica
+Syrphidae,Eristalis intricaria,Rosaceae,Malus domestica
+Syrphidae,Eristalis nemorum,Rosaceae,Malus domestica
+Syrphidae,Eristalis pertinax,Rosaceae,Malus domestica
+Syrphidae,Eristalis pertinax,Rosaceae,Rubus fruticosus
+Syrphidae,Eristalis tenax,Rosaceae,Malus prunifolia
+Syrphidae,Eristalis tenax,Rosaceae,Potentilla anserina
+Syrphidae,Eristalis tenax,Rosaceae,Rubus fruticosus
+Syrphidae,Eupeodes corollae,Rosaceae,Potentilla reptans
+Syrphidae,Helophilus,Rosaceae,Crataegus monogyna
+Syrphidae,Helophilus,Rosaceae,Malus domestica
+Syrphidae,Helophilus,Rosaceae,Rubus fruticosus
+Syrphidae,Helophilus pendulus,Rosaceae,Malus domestica
+Syrphidae,Helophilus pendulus,Rosaceae,Rubus fruticosus
+Syrphidae,Helophilus trivittatus,Rosaceae,Malus domestica
+Syrphidae,Melanostoma,Rosaceae,Crataegus monogyna
+Syrphidae,Melanostoma,Rosaceae,Geum urbanum
+Syrphidae,Melanostoma,Rosaceae,Rubus fruticosus
+Syrphidae,Melanostoma mellinum,Rosaceae,Potentilla erecta
+Syrphidae,Melanostoma scalare,Rosaceae,Malus domestica
+Syrphidae,Myathropa florea,Rosaceae,Rubus fruticosus
+Syrphidae,Neoascia podagrica,Rosaceae,Rubus fruticosus
+Syrphidae,Parasyrphus punctulatus,Rosaceae,Malus domestica
+Syrphidae,Platycheirus albimanus,Rosaceae,Filipendula ulmaria
+Syrphidae,Platycheirus albimanus,Rosaceae,Malus domestica
+Syrphidae,Platycheirus albimanus,Rosaceae,Rubus fruticosus
+Syrphidae,Platycheirus albimanus,Rosaceae,Spiraea cantoniensis
+Syrphidae,Platycheirus manicatus,Rosaceae,Rubus fruticosus
+Syrphidae,Platycheirus rosarum,Rosaceae,Potentilla anserina
+Syrphidae,Rhingia campestris,Rosaceae,Crataegus monogyna
+Syrphidae,Rhingia campestris,Rosaceae,Malus domestica
+Syrphidae,Rhingia campestris,Rosaceae,Potentilla anserina
+Syrphidae,Rhingia campestris,Rosaceae,Rubus fruticosus
+Syrphidae,Sericomyia silentis,Rosaceae,Rubus fruticosus
+Syrphidae,Sphaerophoria,Rosaceae,Potentilla reptans
+Syrphidae,Syritta pipiens,Rosaceae,Pyracantha
+Syrphidae,Syritta pipiens,Rosaceae,Rosa canina
+Syrphidae,Syritta pipiens,Rosaceae,Rubus fruticosus
+Syrphidae,Syrphidae,Rosaceae,Malus domestica
+Syrphidae,Syrphus,Rosaceae,Rubus fruticosus
+Syrphidae,Syrphus ribesii,Rosaceae,Filipendula ulmaria
+Syrphidae,Syrphus ribesii,Rosaceae,Malus domestica
+Syrphidae,Syrphus ribesii,Rosaceae,Rubus fruticosus
+Syrphidae,Volucella,Rosaceae,Rubus fruticosus
+Syrphidae,Volucella bombylans,Rosaceae,Filipendula ulmaria
+Syrphidae,Volucella bombylans,Rosaceae,Malus domestica
+Syrphidae,Volucella pellucens,Rosaceae,Rubus fruticosus
+Syrphidae,Episyrphus balteatus,Rubiaceae,Galium aparine
+Syrphidae,Melanostoma,Rubiaceae,Galium aparine
+Syrphidae,Syrphus,Rubiaceae,Galium aparine
+Syrphidae,Eristalis tenax,Scrophulariaceae,Buddleja davidii
+Syrphidae,Syritta pipiens,Scrophulariaceae,Buddleja globosa
+Syrphidae,Volucella pellucens,Scrophulariaceae,Buddleja davidii
+Syrphidae,Episyrphus balteatus,Solanaceae,Solanum chaucha
+Syrphidae,Platycheirus albimanus,Solanaceae,Calibrachoa parviflora
+Tachinidae,Phasia hemiptera,Asteraceae,Cirsium arvense
+Tachinidae,Tachina grossa,Asteraceae,Cirsium arvense
+Tipulidae,Tipula,Rosaceae,Malus domestica
+Vespidae,Dolichovespula norwegica,Asteraceae,Cirsium arvense
+Vespidae,Vespula,Rosaceae,Malus domestica
+Zygaenidae,Zygaena filipendulae,Asteraceae,Centaurea nigra

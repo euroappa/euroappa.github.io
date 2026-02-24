@@ -5,25 +5,25 @@
 set -x 
 
 generateChecklists() {
-  cat select-insect-pollinators-of-ireland.sql \
+  cat insect-pollinators-of-ireland.sql \
     | duckdb -csv > insect-pollinators-of-ireland.csv
 
-  cat select-insect-pollinators-of-europe.sql \
+  cat insect-pollinators-of-europe.sql \
    | duckdb -csv > insect-pollinators-of-europe.csv 
 
-  cat select-insect-pollinators-of-netherlands.sql \
+  cat insect-pollinators-of-netherlands.sql \
    | duckdb -csv > insect-pollinators-of-netherlands.csv
 }
 
 generateInteractionRecords() {
-  cat select-insect-pollinator-plant-associations-of-ireland.sql \
-  | duckdb -cvs > insect-pollinator-plant-associations-of-ireland.csv
+  cat insect-pollinator-plant-associations-of-ireland.sql \
+  | duckdb -csv > insect-pollinator-plant-associations-of-ireland.csv
 
-  cat select-insect-pollinator-plant-associations-of-netherlands.sql \
-  | duckdb -cvs > insect-pollinator-plant-associations-of-netherlands.csv
+  cat insect-pollinator-plant-associations-of-netherlands.sql \
+  | duckdb -csv > insect-pollinator-plant-associations-of-netherlands.csv
   
-  cat select-insect-pollinator-plant-associations-of-europe.sql \
-  | duckdb -cvs > insect-pollinator-plant-associations-of-europe.csv
+  cat insect-pollinator-plant-associations-of-europe.sql \
+  | duckdb -csv > insect-pollinator-plant-associations-of-europe.csv
 }
 
 downloadSnapshot() { 
