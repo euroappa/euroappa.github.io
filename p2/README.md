@@ -32,6 +32,7 @@ curl -L1 https://euroappa.github.io/p2/dist/euroappa-nuts-2021-col.tsv.gz \
  | head 
 ```
 
+<a href="examples/euroappa-p2-qgis-screenshot-2026-05-11.png"><img src="examples/euroappa-p2-qgis-screenshot-2026-05-11.png" style="width: 33%"/></a><a href="examples/euroappa-p2-qgis-screenshot-closeup-2026-05-11.png"><img src="examples/euroappa-p2-qgis-screenshot-closeup-2026-05-11.png" style="width: 33%"/></a> Screenshots of record density as generated using QGIS 3.34 and EuroAPPA p2.
 
 See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa/euroappa.github.io/tree/main/p2) for associated files. Also, for other examples using these methods (e.g. duckdb, QGIS) see [https://www.globalbioticinteractions.org/2026/01/22/euroappa/](https://www.globalbioticinteractions.org/2026/01/22/euroappa/) . 
 
