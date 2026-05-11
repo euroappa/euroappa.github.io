@@ -1,3 +1,5 @@
 **/interactions.tsv.gz
 p1/euroappa.gpkg
 **/interactions.parquet
+p2/dist/euroappa-nuts-2021.gpkg
+p2/dist/euroappa-cntr-2024.gpkg

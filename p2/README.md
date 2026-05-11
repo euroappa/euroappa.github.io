@@ -2,7 +2,7 @@
 
 # EuroAPPA prototype P2.
 
-TLDR; This prototypes offers integrated data products like ```euroappa-nuts-2021-gbif.csv`` and ```euroappa-cntr-2024-col.csv``` containing geospatially aligned plant-pollinator records as interpreted from selected versioned taxonomic resources. For a more detailed description, see below.
+TLDR; This prototypes offers integrated data products like ```euroappa-nuts-2021-gbif.csv``` and ```euroappa-cntr-2024-col.csv``` containing geospatially aligned plant-pollinator records as interpreted from selected versioned taxonomic resources (e.g., GBIF, Catalogue of Life). For a more detailed description, see below.
 
 See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa/euroappa.github.io/tree/main/p1) for associated files. Also, for other examples using these methods (e.g. duckdb, QGIS) see [https://www.globalbioticinteractions.org/2026/01/22/euroappa/](https://www.globalbioticinteractions.org/2026/01/22/euroappa/) . 
 
@@ -34,8 +34,11 @@ P2.F1. offers a [bash script](bin/make.sh) to implement an automated workflow to
 highlevel workflow:
 
 ```
- interaction data + taxonomic alignment + geospatial alignment = EuroAPPA P2 data products
-
+ synthesized interaction data 
+  + taxonomic alignment 
+  + geospatial alignment 
+         = EuroAPPA P2 data products
+```
 
 P2.F2. offers data workflows and data products for generating of insect pollinators by country using SQL and [DuckDB](https://duckdb.org) 
  * [insect-pollinators-of-europe.sql](insect-pollinators-of-europe.sql) ```-[generated]->``` [insect-pollinators-of-europe.csv](insect-pollinators-of-europe.csv), 
