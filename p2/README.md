@@ -2,9 +2,9 @@
 
 # EuroAPPA prototype P2.
 
-TLDR; This prototypes offers integrated data products like [```euroappa-nuts-2021-gbif.csv.gz```](dist/euroappa-nuts-2021-gbif.csv.gz) and [```euroappa-cntr-2024-col.csv.gz```](dist/euroappa-cntr-2024-col.csv.gz) containing geospatially aligned plant-pollinator records as interpreted from selected versioned taxonomic resources (e.g., GBIF, Catalogue of Life). For a more detailed description, see below.
+TLDR; This prototypes offers integrated plant-pollinator data products like [```euroappa-nuts-2021-gbif.csv.gz```](dist/euroappa-nuts-2021-gbif.csv.gz), [```euroappa-nuts-2021-col.parquet```](dist/euroappa-nuts-2021-col.parquet) and [```euroappa-cntr-2024-col.csv.gz```](dist/euroappa-cntr-2024-col.csv.gz) containing geospatially aligned plant-pollinator records as interpreted from selected versioned taxonomic resources (e.g., GBIF, Catalogue of Life). For a more detailed description, see below.
 
-See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa/euroappa.github.io/tree/main/p1) for associated files. Also, for other examples using these methods (e.g. duckdb, QGIS) see [https://www.globalbioticinteractions.org/2026/01/22/euroappa/](https://www.globalbioticinteractions.org/2026/01/22/euroappa/) . 
+See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa/euroappa.github.io/tree/main/p2) for associated files. Also, for other examples using these methods (e.g. duckdb, QGIS) see [https://www.globalbioticinteractions.org/2026/01/22/euroappa/](https://www.globalbioticinteractions.org/2026/01/22/euroappa/) . 
 
 ## Changes
 
@@ -29,7 +29,7 @@ P2.FR3  allows for a way to provide feedback (not yet implemented)
 
 A [feature](https://en.wikipedia.org/wiki/Software_feature) is "a prominent or distinctive user-visible aspect, quality, or characteristic of a software system or systems", as defined by Kang et al. 1990. A feature implements one or more requirements.
 
-P2.F1. offers a [bash script](bin/make.sh) to implement an automated workflow to generate euroappa data products. These data products are deposited in Zenodo and were derived a versioned copy of the GloBI Data Review Corpus [6] and selected taxonomic and geospatial databases. 
+P2.F1. offers a [bash script](bin/make.sh) to implement an automated workflow to generate euroappa data products. These data products are deposited in Zenodo and were derived a versioned copy of the GloBI Data Review Corpus [3] and selected taxonomic and geospatial databases ([1,2,4,5]) 
 
 highlevel workflow:
 
@@ -106,11 +106,11 @@ first 5 records:
 | Andrenidae | Andrena angustior | Asteraceae | Leontodon crispus |
 | Andrenidae | Andrena minutula | Asteraceae | Bellis perennis |
 
-P2.F4. allows for online queries through [```https://shell.duckdb.org/```](https://shell.duckdb.org) via top 10 most used programming language: SQL and [```euroappa.parquet```](euroappa.parquet) (< 20MiB). Example queries include [listing the first five interactions associated with bee family Apidae](https://shell.duckdb.org/#queries=v0,SELECT-sourceTaxonFamilyName%2CsourceTaxonName%2CinteractionTypeName%2CtargetTaxonFamilyName%2CtargetTaxonName%0AFROM-'https%3A%2F%2Feuroappa.github.io%2Fp1%2Feuroappa.parquet'-%0AWHERE-sourceTaxonFamilyName-%3D-'Apidae'%0ALIMIT-5~).  
+P2.F4. allows for online queries through [```https://shell.duckdb.org/```](https://shell.duckdb.org) via top 10 most used programming language: SQL and [```euroappa.parquet```](euroappa.parquet) (< 20MiB). Example queries include [listing the first five interactions associated with bee family Apidae as aligned with GBIF Taxonomy and NUTS](https://shell.duckdb.org/#queries=v0,SELECT-sourceTaxonFamilyName%2CsourceTaxonName%2CinteractionTypeName%2CtargetTaxonFamilyName%2CtargetTaxonName%0AFROM-'https%3A%2F%2Feuroappa.github.io%2Fp2%2Fdist/euroappa-nuts-2021-gbif.parquet'-%0AWHERE-sourceTaxonFamilyName-%3D-'Apidae'%0ALIMIT-5~).  
 
-[![Screenshot of DuckDB Web Shell in Action](duckdb-shell-2026-02-24.png)](https://shell.duckdb.org/#queries=v0,SELECT-sourceTaxonFamilyName%2CsourceTaxonName%2CinteractionTypeName%2CtargetTaxonFamilyName%2CtargetTaxonName%0AFROM-'https%3A%2F%2Feuroappa.github.io%2Fp1%2Feuroappa.parquet'-WHERE-sourceTaxonFamilyName-%3D-'Apidae'-LIMIT-5;~)
+[![Screenshot of DuckDB Web Shell in Action](duckdb-shell-2026-02-24.png)](https://shell.duckdb.org/#queries=v0,SELECT-sourceTaxonFamilyName%2CsourceTaxonName%2CinteractionTypeName%2CtargetTaxonFamilyName%2CtargetTaxonName%0AFROM-'https%3A%2F%2Feuroappa.github.io%2Fp2%2Fdist/euroappa-nuts-2021-gbif.parquet'-WHERE-sourceTaxonFamilyName-%3D-'Apidae'-LIMIT-5;~)
 
-P2.F5. allows for spatial queries through QGIS and ```euroappa-nuts-2021-col.gpkg``` and related (bigish dataset ~500MiB) data products.
+P2.F5. allows for spatial queries through QGIS and ```euroappa-nuts-2021-col.gpkg```, [```euroappa-nuts-2021-h3-level-4.gpkg```](dist/euroappa-nuts-2021-h3-level-4.gpkg), [```euroappa-nuts-2021-h3-level-6.gpkg```](dist/euroappa-nuts-2021-h3-level-6.gpkg) and related (bigish dataset ~500MiB) data products. 
 
 P2.F6. data products (parquet files) are compatible with commercial data exploration platforms such as ArcGIS, MotherDuck, and have support for integration into R and Python.   
 
@@ -121,10 +121,10 @@ P2.F7. data products (csv files) are compatible with Excel and Google Sheet etc.
 
  data corpus | geospatial scheme | taxonomic scheme | products | 
  --- | --- | --- | ---
- GloBI 2026 | NUTS 2021 | GBIF Taxonomic Backbone | euroappa-nuts-2021-gbif.csv / .tsv / .gpkg / .parquet
- GloBI 2026 | CNTR 2025 | GBIF Taxonomic Backbone | euroappa-cntr-2024-gbif.csv / .tsv / .gpkg / .parquet
- GloBI 2026 | NUTS 2021 | Catalogue of Life | euroappa-nuts-2021-col.csv / .tsv / .gpkg / .parquet
- GloBI 2026 | CNTR 2025 | Catalogue of Life | euroappa-cntr-2024-col.csv / .tsv / .gpkg / .parquet
+ GloBI 2026 | NUTS 2021 | GBIF Taxonomic Backbone | [euroappa-nuts-2021-gbif.csv.gz](dist/euroappa-nuts-2021-gbif.csv.gz) / [.tsv.gz](dist/euroappa-nuts-2021-gbif.tsv.gz) / [.parquet](dist/euroappa-nuts-2021-gbif.parquet)
+ GloBI 2026 | CNTR 2025 | GBIF Taxonomic Backbone | [euroappa-cntr-2024-gbif.csv.gz](dist/euroappa-cntr-2024-gbif.csv.gz) / [.tsv.gz](dist/euroappa-cntr-2024-gbif.tsv.gz) / [.parquet](dist/euroappa-cntr-2024-gbif.tsv.gz)
+ GloBI 2026 | NUTS 2021 | Catalogue of Life | [euroappa-nuts-2021-col.csv.gz](dist/euroappa-nuts-2021-col.csv.gz) / [.tsv.gz](dist/euroappa-nuts-2021-col.tsv.gz) / [.parquet](dist/euroappa-nuts-2021-col.parquet)
+ GloBI 2026 | CNTR 2025 | Catalogue of Life | [euroappa-cntr-2024-col.csv.gz](dist/euroappa-cntr-2024-col.csv.gz) / [.tsv.gz](dist/euroappa-cntr-2024-col.tsv.gz) / [.parquet](dist/euroappa-cntr-2024-col.parquet)
 
 ## Data Schemas 
 
@@ -294,4 +294,15 @@ NAME_ENGL               Ireland
 
 ## References
 
+[1] GBIF Secretariat (2023). GBIF Backbone Taxonomy. Checklist dataset https://doi.org/10.15468/39omei 
+
+[2] Bánki, O., Roskov, Y., Döring, M., Ower, G., Vandepitte, L., Hobern, D., Remsen, D., Schalk, P., DeWalt, R. E., Keping, M., Miller, J., Orrell, T., Aalbu, R., Adlard, R., Adriaenssens, E., Aedo, C., Aescht, E., Akkari, N., Alonso-Zarazaga, M. A., et al. (2022). Catalogue of Life Checklist (Version 2022-01-14). Catalogue of Life. https://doi.org/10.48580/d4tp
+
+[3] Poelen, J. H. (ed . ) . (2026). Nomer Corpus of Taxonomic Resources hash://sha256/14b77b8b7561fea78691723c093b62ce3dffb3672a790cd9da0ab3e045145387 hash://md5/8ed9e0756e3d8ac23c014dbdb9006e4e (0.33) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.19924910
+
+[4] Administrative Units: Countries (2024) https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries https://gisco-services.ec.europa.eu/distribution/v2/nuts/gpkg/CNTR_RG_01M_2024_4326.gpkg hash://md5/f1472535e38a026bd4df4228caf01f82 accessed May 2026. 
+
+[5] Territorial units for statistics (NUTS) (2021) https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics 'https://gisco-services.ec.europa.eu/distribution/v2/nuts/gpkg/NUTS_RG_01M_2021_4326.gpkg' hash://md5/9e1146e52a2cb5e4a34153facaf50b0b
+
+[6] Poelen, J. H., & Global Biotic Interactions Community. (2026). Global Biotic Interactions (GloBI) Review Dataset Corpus hash://md5/9f9f111af19f657e31ce04b9d422eed4 hash://sha256/8467e21bf1194cbbcb201b3ee2bbee0e2d657a772b4e3ce62fc63afe9116c626 [Data set]. Zenodo. https://doi.org/10.5281/zenodo.20072186
 
