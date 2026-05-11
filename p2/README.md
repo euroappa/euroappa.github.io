@@ -2,11 +2,13 @@
 
 # EuroAPPA prototype P2.
 
+TLDR; This prototypes offers integrated data products like ```euroappa-nuts-2021-gbif.csv`` and ```euroappa-cntr-2024-col.csv``` containing geospatially aligned plant-pollinator records as interpreted from selected versioned taxonomic resources. For a more detailed description, see below.
+
 See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa/euroappa.github.io/tree/main/p1) for associated files. Also, for other examples using these methods (e.g. duckdb, QGIS) see [https://www.globalbioticinteractions.org/2026/01/22/euroappa/](https://www.globalbioticinteractions.org/2026/01/22/euroappa/) . 
 
 ## Changes
 
-Where P1 used verbatim taxonomic names and provided decimal coordinates, P2 applies specific taxonomic perspectives (i.e., GBIF taxonomic backbone [1], Catalogue of Life [2] as versioned in Nomer's corpus of taxonomic resources [3]) and specific geospatial units (i.e., administrative country boundaries [4], statistical zones[5]). 
+Where P1 used verbatim taxonomic names and provided decimal coordinates, P2 applies specific taxonomic perspectives (i.e., GBIF taxonomic backbone [1], Catalogue of Life [2] as versioned in Nomer's Corpus of Taxonomic Resources [3]) and specific geospatial units (i.e., administrative country boundaries [4], statistical zones[5]). 
 
 ## Requirements
 
@@ -46,11 +48,13 @@ SELECT DISTINCT
   sourceTaxonFamilyName, 
   sourceTaxonName 
 FROM 
-  'euroappa.parquet'
+  'euroappa-nuts-2021-col.parquet'
 WHERE
   sourceTaxonPathNames ~ '.*[^A-Z]Insecta[ ].*'
-  AND sourceTaxonFamilyName NOT NULL 
-  AND ISO3_CODE = 'IRL'
+  AND sourceTaxonFamilyName NOT NULL
+  -- Ireland Statistical Regions https://en.wikipedia.org/wiki/NUTS_statistical_regions_of_Ireland
+  -- NUTS Level 3 West: IE042 
+  AND NUTS_ID = 'IE042'
 GROUP BY sourceTaxonFamilyName, sourceTaxonName 
 ORDER BY sourceTaxonFamilyName, sourceTaxonName;
 ```
@@ -83,6 +87,8 @@ FROM
 WHERE
   sourceTaxonPathNames ~ '.*[^A-Z]Insecta[ ].*'
   AND sourceTaxonFamilyName NOT NULL 
+  AND targetTaxonFamilyName NOT NULL 
+  -- country code for Ireland according to https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
   AND ISO3_CODE = 'IRL'
 GROUP BY sourceTaxonFamilyName, sourceTaxonName, targetTaxonFamilyName, targetTaxonName
 ORDER BY sourceTaxonFamilyName, targetTaxonFamilyName, sourceTaxonName, targetTaxonName;
@@ -102,7 +108,7 @@ P2.F4. allows for online queries through [```https://shell.duckdb.org/```](https
 
 [![Screenshot of DuckDB Web Shell in Action](duckdb-shell-2026-02-24.png)](https://shell.duckdb.org/#queries=v0,SELECT-sourceTaxonFamilyName%2CsourceTaxonName%2CinteractionTypeName%2CtargetTaxonFamilyName%2CtargetTaxonName%0AFROM-'https%3A%2F%2Feuroappa.github.io%2Fp1%2Feuroappa.parquet'-WHERE-sourceTaxonFamilyName-%3D-'Apidae'-LIMIT-5;~)
 
-P2.F5. allows for spatial queries through QGIS and ```euroappa.gpkg``` (bigish dataset ~500MiB) data product.
+P2.F5. allows for spatial queries through QGIS and ```euroappa-nuts-2021-col.gpkg``` and related (bigish dataset ~500MiB) data products.
 
 P2.F6. data products (parquet files) are compatible with commercial data exploration platforms such as ArcGIS, MotherDuck, and have support for integration into R and Python.   
 
@@ -136,7 +142,7 @@ duckdb \
 | decimalLongitude        | DOUBLE      | YES  | NULL | NULL    | NULL  |
 | sourceTaxonId           | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | sourceTaxonName         | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| sourceTaxonAuthority    | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| sourceTaxonAuthorship   | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | sourceTaxonFamilyId     | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | sourceTaxonFamilyName   | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | sourceTaxonPathIds      | VARCHAR     | YES  | NULL | NULL    | NULL  |
@@ -145,7 +151,7 @@ duckdb \
 | interactionTypeName     | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | targetTaxonId           | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | targetTaxonName         | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonAuthority    | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonAuthorship   | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | targetTaxonFamilyId     | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | targetTaxonFamilyName   | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | targetTaxonPathIds      | VARCHAR     | YES  | NULL | NULL    | NULL  |
@@ -161,45 +167,46 @@ duckdb \
 | NUTS_NAME               | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | LEVL_CODE               | BIGINT      | YES  | NULL | NULL    | NULL  |
 
-with an example record shown below as generated via
+with an example record from NUTS ID PT200 (Região Autónoma dos Açores) shown below as generated via
 
 ```
 duckdb \
  -csv \
- -c "select * from 'dist/euroappa-cntr-2024-col.parquet' limit 1;" \
+ -c "select * from 'dist/euroappa-nuts-2021-col.parquet' WHERE NUTS_ID = 'PT200' limit 1;" \
   | mlr --icsv --oxtab cat
 ```
 
 yielding
 
 ```
-decimalLatitude         57.6663
-decimalLongitude        -7.1672
-sourceTaxonId           COL:MFLX
-sourceTaxonName         Bombus jonellus
-sourceTaxonAuthority    NULL
-sourceTaxonFamilyId     COL:6KD
-sourceTaxonFamilyName   Apidae
-sourceTaxonPathIds      COL:CS5HF   COL:N   COL:RT   COL:L2655   COL:H6   COL:HYM   COL:KZPW7   COL:KZMNP   COL:625GP   COL:6KD   COL:J5V   COL:KN5   COL:62H8K   COL:MFLX
-sourceTaxonPathNames    Eukaryota   Animalia   Arthropoda   Hexapoda   Insecta   Hymenoptera   Apocrita   Aculeata   Apoidea   Apidae   Apinae   Bombini   Bombus   Bombus jonellus
-sourceTaxonNameRelation SYNONYM_OF
+decimalLatitude         38.6747398333
+decimalLongitude        -27.2511157778
+sourceTaxonId           COL:4YRBX
+sourceTaxonName         Sphaerophoria scripta
+sourceTaxonAuthorship    (Linnaeus, 1758)
+sourceTaxonFamilyId     COL:GVS
+sourceTaxonFamilyName   Syrphidae
+sourceTaxonPathIds      COL:CS5HF   COL:N   COL:RT   COL:L2655   COL:H6   COL:D2P   COL:GVS   COL:87CNM   COL:87CZ8   COL:BY4GV   COL:BY4GW   COL:4YRBX
+sourceTaxonPathNames    Eukaryota   Animalia   Arthropoda   Hexapoda   Insecta   Diptera   Syrphidae   Syrphinae   Syrphini   Sphaerophoria   Sphaerophoria (Sphaerophoria)   Sphaerophoria scripta
+sourceTaxonNameRelation HAS_ACCEPTED_NAME
 interactionTypeName     visitsFlowersOf
-targetTaxonId           COL:53QG6
-targetTaxonName         Symphytum officinale
-targetTaxonAuthority    NULL
-targetTaxonFamilyId     COL:622G7
-targetTaxonFamilyName   Boraginaceae
-targetTaxonPathIds      COL:CS5HF   COL:P   COL:CMQ8S   COL:TP   COL:MG   COL:TW   COL:622G7   COL:BVBBM   COL:KTZBJ   COL:KTZBL   COL:7QWP   COL:53QG6
-targetTaxonPathNames    Eukaryota   Plantae   Pteridobiotina   Tracheophyta   Magnoliopsida   Boraginales   Boraginaceae   Boraginoideae   Boragineae   Boragininae   Symphytum   Symphytum officinale
+targetTaxonId           COL:622TP
+targetTaxonName         Asteraceae
+targetTaxonAuthorship    Dumort.
+targetTaxonFamilyId     COL:622TP
+targetTaxonFamilyName   Asteraceae
+targetTaxonPathIds      COL:CS5HF   COL:P   COL:CMQ8S   COL:TP   COL:MG   COL:ST   COL:622TP
+targetTaxonPathNames    Eukaryota   Plantae   Pteridobiotina   Tracheophyta   Magnoliopsida   Asterales   Asteraceae
 targetTaxonNameRelation HAS_ACCEPTED_NAME
-eventDate               2003-01-01 00:00:00
-referenceCitation       D. Goulson et al., 2005. Causes of rarity in bumblebees. Biological Conservation, 122. doi:10.1016/j.biocon.2004.06.017
-citation                Balfour, N.J., Castellanos, M.C., Goulson, D., Philippides, A. and Johnson, C., 2022. DoPI: The Database of Pollinator Interactions. Ecology, 103, e3801.
-namespace               globalbioticinteractions/dopi
-lastSeenAt              2026-05-06 14:33:18.001
-ISO3_CODE               GBR
-CNTR_ID                 UK
-NAME_ENGL               United Kingdom
+eventDate               2025-06-11 15:20:24
+referenceCitation       https://www.inaturalist.org/observations/289117707
+citation                http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world.
+namespace               globalbioticinteractions/inaturalist
+lastSeenAt              2026-05-06 15:48:15.203
+CNTR_CODE               PT
+NUTS_ID                 PT200
+NUTS_NAME               Região Autónoma dos Açores
+LEVL_CODE               3
 ```
 
 ## CNTR Associated Schemas 
@@ -218,7 +225,7 @@ duckdb \
 | decimalLongitude        | DOUBLE      | YES  | NULL | NULL    | NULL  |
 | sourceTaxonId           | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | sourceTaxonName         | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| sourceTaxonAuthority    | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| sourceTaxonAuthorship   | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | sourceTaxonFamilyId     | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | sourceTaxonFamilyName   | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | sourceTaxonPathIds      | VARCHAR     | YES  | NULL | NULL    | NULL  |
@@ -227,7 +234,7 @@ duckdb \
 | interactionTypeName     | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | targetTaxonId           | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | targetTaxonName         | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonAuthority    | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonAuthorship   | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | targetTaxonFamilyId     | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | targetTaxonFamilyName   | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | targetTaxonPathIds      | VARCHAR     | YES  | NULL | NULL    | NULL  |
@@ -241,5 +248,48 @@ duckdb \
 | ISO3_CODE               | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | CNTR_ID                 | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | NAME_ENGL               | VARCHAR     | YES  | NULL | NULL    | NULL  |
+
+With example record generated via 
+
+```
+duckdb \
+ -csv \
+ -c "SELECT * from 'dist/euroappa-cntr-2024-col.parquet' WHERE ISO3_CODE = 'IRL' limit 1;" \
+  | mlr --icsv --oxtab cat
+```
+
+yielding
+
+```
+decimalLatitude         53.13666534423828
+decimalLongitude        -9.114999771118164
+sourceTaxonId           COL:MFLX
+sourceTaxonName         Bombus jonellus
+sourceTaxonAuthority    (Kirby, 1802)
+sourceTaxonFamilyId     COL:6KD
+sourceTaxonFamilyName   Apidae
+sourceTaxonPathIds      COL:CS5HF   COL:N   COL:RT   COL:L2655   COL:H6   COL:HYM   COL:KZPW7   COL:KZMNP   COL:625GP   COL:6KD   COL:J5V   COL:KN5   COL:62H8K   COL:MFLX
+sourceTaxonPathNames    Eukaryota   Animalia   Arthropoda   Hexapoda   Insecta   Hymenoptera   Apocrita   Aculeata   Apoidea   Apidae   Apinae   Bombini   Bombus   Bombus jonellus
+sourceTaxonNameRelation HAS_ACCEPTED_NAME
+interactionTypeName     pollinates
+targetTaxonId           COL:768LJ
+targetTaxonName         Pedicularis sylvatica
+targetTaxonAuthority    L.
+targetTaxonFamilyId     COL:DQG
+targetTaxonFamilyName   Orobanchaceae
+targetTaxonPathIds      COL:CS5HF   COL:P   COL:CMQ8S   COL:TP   COL:MG   COL:3F4   COL:DQG   COL:KVNJK   COL:6JYZ   COL:768LJ
+targetTaxonPathNames    Eukaryota   Plantae   Pteridobiotina   Tracheophyta   Magnoliopsida   Lamiales   Orobanchaceae   Pedicularideae   Pedicularis   Pedicularis sylvatica
+targetTaxonNameRelation HAS_ACCEPTED_NAME
+eventDate               2017-06-02 00:00:00
+referenceCitation       doi:10.1111/1365-2664.13990
+citation                Lanuza et al. (2025), EuPPollNet: A European Database of Plant-Pollinator Networks. Global Ecol Biogeogr, 34: e70000. https://doi.org/10.1111/geb.70000
+namespace               JoseBSL/EuPPollNet
+lastSeenAt              2026-05-06 22:50:55.128
+ISO3_CODE               IRL
+CNTR_ID                 IE
+NAME_ENGL               Ireland
+```
+
+## References
 
 
