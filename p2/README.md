@@ -1,8 +1,37 @@
 2026-05-11
 
+! This is a work in progress !
+
+Got questions? See https://globalbioticinteractions.org/euroappa for more informration.
+
 # EuroAPPA prototype P2.
 
 TLDR; This prototypes offers integrated plant-pollinator data products like [```euroappa-nuts-2021-gbif.csv.gz```](dist/euroappa-nuts-2021-gbif.csv.gz), [```euroappa-nuts-2021-col.parquet```](dist/euroappa-nuts-2021-col.parquet) and [```euroappa-cntr-2024-col.csv.gz```](dist/euroappa-cntr-2024-col.csv.gz) containing geospatially aligned plant-pollinator records as interpreted from selected versioned taxonomic resources (e.g., GBIF, Catalogue of Life). For a more detailed description, see below.
+
+```R
+// load duckdb libraries for efficient data access
+library(duckdb)
+library(duckplyr)
+
+// connect 
+con <- dbConnect(duckdb())
+
+// create view for convenient viewing
+dbExecute(con,
+  "CREATE VIEW euroappa AS
+   SELECT * FROM PARQUET_SCAN('https://euroappa.github.io/p2/dist/euroappa-nuts-2021-col.parquet');")
+
+// show first few records
+tbl(con, "euroappa") |>
+  head() |>
+  collect()
+```
+
+```bash
+curl -L1 https://euroappa.github.io/p2/dist/euroappa-nuts-2021-col.tsv.gz \
+ | head 
+```
+
 
 See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa/euroappa.github.io/tree/main/p2) for associated files. Also, for other examples using these methods (e.g. duckdb, QGIS) see [https://www.globalbioticinteractions.org/2026/01/22/euroappa/](https://www.globalbioticinteractions.org/2026/01/22/euroappa/) . 
 
