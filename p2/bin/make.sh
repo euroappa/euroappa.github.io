@@ -6,6 +6,8 @@ set -x
 
 SCRIPT_DIR=$(dirname $0)
 
+mkdir -p ${SCRIPT_DIR}/../dist
+
 cat ${SCRIPT_DIR}/euroappa.sql \
  | duckdb
 
