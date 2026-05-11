@@ -6,7 +6,7 @@ See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa
 
 ## Changes
 
-P2 applies specific taxonomic (e.g., GBIF taxonomic backbone [1], Catalogue of Life [2] as versioned in Nomer's corpus of taxonomic resources [3]) and geospatial (NUTS,  schemes. 
+Where P1 used verbatim taxonomic names and provided decimal coordinates, P2 applies specific taxonomic perspectives (i.e., GBIF taxonomic backbone [1], Catalogue of Life [2] as versioned in Nomer's corpus of taxonomic resources [3]) and specific geospatial units (i.e., administrative country boundaries [4], statistical zones[5]). 
 
 ## Requirements
 
@@ -23,11 +23,17 @@ P2.FR2. generate list of pollinators for a specific geospatial/taxonomic range
 P2.FR3  allows for a way to provide feedback (not yet implemented) 
 
 
-### Features
+## Features
 
 A [feature](https://en.wikipedia.org/wiki/Software_feature) is "a prominent or distinctive user-visible aspect, quality, or characteristic of a software system or systems", as defined by Kang et al. 1990. A feature implements one or more requirements.
 
-P2.F1. offers a [bash script](make.sh) to generate euroappa data products ```euroappa.gpkg```, [euroappa.parquet](euroappa.parquet) from a recent snapshot of [GloBI indexed interactions](https://globalbioticinteractions.org/data) using methods similar to [https://www.globalbioticinteractions.org/2026/01/22/euroappa/](https://www.globalbioticinteractions.org/2026/01/22/euroappa/). 
+P2.F1. offers a [bash script](bin/make.sh) to implement an automated workflow to generate euroappa data products. These data products are deposited in Zenodo and were derived a versioned copy of the GloBI Data Review Corpus [6] and selected taxonomic and geospatial databases. 
+
+highlevel workflow:
+
+```
+ interaction data + taxonomic alignment + geospatial alignment = EuroAPPA P2 data products
+
 
 P2.F2. offers data workflows and data products for generating of insect pollinators by country using SQL and [DuckDB](https://duckdb.org) 
  * [insect-pollinators-of-europe.sql](insect-pollinators-of-europe.sql) ```-[generated]->``` [insect-pollinators-of-europe.csv](insect-pollinators-of-europe.csv), 
@@ -101,3 +107,139 @@ P2.F5. allows for spatial queries through QGIS and ```euroappa.gpkg``` (bigish d
 P2.F6. data products (parquet files) are compatible with commercial data exploration platforms such as ArcGIS, MotherDuck, and have support for integration into R and Python.   
 
 P2.F7. data products (csv files) are compatible with Excel and Google Sheet etc. 
+
+
+## Data Products
+
+ data corpus | geospatial scheme | taxonomic scheme | products | 
+ --- | --- | --- | ---
+ GloBI 2026 | NUTS 2021 | GBIF Taxonomic Backbone | euroappa-nuts-2021-gbif.csv / .tsv / .gpkg / .parquet
+ GloBI 2026 | CNTR 2025 | GBIF Taxonomic Backbone | euroappa-cntr-2024-gbif.csv / .tsv / .gpkg / .parquet
+ GloBI 2026 | NUTS 2021 | Catalogue of Life | euroappa-nuts-2021-col.csv / .tsv / .gpkg / .parquet
+ GloBI 2026 | CNTR 2025 | Catalogue of Life | euroappa-cntr-2024-col.csv / .tsv / .gpkg / .parquet
+
+## Data Schemas 
+
+### NUTS Associated Schemas
+
+As generated from 
+
+```
+duckdb \
+ -markdown \
+ -c "describe 'dist/euroappa-nuts-2021-col.parquet';"
+```
+
+|       column_name       | column_type | null | key  | default | extra |
+|-------------------------|-------------|------|------|---------|-------|
+| decimalLatitude         | DOUBLE      | YES  | NULL | NULL    | NULL  |
+| decimalLongitude        | DOUBLE      | YES  | NULL | NULL    | NULL  |
+| sourceTaxonId           | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| sourceTaxonName         | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| sourceTaxonAuthority    | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| sourceTaxonFamilyId     | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| sourceTaxonFamilyName   | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| sourceTaxonPathIds      | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| sourceTaxonPathNames    | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| sourceTaxonNameRelation | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| interactionTypeName     | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonId           | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonName         | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonAuthority    | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonFamilyId     | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonFamilyName   | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonPathIds      | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonPathNames    | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonNameRelation | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| eventDate               | TIMESTAMP   | YES  | NULL | NULL    | NULL  |
+| referenceCitation       | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| citation                | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| namespace               | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| lastSeenAt              | TIMESTAMP   | YES  | NULL | NULL    | NULL  |
+| CNTR_CODE               | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| NUTS_ID                 | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| NUTS_NAME               | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| LEVL_CODE               | BIGINT      | YES  | NULL | NULL    | NULL  |
+
+with an example record shown below as generated via
+
+```
+duckdb \
+ -csv \
+ -c "select * from 'dist/euroappa-cntr-2024-col.parquet' limit 1;" \
+  | mlr --icsv --oxtab cat
+```
+
+yielding
+
+```
+decimalLatitude         57.6663
+decimalLongitude        -7.1672
+sourceTaxonId           COL:MFLX
+sourceTaxonName         Bombus jonellus
+sourceTaxonAuthority    NULL
+sourceTaxonFamilyId     COL:6KD
+sourceTaxonFamilyName   Apidae
+sourceTaxonPathIds      COL:CS5HF   COL:N   COL:RT   COL:L2655   COL:H6   COL:HYM   COL:KZPW7   COL:KZMNP   COL:625GP   COL:6KD   COL:J5V   COL:KN5   COL:62H8K   COL:MFLX
+sourceTaxonPathNames    Eukaryota   Animalia   Arthropoda   Hexapoda   Insecta   Hymenoptera   Apocrita   Aculeata   Apoidea   Apidae   Apinae   Bombini   Bombus   Bombus jonellus
+sourceTaxonNameRelation SYNONYM_OF
+interactionTypeName     visitsFlowersOf
+targetTaxonId           COL:53QG6
+targetTaxonName         Symphytum officinale
+targetTaxonAuthority    NULL
+targetTaxonFamilyId     COL:622G7
+targetTaxonFamilyName   Boraginaceae
+targetTaxonPathIds      COL:CS5HF   COL:P   COL:CMQ8S   COL:TP   COL:MG   COL:TW   COL:622G7   COL:BVBBM   COL:KTZBJ   COL:KTZBL   COL:7QWP   COL:53QG6
+targetTaxonPathNames    Eukaryota   Plantae   Pteridobiotina   Tracheophyta   Magnoliopsida   Boraginales   Boraginaceae   Boraginoideae   Boragineae   Boragininae   Symphytum   Symphytum officinale
+targetTaxonNameRelation HAS_ACCEPTED_NAME
+eventDate               2003-01-01 00:00:00
+referenceCitation       D. Goulson et al., 2005. Causes of rarity in bumblebees. Biological Conservation, 122. doi:10.1016/j.biocon.2004.06.017
+citation                Balfour, N.J., Castellanos, M.C., Goulson, D., Philippides, A. and Johnson, C., 2022. DoPI: The Database of Pollinator Interactions. Ecology, 103, e3801.
+namespace               globalbioticinteractions/dopi
+lastSeenAt              2026-05-06 14:33:18.001
+ISO3_CODE               GBR
+CNTR_ID                 UK
+NAME_ENGL               United Kingdom
+```
+
+## CNTR Associated Schemas 
+
+As generated from 
+
+```
+duckdb \
+ -markdown \
+ -c "describe 'dist/euroappa-cntr-2024-col.parquet';"
+```
+
+|       column_name       | column_type | null | key  | default | extra |
+|-------------------------|-------------|------|------|---------|-------|
+| decimalLatitude         | DOUBLE      | YES  | NULL | NULL    | NULL  |
+| decimalLongitude        | DOUBLE      | YES  | NULL | NULL    | NULL  |
+| sourceTaxonId           | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| sourceTaxonName         | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| sourceTaxonAuthority    | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| sourceTaxonFamilyId     | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| sourceTaxonFamilyName   | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| sourceTaxonPathIds      | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| sourceTaxonPathNames    | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| sourceTaxonNameRelation | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| interactionTypeName     | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonId           | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonName         | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonAuthority    | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonFamilyId     | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonFamilyName   | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonPathIds      | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonPathNames    | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| targetTaxonNameRelation | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| eventDate               | TIMESTAMP   | YES  | NULL | NULL    | NULL  |
+| referenceCitation       | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| citation                | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| namespace               | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| lastSeenAt              | TIMESTAMP   | YES  | NULL | NULL    | NULL  |
+| ISO3_CODE               | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| CNTR_ID                 | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| NAME_ENGL               | VARCHAR     | YES  | NULL | NULL    | NULL  |
+
+
