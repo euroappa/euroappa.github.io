@@ -140,7 +140,7 @@ first 5 records:
 | Andrenidae | Andrena angustior | Asteraceae | Leontodon crispus |
 | Andrenidae | Andrena minutula | Asteraceae | Bellis perennis |
 
-P2.F4. allows for online queries through [```https://shell.duckdb.org/```](https://shell.duckdb.org) via top 10 most used programming language: SQL. Example queries include listing the first five interactions associated with bee family Apidae as aligned with GBIF Taxonomy and NUTS 2021. 
+P2.F4. allows for online queries through services like [```https://shell.duckdb.org/```](https://shell.duckdb.org) and [SQL](https://en.wikipedia.org/wiki/SQL), a top 10 most used programming language. Example queries include listing the first five interactions associated with bee family Apidae as aligned with GBIF Taxonomy and NUTS 2021. 
 
 [![Screenshot of DuckDB Web Shell in Action](examples/duckdb-web-screenshot-2026-05-12.png)](https://shell.duckdb.org/)
 
