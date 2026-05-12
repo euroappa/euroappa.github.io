@@ -6,7 +6,7 @@ Got questions? See [https://globalbioticinteractions.org/euroappa](https://globa
 
 # EuroAPPA prototype P2.
 
-**TLDR;** This prototypes offers integrated plant-pollinator [data products](#data-products) like [```euroappa-nuts-2021-gbif.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.csv), [```euroappa-nuts-2021-col.parquet```](dist/euroappa-nuts-2021-col.parquet) and [```euroappa-cntr-2024-col.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.csv) containing geospatially aligned plant-pollinator records as interpreted from selected versioned taxonomic resources (e.g., GBIF, Catalogue of Life). For a more detailed description, see below.
+**TLDR;** This prototypes offers integrated plant-pollinator [data products](#data-products) like [```euroappa-nuts-2021-gbif.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.csv), [```euroappa-nuts-2021-col.parquet```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.parquet) and [```euroappa-cntr-2024-col.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.csv) containing geospatially aligned plant-pollinator records as interpreted from selected versioned taxonomic resources (e.g., GBIF, Catalogue of Life). For a more detailed description, see below.
 
 ```R
 # load duckdb libraries for efficient data access
@@ -19,7 +19,7 @@ con <- dbConnect(duckdb())
 # create view for convenient viewing
 dbExecute(con,
   "CREATE VIEW euroappa AS
-   SELECT * FROM PARQUET_SCAN('https://euroappa.github.io/p2/dist/euroappa-nuts-2021-col.parquet');")
+   SELECT * FROM PARQUET_SCAN('https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.parquet');")
 
 # show first few records
 tbl(con, "euroappa") |>
