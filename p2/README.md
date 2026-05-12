@@ -2,7 +2,7 @@
 
 ! This is a work in progress !
 
-Got questions? See https://globalbioticinteractions.org/euroappa for more informration.
+Got questions? See [https://globalbioticinteractions.org/euroappa](https://globalbioticinteractions.org/euroappa) for more information, or reach out to Jorrit or Cala. 
 
 # EuroAPPA prototype P2.
 
