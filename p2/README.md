@@ -44,7 +44,7 @@ See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa
 
 ## Changes
 
-Where [Prototype 1 (P1)](../p1) used verbatim taxonomic names and provided decimal coordinates, P2 applies specific taxonomic perspectives (i.e., GBIF taxonomic backbone [1], Catalogue of Life [2] as versioned in Nomer's Corpus of Taxonomic Resources [3]) and specific geospatial units (i.e., administrative country boundaries [4], statistical zones[5]). 
+Where [Prototype 1 (P1)](../p1) used verbatim taxonomic names and provided decimal coordinates, P2 applies specific taxonomic perspectives (i.e., GBIF taxonomic backbone [[1]](#ref1), Catalogue of Life [[2]](#ref2) as versioned in Nomer's Corpus of Taxonomic Resources [[3]](#ref3)) and specific geospatial units (i.e., administrative country boundaries [[4]](#ref4), statistical zones[[5]](#ref5)). 
 
 ## Requirements
 
@@ -65,7 +65,7 @@ P2.FR3  allows for a way to provide feedback (not yet implemented)
 
 A [feature](https://en.wikipedia.org/wiki/Software_feature) is "a prominent or distinctive user-visible aspect, quality, or characteristic of a software system or systems", as defined by Kang et al. 1990. A feature implements one or more requirements.
 
-P2.F1. offers a [bash script](bin/make.sh) to implement an automated workflow to generate euroappa data products. These data products are deposited in Zenodo and were derived a versioned copy of the GloBI Data Review Corpus [3] and selected taxonomic and geospatial databases ([1,2,4,5]) 
+P2.F1. offers a [bash script](bin/make.sh) to implement an automated workflow to generate euroappa data products. These data products are deposited in Zenodo and were derived a versioned copy of the GloBI Data Review Corpus [[3]](#ref3) and selected taxonomic and geospatial databases ([1,2,4,5]) 
 
 highlevel workflow:
 
@@ -164,10 +164,11 @@ P2.F7. data products (csv files) are compatible with Excel and Google Sheet etc.
 
  interaction data corpus | geospatial scheme | taxonomic scheme | products | 
  --- | --- | --- | ---
- GloBI 2026 [6] | [NUTS 2021](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics ) [euroappa-nuts-2021.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021.gpkg) | GBIF Taxonomic Backbone [1] | [euroappa-nuts-2021-gbif.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.tsv) / [.parquet](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.parquet)
- GloBI 2026 [6] | [CNTR 2024](https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries) [euroappa-cntr-2024.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024.gpkg) | GBIF Taxonomic Backbone [1] | [euroappa-cntr-2024-gbif.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-gbif.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-gbif.tsv) / [.parquet](dist/euroappa-cntr-2024-gbif.tsv)
- GloBI 2026 [6] | [NUTS 2021](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics ) [euroappa-nuts-2021.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021.gpkg) | Catalogue of Life [2] | [euroappa-nuts-2021-col.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.tsv) / [.parquet](dist/euroappa-nuts-2021-col.parquet)
- GloBI 2026 [6] | [CNTR 2024](https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries) [euroappa-cntr-2024.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024.gpkg) | Catalogue of Life [2] | [euroappa-cntr-2024-col.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.tsv) / [.parquet](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.parquet)
+ GloBI 2026 [[6]](#ref6) | [NUTS 2021](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics ) [euroappa-nuts-2021.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021.gpkg) | GBIF Taxonomic Backbone [[1]](#ref1) | [euroappa-nuts-2021-gbif.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.tsv) / [.parquet](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.parquet)
+
+ GloBI 2026 [[6]](#ref6) | [CNTR 2024](https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries) [euroappa-cntr-2024.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024.gpkg) | GBIF Taxonomic Backbone [[1]](#ref1) | [euroappa-cntr-2024-gbif.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-gbif.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-gbif.tsv) / [.parquet](dist/euroappa-cntr-2024-gbif.tsv)
+ GloBI 2026 [[6]](#ref6) | [NUTS 2021](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics ) [euroappa-nuts-2021.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021.gpkg) | Catalogue of Life [[2]](#ref2) | [euroappa-nuts-2021-col.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.tsv) / [.parquet](dist/euroappa-nuts-2021-col.parquet)
+ GloBI 2026 [[6]](#ref6) | [CNTR 2024](https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries) [euroappa-cntr-2024.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024.gpkg) | Catalogue of Life [[2]](#ref2) | [euroappa-cntr-2024-col.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.tsv) / [.parquet](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.parquet)
 
 ## Data Schemas 
 
@@ -337,15 +338,15 @@ NAME_ENGL               Ireland
 
 ## References
 
-[1] GBIF Secretariat (2023). GBIF Backbone Taxonomy. Checklist dataset https://doi.org/10.15468/39omei 
+<div id="ref1"/>[1](#ref1) GBIF Secretariat (2023). GBIF Backbone Taxonomy. Checklist dataset https://doi.org/10.15468/39omei 
 
-[2] Bánki, O., Roskov, Y., Döring, M., Ower, G., Vandepitte, L., Hobern, D., Remsen, D., Schalk, P., DeWalt, R. E., Keping, M., Miller, J., Orrell, T., Aalbu, R., Adlard, R., Adriaenssens, E., Aedo, C., Aescht, E., Akkari, N., Alonso-Zarazaga, M. A., et al. (2022). Catalogue of Life Checklist (Version 2022-01-14). Catalogue of Life. https://doi.org/10.48580/d4tp
+<div id="ref2"/>[[2]](#ref2) Bánki, O., Roskov, Y., Döring, M., Ower, G., Vandepitte, L., Hobern, D., Remsen, D., Schalk, P., DeWalt, R. E., Keping, M., Miller, J., Orrell, T., Aalbu, R., Adlard, R., Adriaenssens, E., Aedo, C., Aescht, E., Akkari, N., Alonso-Zarazaga, M. A., et al. (2022). Catalogue of Life Checklist (Version 2022-01-14). Catalogue of Life. https://doi.org/10.48580/d4tp
 
-[3] Poelen, J. H. (ed . ) . (2026). Nomer Corpus of Taxonomic Resources hash://sha256/14b77b8b7561fea78691723c093b62ce3dffb3672a790cd9da0ab3e045145387 hash://md5/8ed9e0756e3d8ac23c014dbdb9006e4e (0.33) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.19924910
+<div id="ref3"/>[[3]](#ref3) Poelen, J. H. (ed . ) . (2026). Nomer Corpus of Taxonomic Resources hash://sha256/14b77b8b7561fea78691723c093b62ce3dffb3672a790cd9da0ab3e045145387 hash://md5/8ed9e0756e3d8ac23c014dbdb9006e4e (0.33) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.19924910
 
-[4] Administrative Units: Countries (2024) https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries https://gisco-services.ec.europa.eu/distribution/v2/nuts/gpkg/CNTR_RG_01M_2024_4326.gpkg hash://md5/f1472535e38a026bd4df4228caf01f82 accessed May 2026. 
+<div id="ref4"/>[[4]](#ref4) Administrative Units: Countries (2024) https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries https://gisco-services.ec.europa.eu/distribution/v2/nuts/gpkg/CNTR_RG_01M_2024_4326.gpkg hash://md5/f1472535e38a026bd4df4228caf01f82 accessed May 2026. 
 
-[5] Territorial units for statistics (NUTS) (2021) https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics 'https://gisco-services.ec.europa.eu/distribution/v2/nuts/gpkg/NUTS_RG_01M_2021_4326.gpkg' hash://md5/9e1146e52a2cb5e4a34153facaf50b0b
+<div id="ref5"/>[[5]](#ref5) Territorial units for statistics (NUTS) (2021) https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics 'https://gisco-services.ec.europa.eu/distribution/v2/nuts/gpkg/NUTS_RG_01M_2021_4326.gpkg' hash://md5/9e1146e52a2cb5e4a34153facaf50b0b
 
-[6] Poelen, J. H., & Global Biotic Interactions Community. (2026). Global Biotic Interactions (GloBI) Review Dataset Corpus hash://md5/9f9f111af19f657e31ce04b9d422eed4 hash://sha256/8467e21bf1194cbbcb201b3ee2bbee0e2d657a772b4e3ce62fc63afe9116c626 [Data set]. Zenodo. https://doi.org/10.5281/zenodo.20072186
+<div id="ref6"/>[[6]](#ref6) Poelen, J. H., & Global Biotic Interactions Community. (2026). Global Biotic Interactions (GloBI) Review Dataset Corpus hash://md5/9f9f111af19f657e31ce04b9d422eed4 hash://sha256/8467e21bf1194cbbcb201b3ee2bbee0e2d657a772b4e3ce62fc63afe9116c626 [Data set]. Zenodo. https://doi.org/10.5281/zenodo.20072186
 
