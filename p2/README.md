@@ -6,7 +6,7 @@ Got questions? See [https://globalbioticinteractions.org/euroappa](https://globa
 
 # EuroAPPA prototype P2.
 
-**TLDR;** This prototypes offers integrated plant-pollinator [data products](#data-products) like [```euroappa-nuts-2021-gbif.csv.gz```](dist/euroappa-nuts-2021-gbif.csv.gz), [```euroappa-nuts-2021-col.parquet```](dist/euroappa-nuts-2021-col.parquet) and [```euroappa-cntr-2024-col.csv.gz```](dist/euroappa-cntr-2024-col.csv.gz) containing geospatially aligned plant-pollinator records as interpreted from selected versioned taxonomic resources (e.g., GBIF, Catalogue of Life). For a more detailed description, see below.
+**TLDR;** This prototypes offers integrated plant-pollinator [data products](#data-products) like [```euroappa-nuts-2021-gbif.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.csv), [```euroappa-nuts-2021-col.parquet```](dist/euroappa-nuts-2021-col.parquet) and [```euroappa-cntr-2024-col.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.csv) containing geospatially aligned plant-pollinator records as interpreted from selected versioned taxonomic resources (e.g., GBIF, Catalogue of Life). For a more detailed description, see below.
 
 ```R
 # load duckdb libraries for efficient data access
@@ -28,8 +28,7 @@ tbl(con, "euroappa") |>
 ```
 
 ```bash
-curl -L1 https://euroappa.github.io/p2/dist/euroappa-nuts-2021-col.tsv.gz \
- | gunzip \
+curl -L1 https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.tsv \
  | head 
 ```
 
@@ -84,7 +83,7 @@ SELECT DISTINCT
   sourceTaxonFamilyName, 
   sourceTaxonName 
 FROM 
-  'https://euroappa.github.io/p2/dist/euroappa-nuts-2021-col.parquet'
+  'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.parquet'
 WHERE
   sourceTaxonPathNames ~ '.*[^A-Z]Insecta[ ].*'
   AND sourceTaxonFamilyName NOT NULL
@@ -117,7 +116,7 @@ SELECT DISTINCT
   targetTaxonFamilyName as plantFamily,
   targetTaxonName as plantName,
 FROM 
-  'https://euroappa.github.io/p2/dist/euroappa-nuts-2021-col.parquet'
+  'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.parquet'
 WHERE
   sourceTaxonPathNames ~ '.*[^A-Z]Insecta[ ].*'
   AND sourceTaxonFamilyName NOT NULL 
@@ -154,10 +153,10 @@ P2.F7. data products (csv files) are compatible with Excel and Google Sheet etc.
 
  data corpus | geospatial scheme | taxonomic scheme | products | 
  --- | --- | --- | ---
- GloBI 2026 [6] | [NUTS 2021](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics ) | GBIF Taxonomic Backbone [1] | [euroappa-nuts-2021-gbif.csv.gz](dist/euroappa-nuts-2021-gbif.csv.gz) / [.tsv.gz](dist/euroappa-nuts-2021-gbif.tsv.gz) / [.parquet](dist/euroappa-nuts-2021-gbif.parquet)
- GloBI 2026 [6] | [CNTR 2024](https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries) | GBIF Taxonomic Backbone [1] | [euroappa-cntr-2024-gbif.csv.gz](dist/euroappa-cntr-2024-gbif.csv.gz) / [.tsv.gz](dist/euroappa-cntr-2024-gbif.tsv.gz) / [.parquet](dist/euroappa-cntr-2024-gbif.tsv.gz)
- GloBI 2026 [6] | [NUTS 2021](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics ) | Catalogue of Life [2] | [euroappa-nuts-2021-col.csv.gz](dist/euroappa-nuts-2021-col.csv.gz) / [.tsv.gz](dist/euroappa-nuts-2021-col.tsv.gz) / [.parquet](dist/euroappa-nuts-2021-col.parquet)
- GloBI 2026 [6] | [CNTR 2024](https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries) | Catalogue of Life [2] | [euroappa-cntr-2024-col.csv.gz](dist/euroappa-cntr-2024-col.csv.gz) / [.tsv.gz](dist/euroappa-cntr-2024-col.tsv.gz) / [.parquet](dist/euroappa-cntr-2024-col.parquet)
+ GloBI 2026 [6] | [NUTS 2021](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics ) | GBIF Taxonomic Backbone [1] | [euroappa-nuts-2021-gbif.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.tsv) / [.parquet](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.parquet) / [.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021.gpkg)
+ GloBI 2026 [6] | [CNTR 2024](https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries) | GBIF Taxonomic Backbone [1] | [euroappa-cntr-2024-gbif.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-gbif.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-gbif.tsv) / [.parquet](dist/euroappa-cntr-2024-gbif.tsv) / [.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024.gpkg)
+ GloBI 2026 [6] | [NUTS 2021](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics ) | Catalogue of Life [2] | [euroappa-nuts-2021-col.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.tsv) / [.parquet](dist/euroappa-nuts-2021-col.parquet) / [.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021.gpkg)
+ GloBI 2026 [6] | [CNTR 2024](https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries) | Catalogue of Life [2] | [euroappa-cntr-2024-col.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.tsv) / [.parquet](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.parquet) / [.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024.gpkg)
 
 ## Data Schemas 
 
@@ -168,7 +167,7 @@ As generated from
 ```
 duckdb \
  -markdown \
- -c "describe 'https://euroappa.github.io/p2/dist/euroappa-nuts-2021-col.parquet';"
+ -c "describe 'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.parquet';"
 ```
 
 |       column_name       | column_type | null | key  | default | extra |
@@ -207,7 +206,7 @@ with an example record from NUTS ID PT200 (Região Autónoma dos Açores) shown 
 ```
 duckdb \
  -csv \
- -c "select * from 'https://euroappa.github.io/p2/dist/euroappa-nuts-2021-col.parquet' WHERE NUTS_ID = 'PT200' limit 1;" \
+ -c "select * from 'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.parquet' WHERE NUTS_ID = 'PT200' limit 1;" \
   | mlr --icsv --oxtab cat
 ```
 
@@ -251,7 +250,7 @@ As generated from
 ```
 duckdb \
  -markdown \
- -c "describe 'dist/euroappa-cntr-2024-col.parquet';"
+ -c "describe 'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.parquet';"
 ```
 
 |       column_name       | column_type | null | key  | default | extra |
@@ -289,7 +288,7 @@ With example record from country code ```IRL``` (Ireland) generated via:
 ```
 duckdb \
  -csv \
- -c "SELECT * from 'dist/euroappa-cntr-2024-col.parquet' WHERE ISO3_CODE = 'IRL' limit 1;" \
+ -c "SELECT * from 'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.parquet' WHERE ISO3_CODE = 'IRL' limit 1;" \
   | mlr --icsv --oxtab cat
 ```
 
