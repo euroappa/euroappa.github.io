@@ -29,6 +29,7 @@ tbl(con, "euroappa") |>
 
 ```bash
 curl -L1 https://euroappa.github.io/p2/dist/euroappa-nuts-2021-col.tsv.gz \
+ | gunzip \
  | head 
 ```
 
