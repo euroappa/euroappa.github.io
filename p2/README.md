@@ -65,7 +65,7 @@ P2.FR3  allows for a way to provide feedback (not yet implemented)
 
 A [feature](https://en.wikipedia.org/wiki/Software_feature) is "a prominent or distinctive user-visible aspect, quality, or characteristic of a software system or systems", as defined by Kang et al. 1990. A feature implements one or more requirements.
 
-P2.F1. offers a [bash script](bin/make.sh) to implement an automated workflow to generate euroappa data products. These data products are deposited in Zenodo and were derived a versioned copy of the GloBI Data Review Corpus [[3]](#ref3) and selected taxonomic and geospatial databases ([1,2,4,5]) 
+P2.F1. offers a [bash script](https://github.com/euroappa/euroappa.github.io/blob/58e8bf74ab1999b098054da82e6439ab496e892d/p2/bin/make.sh) to implement an automated workflow to generate euroappa data products. These data products are deposited in Zenodo and were derived a versioned copy of the GloBI Data Review Corpus [[3]](#ref3) and selected taxonomic and geospatial databases ([1,2,4,5]) 
 
 highlevel workflow:
 
