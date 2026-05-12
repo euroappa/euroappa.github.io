@@ -6,7 +6,7 @@ Got questions? See [https://globalbioticinteractions.org/euroappa](https://globa
 
 # EuroAPPA prototype P2.
 
-**TLDR;** This prototypes offers integrated plant-pollinator [data products](#data-products) like [```euroappa-nuts-2021-gbif.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.csv), [```euroappa-nuts-2021-col.parquet```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.parquet) and [```euroappa-cntr-2024-col.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.csv) containing geospatially aligned plant-pollinator records as interpreted from selected versioned taxonomic resources (e.g., GBIF, Catalogue of Life). For a more detailed description, see below.
+**TLDR;** This prototypes offers integrated plant-pollinator [data products](#data-products) like [```euroappa-nuts-2021-gbif.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.csv), [```euroappa-nuts-2021-col.parquet```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.parquet) and [```euroappa-cntr-2024-col.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.csv) containing geospatially aligned plant-pollinator records as interpreted from selected *versioned* taxonomic resources (e.g., GBIF, Catalogue of Life) sourced from a *versioned* collection of existing species interaction datasets. For a more detailed description, see below.
 
 ```R
 # load duckdb libraries for efficient data access
