@@ -44,7 +44,7 @@ See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa
 
 ## Changes
 
-Where P1 used verbatim taxonomic names and provided decimal coordinates, P2 applies specific taxonomic perspectives (i.e., GBIF taxonomic backbone [1], Catalogue of Life [2] as versioned in Nomer's Corpus of Taxonomic Resources [3]) and specific geospatial units (i.e., administrative country boundaries [4], statistical zones[5]). 
+Where [Prototype 1 (P1)](../p1) used verbatim taxonomic names and provided decimal coordinates, P2 applies specific taxonomic perspectives (i.e., GBIF taxonomic backbone [1], Catalogue of Life [2] as versioned in Nomer's Corpus of Taxonomic Resources [3]) and specific geospatial units (i.e., administrative country boundaries [4], statistical zones[5]). 
 
 ## Requirements
 
