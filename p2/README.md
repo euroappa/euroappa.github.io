@@ -6,7 +6,7 @@ Got questions? See [https://globalbioticinteractions.org/euroappa](https://globa
 
 # EuroAPPA prototype P2.
 
-**TLDR;** This prototypes offers integrated plant-pollinator data products like [```euroappa-nuts-2021-gbif.csv.gz```](dist/euroappa-nuts-2021-gbif.csv.gz), [```euroappa-nuts-2021-col.parquet```](dist/euroappa-nuts-2021-col.parquet) and [```euroappa-cntr-2024-col.csv.gz```](dist/euroappa-cntr-2024-col.csv.gz) containing geospatially aligned plant-pollinator records as interpreted from selected versioned taxonomic resources (e.g., GBIF, Catalogue of Life). For a more detailed description, see below.
+**TLDR;** This prototypes offers integrated plant-pollinator [data products](#data-products) like [```euroappa-nuts-2021-gbif.csv.gz```](dist/euroappa-nuts-2021-gbif.csv.gz), [```euroappa-nuts-2021-col.parquet```](dist/euroappa-nuts-2021-col.parquet) and [```euroappa-cntr-2024-col.csv.gz```](dist/euroappa-cntr-2024-col.csv.gz) containing geospatially aligned plant-pollinator records as interpreted from selected versioned taxonomic resources (e.g., GBIF, Catalogue of Life). For a more detailed description, see below.
 
 ```R
 // load duckdb libraries for efficient data access
@@ -153,10 +153,10 @@ P2.F7. data products (csv files) are compatible with Excel and Google Sheet etc.
 
  data corpus | geospatial scheme | taxonomic scheme | products | 
  --- | --- | --- | ---
- GloBI 2026 | NUTS 2021 | GBIF Taxonomic Backbone | [euroappa-nuts-2021-gbif.csv.gz](dist/euroappa-nuts-2021-gbif.csv.gz) / [.tsv.gz](dist/euroappa-nuts-2021-gbif.tsv.gz) / [.parquet](dist/euroappa-nuts-2021-gbif.parquet)
- GloBI 2026 | CNTR 2025 | GBIF Taxonomic Backbone | [euroappa-cntr-2024-gbif.csv.gz](dist/euroappa-cntr-2024-gbif.csv.gz) / [.tsv.gz](dist/euroappa-cntr-2024-gbif.tsv.gz) / [.parquet](dist/euroappa-cntr-2024-gbif.tsv.gz)
- GloBI 2026 | NUTS 2021 | Catalogue of Life | [euroappa-nuts-2021-col.csv.gz](dist/euroappa-nuts-2021-col.csv.gz) / [.tsv.gz](dist/euroappa-nuts-2021-col.tsv.gz) / [.parquet](dist/euroappa-nuts-2021-col.parquet)
- GloBI 2026 | CNTR 2025 | Catalogue of Life | [euroappa-cntr-2024-col.csv.gz](dist/euroappa-cntr-2024-col.csv.gz) / [.tsv.gz](dist/euroappa-cntr-2024-col.tsv.gz) / [.parquet](dist/euroappa-cntr-2024-col.parquet)
+ GloBI 2026 [6] | [NUTS 2021](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics ) | GBIF Taxonomic Backbone [1] | [euroappa-nuts-2021-gbif.csv.gz](dist/euroappa-nuts-2021-gbif.csv.gz) / [.tsv.gz](dist/euroappa-nuts-2021-gbif.tsv.gz) / [.parquet](dist/euroappa-nuts-2021-gbif.parquet)
+ GloBI 2026 [6] | [CNTR 2024](https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries) | GBIF Taxonomic Backbone [1] | [euroappa-cntr-2024-gbif.csv.gz](dist/euroappa-cntr-2024-gbif.csv.gz) / [.tsv.gz](dist/euroappa-cntr-2024-gbif.tsv.gz) / [.parquet](dist/euroappa-cntr-2024-gbif.tsv.gz)
+ GloBI 2026 [6] | [NUTS 2021](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics ) | Catalogue of Life [2] | [euroappa-nuts-2021-col.csv.gz](dist/euroappa-nuts-2021-col.csv.gz) / [.tsv.gz](dist/euroappa-nuts-2021-col.tsv.gz) / [.parquet](dist/euroappa-nuts-2021-col.parquet)
+ GloBI 2026 [6] | [CNTR 2024](https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries) | Catalogue of Life [2] | [euroappa-cntr-2024-col.csv.gz](dist/euroappa-cntr-2024-col.csv.gz) / [.tsv.gz](dist/euroappa-cntr-2024-col.tsv.gz) / [.parquet](dist/euroappa-cntr-2024-col.parquet)
 
 ## Data Schemas 
 
