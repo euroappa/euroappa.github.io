@@ -140,11 +140,20 @@ first 5 records:
 | Andrenidae | Andrena angustior | Asteraceae | Leontodon crispus |
 | Andrenidae | Andrena minutula | Asteraceae | Bellis perennis |
 
-P2.F4. allows for online queries through [```https://shell.duckdb.org/```](https://shell.duckdb.org) via top 10 most used programming language: SQL and [```euroappa.parquet```](euroappa.parquet) (< 20MiB). Example queries include [listing the first five interactions associated with bee family Apidae as aligned with GBIF Taxonomy and NUTS](https://shell.duckdb.org/#queries=v0,SELECT-sourceTaxonFamilyName%2CsourceTaxonName%2CinteractionTypeName%2CtargetTaxonFamilyName%2CtargetTaxonName%0AFROM-'https%3A%2F%2Feuroappa.github.io%2Fp2%2Fdist/euroappa%2Dnuts%2D2021%2Dgbif.parquet'-%0AWHERE-sourceTaxonFamilyName-%3D-'Apidae'%0ALIMIT-5).  
+P2.F4. allows for online queries through [```https://shell.duckdb.org/```](https://shell.duckdb.org) via top 10 most used programming language: SQL. Example queries include listing the first five interactions associated with bee family Apidae as aligned with GBIF Taxonomy and NUTS 2021. 
 
-[![Screenshot of DuckDB Web Shell in Action](examples/duckdb-web-screenshot-2026-05-12.png)](https://shell.duckdb.org/#queries=v0,SELECT-sourceTaxonFamilyName%2CsourceTaxonName%2CinteractionTypeName%2CtargetTaxonFamilyName%2CtargetTaxonName%0AFROM-'https%3A%2F%2Feuroappa.github.io%2Fp2%2Fdist/euroappa%2Dnuts%2D2021%2Dgbif.parquet'-WHERE-sourceTaxonFamilyName-%3D-'Apidae'-LIMIT-5;)
+[![Screenshot of DuckDB Web Shell in Action](examples/duckdb-web-screenshot-2026-05-12.png)](https://shell.duckdb.org/)
 
-P2.F5. allows for spatial queries through QGIS and ```euroappa-nuts-2021-col.gpkg```, [```euroappa-nuts-2021-h3-level-4.gpkg```](dist/euroappa-nuts-2021-h3-level-4.gpkg), [```euroappa-nuts-2021-h3-level-6.gpkg```](dist/euroappa-nuts-2021-h3-level-6.gpkg) and related (bigish dataset ~500MiB) data products. 
+using query:
+
+```SQL
+SELECT sourceTaxonFamilyName,sourceTaxonName,interactionTypeName,targetTaxonFamilyName,targetTaxonName
+FROM 'https://euroappa.github.io/p2/dist/euroappa-nuts-2021-gbif.parquet'
+WHERE sourceTaxonFamilyName = 'Apidae'
+LIMIT 5;
+```
+
+P2.F5. allows for spatial queries through QGIS and ```euroappa-nuts-2021-col.gpkg```, [```euroappa-nuts-2021-h3-level-4.gpkg```](dist/euroappa-nuts-2021-h3-level-4.gpkg), [```euroappa-nuts-2021-h3-level-6.gpkg```](dist/euroappa-nuts-2021-h3-level-6.gpkg) and [```euroappa-nuts-2021.gpkg```](https://github.com//euroappa-nuts-2021-h3-level-6.gpkg) related (bigish dataset ~500MiB) data products. 
 
 P2.F6. data products (parquet files) are compatible with commercial data exploration platforms such as ArcGIS, MotherDuck, and have support for integration into R and Python.   
 
