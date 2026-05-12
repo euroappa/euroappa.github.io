@@ -162,7 +162,7 @@ P2.F7. data products (csv files) are compatible with Excel and Google Sheet etc.
 
 ## Data Products
 
- data corpus | geospatial scheme | taxonomic scheme | products | 
+ interaction data corpus | geospatial scheme | taxonomic scheme | products | 
  --- | --- | --- | ---
  GloBI 2026 [6] | [NUTS 2021](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics ) [euroappa-nuts-2021.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021.gpkg) | GBIF Taxonomic Backbone [1] | [euroappa-nuts-2021-gbif.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.tsv) / [.parquet](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.parquet)
  GloBI 2026 [6] | [CNTR 2024](https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries) [euroappa-cntr-2024.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024.gpkg) | GBIF Taxonomic Backbone [1] | [euroappa-cntr-2024-gbif.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-gbif.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-gbif.tsv) / [.parquet](dist/euroappa-cntr-2024-gbif.tsv)
