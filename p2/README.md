@@ -9,19 +9,19 @@ Got questions? See [https://globalbioticinteractions.org/euroappa](https://globa
 **TLDR;** This prototypes offers integrated plant-pollinator [data products](#data-products) like [```euroappa-nuts-2021-gbif.csv.gz```](dist/euroappa-nuts-2021-gbif.csv.gz), [```euroappa-nuts-2021-col.parquet```](dist/euroappa-nuts-2021-col.parquet) and [```euroappa-cntr-2024-col.csv.gz```](dist/euroappa-cntr-2024-col.csv.gz) containing geospatially aligned plant-pollinator records as interpreted from selected versioned taxonomic resources (e.g., GBIF, Catalogue of Life). For a more detailed description, see below.
 
 ```R
-// load duckdb libraries for efficient data access
+# load duckdb libraries for efficient data access
 library(duckdb)
 library(duckplyr)
 
-// connect 
+# connect 
 con <- dbConnect(duckdb())
 
-// create view for convenient viewing
+# create view for convenient viewing
 dbExecute(con,
   "CREATE VIEW euroappa AS
    SELECT * FROM PARQUET_SCAN('https://euroappa.github.io/p2/dist/euroappa-nuts-2021-col.parquet');")
 
-// show first few records
+# show first few records
 tbl(con, "euroappa") |>
   head() |>
   collect()
