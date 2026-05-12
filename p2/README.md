@@ -6,7 +6,7 @@ Got questions? See [https://globalbioticinteractions.org/euroappa](https://globa
 
 # EuroAPPA prototype P2.
 
-TLDR; This prototypes offers integrated plant-pollinator data products like [```euroappa-nuts-2021-gbif.csv.gz```](dist/euroappa-nuts-2021-gbif.csv.gz), [```euroappa-nuts-2021-col.parquet```](dist/euroappa-nuts-2021-col.parquet) and [```euroappa-cntr-2024-col.csv.gz```](dist/euroappa-cntr-2024-col.csv.gz) containing geospatially aligned plant-pollinator records as interpreted from selected versioned taxonomic resources (e.g., GBIF, Catalogue of Life). For a more detailed description, see below.
+**TLDR;** This prototypes offers integrated plant-pollinator data products like [```euroappa-nuts-2021-gbif.csv.gz```](dist/euroappa-nuts-2021-gbif.csv.gz), [```euroappa-nuts-2021-col.parquet```](dist/euroappa-nuts-2021-col.parquet) and [```euroappa-cntr-2024-col.csv.gz```](dist/euroappa-cntr-2024-col.csv.gz) containing geospatially aligned plant-pollinator records as interpreted from selected versioned taxonomic resources (e.g., GBIF, Catalogue of Life). For a more detailed description, see below.
 
 ```R
 // load duckdb libraries for efficient data access
@@ -32,7 +32,11 @@ curl -L1 https://euroappa.github.io/p2/dist/euroappa-nuts-2021-col.tsv.gz \
  | head 
 ```
 
-<a href="examples/euroappa-p2-qgis-screenshot-2026-05-11.png"><img src="examples/euroappa-p2-qgis-screenshot-2026-05-11.png" style="width: 33%"/></a><a href="examples/euroappa-p2-qgis-screenshot-closeup-2026-05-11.png"><img src="examples/euroappa-p2-qgis-screenshot-closeup-2026-05-11.png" style="width: 33%"/></a> Screenshots of record density as generated using QGIS 3.34 and EuroAPPA p2.
+<a href="examples/euroappa-p2-qgis-screenshot-2026-05-11.png"><img src="examples/euroappa-p2-qgis-screenshot-2026-05-11.png" style="width: 33%"/></a><a href="examples/euroappa-p2-qgis-screenshot-closeup-2026-05-11.png">
+
+<img src="examples/euroappa-p2-qgis-screenshot-closeup-2026-05-11.png" style="width: 33%"/></a> 
+
+Screenshots of EuroAPPA record density as generated using QGIS 3.34 and EuroAPPA p2 data products.
 
 See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa/euroappa.github.io/tree/main/p2) for associated files. Also, for other examples using these methods (e.g. duckdb, QGIS) see [https://www.globalbioticinteractions.org/2026/01/22/euroappa/](https://www.globalbioticinteractions.org/2026/01/22/euroappa/) . 
 
@@ -101,9 +105,7 @@ first 5 records:
 | Andrenidae | Andrena minutula |
 
 P2.F3. offers data products containing country specific pollinator-plant association record datasets:
- * [insect-pollinator-plant-associations-of-europe.sql](insect-pollinator-plant-associations-of-europe.sql) ```-[:generated]``` -> [insect-pollinator-plant-associations-of-europe.csv](insect-pollinator-plant-associations-of-europe.csv)
  * [insect-pollinators-of-ireland.sql](insect-pollinators-associations-of-ireland.sql) ```-[:generated]->``` [insect-pollinators-of-ireland.csv](insect-pollinators-associations-of-ireland.csv)
- * [insect-pollinators-associations-of-netherlands.sql](insect-pollinators-associations-of-netherlands.sql) ```-[:generated]->``` [insect-pollinators-associations-of-netherlands.csv](insect-pollinators-associations-of-netherlands.csv))
 
 Example query:
 
