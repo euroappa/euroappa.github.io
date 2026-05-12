@@ -153,7 +153,7 @@ WHERE sourceTaxonFamilyName = 'Apidae'
 LIMIT 5;
 ```
 
-P2.F5. allows for spatial queries through QGIS and ```euroappa-nuts-2021-col.gpkg```, [```euroappa-nuts-2021-h3-level-4.gpkg```](dist/euroappa-nuts-2021-h3-level-4.gpkg), [```euroappa-nuts-2021-h3-level-6.gpkg```](dist/euroappa-nuts-2021-h3-level-6.gpkg) and [```euroappa-nuts-2021.gpkg```](https://github.com//euroappa-nuts-2021-h3-level-6.gpkg) related (bigish dataset ~500MiB) data products. 
+P2.F5. allows for spatial queries through QGIS and [```euroappa-nuts-2021-col.gpkg```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.gpkg), [```euroappa-nuts-2021-h3-level-4.gpkg```](dist/euroappa-nuts-2021-h3-level-4.gpkg), [```euroappa-nuts-2021-h3-level-6.gpkg```](dist/euroappa-nuts-2021-h3-level-6.gpkg) and [```euroappa-nuts-2021.gpkg```](https://github.com//euroappa-nuts-2021-h3-level-6.gpkg) related (bigish dataset ~500MiB) data products. 
 
 P2.F6. data products (parquet files) are compatible with commercial data exploration platforms such as ArcGIS, MotherDuck, and have support for integration into R and Python.   
 
