@@ -167,7 +167,7 @@ As generated from
 ```
 duckdb \
  -markdown \
- -c "describe 'dist/euroappa-nuts-2021-col.parquet';"
+ -c "describe 'https://euroappa.github.io/p2/dist/euroappa-nuts-2021-col.parquet';"
 ```
 
 |       column_name       | column_type | null | key  | default | extra |
@@ -206,7 +206,7 @@ with an example record from NUTS ID PT200 (Região Autónoma dos Açores) shown 
 ```
 duckdb \
  -csv \
- -c "select * from 'dist/euroappa-nuts-2021-col.parquet' WHERE NUTS_ID = 'PT200' limit 1;" \
+ -c "select * from 'https://euroappa.github.io/p2/dist/euroappa-nuts-2021-col.parquet' WHERE NUTS_ID = 'PT200' limit 1;" \
   | mlr --icsv --oxtab cat
 ```
 
@@ -283,7 +283,7 @@ duckdb \
 | CNTR_ID                 | VARCHAR     | YES  | NULL | NULL    | NULL  |
 | NAME_ENGL               | VARCHAR     | YES  | NULL | NULL    | NULL  |
 
-With example record generated via 
+With example record from country code ```IRL``` (Ireland) generated via: 
 
 ```
 duckdb \
