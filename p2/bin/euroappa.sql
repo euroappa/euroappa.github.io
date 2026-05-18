@@ -34,6 +34,7 @@ AS SELECT
   referenceCitation, 
   citation, 
   namespace, 
+  CONCAT('https://zenodo.org/search?q=%22', contentHash, '%22') AS datasetReviewUrl,
   lastSeenAt
 FROM 
   'lib/interactions.parquet'
@@ -70,6 +71,7 @@ UNION
   referenceCitation,
   citation,
   namespace,
+  contentHash as reviewId,
   lastSeenAt
 FROM
   -- Poelen, J. H., & Global Biotic Interactions Community. (2026). Global Biotic Interactions (GloBI) Review Dataset Corpus hash://md5/9f9f111af19f657e31ce04b9d422eed4 hash://sha256/8467e21bf1194cbbcb201b3ee2bbee0e2d657a772b4e3ce62fc63afe9116c626 [Data set]. Zenodo. https://doi.org/10.5281/zenodo.20072186
