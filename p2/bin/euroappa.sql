@@ -128,6 +128,11 @@ COPY (
 ) TO 'dist/euroappa-nuts-2021.csv.gz' 
   WITH (OVERWRITE true);  
   
+COPY ( 
+  SELECT * 
+  FROM 'dist/euroappa-nuts-2021.gpkg' 
+) TO 'dist/euroappa-nuts-2021.fgb'
+  WITH (FORMAT gdal, DRIVER 'FlatGeobuf', SRS 'EPSG:4326', OVERWRITE true); 
 
 COPY (
  SELECT 
@@ -167,3 +172,9 @@ COPY (
   FROM 'dist/euroappa-cntr-2024.gpkg' 
 ) TO 'dist/euroappa-cntr-2024.csv.gz' 
   WITH (OVERWRITE true);  
+
+COPY ( 
+  SELECT * 
+  FROM 'dist/euroappa-cntr-2024.gpkg' 
+) TO 'dist/euroappa-cntr-2024.fgb'
+  WITH (FORMAT gdal, DRIVER 'FlatGeobuf', SRS 'EPSG:4326', OVERWRITE true); 
