@@ -10,7 +10,7 @@ COPY (
   FROM (
     SELECT 
       h3_latlng_to_cell(ST_Y(geom), ST_X(geom), 4) AS h3_cell,
-      LOG(1+COUNT(*)) AS number_of_records
+      LOG(1+COUNT(*)) AS ln_number_of_records
     FROM 
       'dist/euroappa-nuts-2021.gpkg'
     GROUP BY 
@@ -26,7 +26,7 @@ COPY (
   FROM (
     SELECT 
       h3_latlng_to_cell(ST_Y(geom), ST_X(geom), 4) AS h3_cell,
-      LOG(1+COUNT(*)) AS number_of_records
+      LOG(1+COUNT(*)) AS ln_number_of_records
     FROM 
       'dist/euroappa-cntr-2024.gpkg'
     GROUP BY 
@@ -47,7 +47,7 @@ COPY (
   FROM (
     SELECT 
       h3_latlng_to_cell(ST_Y(geom), ST_X(geom), 6) AS h3_cell,
-      LOG(1+COUNT(*)) AS number_of_records
+      LOG(1+COUNT(*)) AS ln_number_of_records
     FROM 
       'dist/euroappa-nuts-2021.gpkg'
     GROUP BY 
@@ -63,7 +63,7 @@ COPY (
   FROM (
     SELECT 
       h3_latlng_to_cell(ST_Y(geom), ST_X(geom), 6) AS h3_cell,
-      LOG(1+COUNT(*)) AS number_of_records
+      LOG(1+COUNT(*)) AS ln_number_of_records
     FROM 
       'dist/euroappa-cntr-2024.gpkg'
     GROUP BY 
