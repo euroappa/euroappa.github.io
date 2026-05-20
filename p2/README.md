@@ -77,7 +77,7 @@ highlevel workflow:
 ```
 
 P2.F2. offers data workflows and data products for generating of insect pollinators by country using SQL and [DuckDB](https://duckdb.org) 
- * [insect-pollinators-of-ireland.sql](insect-pollinators-of-ireland.sql) ```-[generated]->``` [insect-pollinators-of-ireland.csv](insect-pollinators-of-ireland.csv) 
+ * [insect-pollinators-of-ireland.sql](examples/insect-pollinators-of-ireland.sql) ```-[generated]->``` [examples/insect-pollinators-of-ireland.csv](insect-pollinators-of-ireland.csv) 
 
 Example query:
 ```
@@ -107,7 +107,7 @@ first 5 records:
 | Andrenidae | Andrena minutula |
 
 P2.F3. offers data products containing country specific pollinator-plant association record datasets:
- * [insect-pollinators-of-ireland.sql](insect-pollinators-associations-of-ireland.sql) ```-[:generated]->``` [insect-pollinators-of-ireland.csv](insect-pollinators-associations-of-ireland.csv)
+ * [insect-pollinators-of-ireland.sql](examples/insect-pollinators-associations-of-ireland.sql) ```-[:generated]->``` [examples/insect-pollinators-of-ireland.csv](insect-pollinators-associations-of-ireland.csv)
 
 Example query:
 
