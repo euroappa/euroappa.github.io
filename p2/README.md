@@ -6,7 +6,7 @@ Got questions? See [https://globalbioticinteractions.org/euroappa](https://globa
 
 # EuroAPPA prototype P2.
 
-**TLDR;** This prototypes offers integrated plant-pollinator [data products](#data-products) like [```euroappa-nuts-2021-gbif.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.csv), [```euroappa-nuts-2021-col.parquet```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.parquet), [```euroappa-nuts-2021.gpkg```](https://euroappa.github.io/p2/dist/euroappa-nuts-2021-h3-level-4.gpkg) ([view summary on map](https://ngageoint.github.io/geopackage-viewer-js/?gpkg=https://euroappa.github.io/p2/dist/euroappa-nuts-2021-h3-level-4.gpkg&layers=euroappa-nuts-2021-h3-level-4)) and [```euroappa-cntr-2024-col.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.csv) containing [geospatially aligned](#ref3) plant-pollinator records as interpreted from selected *versioned* taxonomic resources (e.g., [GBIF](#ref1), [Catalogue of Life](#ref2)) sourced from a *versioned* collection of [existing species interaction datasets](#ref6). For a more detailed description, see below.
+**TLDR;** This prototypes offers integrated plant-pollinator [data products](#data-products) like [```euroappa-nuts-2021-gbif.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.csv), [```euroappa-nuts-2021-col.parquet```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.parquet), [```pollinator checklist of NUTS IE042 (West Ireland)```](examples/insect-pollinators-of-ireland.csv), [```euroappa-nuts-2021.gpkg```](https://euroappa.github.io/p2/dist/euroappa-nuts-2021-h3-level-4.gpkg) ([view summary on map](https://ngageoint.github.io/geopackage-viewer-js/?gpkg=https://euroappa.github.io/p2/dist/euroappa-nuts-2021-h3-level-4.gpkg&layers=euroappa-nuts-2021-h3-level-4)) and [```euroappa-cntr-2024-col.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.csv) containing [geospatially aligned](#ref3) plant-pollinator records as interpreted from selected *versioned* taxonomic resources (e.g., [GBIF](#ref1), [Catalogue of Life](#ref2)) sourced from a *versioned* collection of [existing species interaction datasets](#ref6). For a more detailed description, see below.
 
 ```R
 # R code - getting started
@@ -77,7 +77,7 @@ highlevel workflow:
 ```
 
 P2.F2. offers data workflows and data products for generating of insect pollinators by country using SQL and [DuckDB](https://duckdb.org) 
- * [insect-pollinators-of-ireland.sql](examples/insect-pollinators-of-ireland.sql) ```-[generated]->``` [examples/insect-pollinators-of-ireland.csv](insect-pollinators-of-ireland.csv) 
+ * [insect-pollinators-of-ireland.sql](examples/insect-pollinators-of-ireland.sql) ```-[generated]->``` [insect-pollinators-of-ireland.csv](examples/insect-pollinators-of-ireland.csv) 
 
 Example query:
 ```
@@ -107,7 +107,7 @@ first 5 records:
 | Andrenidae | Andrena minutula |
 
 P2.F3. offers data products containing country specific pollinator-plant association record datasets:
- * [insect-pollinators-of-ireland.sql](examples/insect-pollinators-associations-of-ireland.sql) ```-[:generated]->``` [examples/insect-pollinators-of-ireland.csv](insect-pollinators-associations-of-ireland.csv)
+ * [insect-pollinators-of-ireland.sql](examples/insect-pollinators-associations-of-ireland.sql) ```-[:generated]->``` [insect-pollinators-of-ireland.csv](examples/insect-pollinators-associations-of-ireland.csv)
 
 Example query:
 
