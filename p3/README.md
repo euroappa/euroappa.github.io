@@ -6,7 +6,7 @@ Got questions? See [https://globalbioticinteractions.org/euroappa](https://globa
 
 # EuroAPPA prototype P3
 
-**TLDR;** This prototypes offers integrated plant-pollinator [data products](#data-products) like [```euroappa-nuts-2021-gbif.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.csv), [```euroappa-nuts-2021-col.parquet```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.parquet), [```euroappa-nuts-2021.gpkg```](https://euroappa.github.io/p2/dist/euroappa-nuts-2021-h3-level-4.gpkg) ([view summary on map](https://ngageoint.github.io/geopackage-viewer-js/?gpkg=https://euroappa.github.io/p2/dist/euroappa-nuts-2021-h3-level-4.gpkg&layers=euroappa-nuts-2021-h3-level-4)) and [```euroappa-cntr-2024-col.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.csv) containing [geospatially aligned](#ref3) plant-pollinator records as interpreted from selected *versioned* taxonomic resources (e.g., [GBIF](#ref1), [Catalogue of Life](#ref2)) sourced from a *versioned* collection of [existing species interaction datasets](#ref6). For a more detailed description, see below.
+**TLDR;** This prototypes offers integrated plant-pollinator [data products](#data-products) like [```euroappa-nuts-2021-gbif.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-gbif.csv), [```euroappa-nuts-2021-col.parquet```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-col.parquet), [```euroappa-nuts-2021.gpkg```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-h3-level-4.gpkg) ([view summary on map](https://ngageoint.github.io/geopackage-viewer-js/?gpkg=https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-h3-level-4.gpkg&layers=euroappa-nuts-2021-h3-level-4)) and [```euroappa-cntr-2024-col.csv```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-cntr-2024-col.csv) containing [geospatially aligned](#ref3) plant-pollinator records as interpreted from selected *versioned* taxonomic resources (e.g., [GBIF](#ref1), [Catalogue of Life](#ref2)) sourced from a *versioned* collection of [existing species interaction datasets](#ref6). For a more detailed description, see below.
 
 ```R
 # R code - getting started
@@ -20,7 +20,7 @@ con <- dbConnect(duckdb())
 # create view for convenient viewing
 dbExecute(con,
   "CREATE VIEW euroappa AS
-   SELECT * FROM PARQUET_SCAN('https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.parquet');")
+   SELECT * FROM PARQUET_SCAN('https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-col.parquet');")
 
 # show first few records
 tbl(con, "euroappa") |>
@@ -30,13 +30,13 @@ tbl(con, "euroappa") |>
 
 ```bash
 # bash code for getting started
-curl -L1 https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.tsv \
+curl -L1 https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-col.tsv \
  | head 
 ```
 
-<a href="examples/euroappa-p2-qgis-screenshot-2026-05-11.png"><img src="examples/euroappa-p2-qgis-screenshot-2026-05-11.png" style="width: 33%"/></a>
+<a href="examples/euroappa.p3-qgis-screenshot-2026-05-11.png"><img src="examples/euroappa.p3-qgis-screenshot-2026-05-11.png" style="width: 33%"/></a>
 
-<a href="examples/euroappa-p2-qgis-screenshot-closeup-2026-05-11.png"><img src="examples/euroappa-p2-qgis-screenshot-closeup-2026-05-11.png" style="width: 33%"/></a> 
+<a href="examples/euroappa.p3-qgis-screenshot-closeup-2026-05-11.png"><img src="examples/euroappa.p3-qgis-screenshot-closeup-2026-05-11.png" style="width: 33%"/></a> 
 
 Screenshots of EuroAPPA record density as generated using QGIS 3.34 and EuroAPPA p2 data products and NUTS 2021.
 
@@ -89,7 +89,7 @@ SELECT DISTINCT
   sourceTaxonFamilyName, 
   sourceTaxonName 
 FROM 
-  'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.parquet'
+  'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-col.parquet'
 WHERE
   sourceTaxonPathNames ~ '.*[^A-Z]Insecta[ ].*'
   AND sourceTaxonFamilyName NOT NULL
@@ -122,7 +122,7 @@ SELECT DISTINCT
   targetTaxonFamilyName as plantFamily,
   targetTaxonName as plantName,
 FROM 
-  'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.parquet'
+  'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-col.parquet'
 WHERE
   sourceTaxonPathNames ~ '.*[^A-Z]Insecta[ ].*'
   AND sourceTaxonFamilyName NOT NULL 
@@ -152,12 +152,12 @@ using query:
 
 ```SQL
 SELECT sourceTaxonFamilyName,sourceTaxonName,interactionTypeName,targetTaxonFamilyName,targetTaxonName
-FROM 'https://euroappa.github.io/p2/dist/euroappa-nuts-2021-gbif.parquet'
+FROM 'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-gbif.parquet'
 WHERE sourceTaxonFamilyName = 'Apidae'
 LIMIT 5;
 ```
 
-P2.F5. allows for spatial queries through QGIS and [```euroappa-nuts-2021.gpkg```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021.gpkg), [```euroappa-nuts-2021-h3-level-4.gpkg```](dist/euroappa-nuts-2021-h3-level-4.gpkg), [```euroappa-nuts-2021-h3-level-6.gpkg```](dist/euroappa-nuts-2021-h3-level-6.gpkg) and [```euroappa-nuts-2021.gpkg```](https://github.com//euroappa-nuts-2021-h3-level-6.gpkg) related (bigish dataset ~500MiB) data products. 
+P2.F5. allows for spatial queries through QGIS and [```euroappa-nuts-2021.gpkg```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021.gpkg), [```euroappa-nuts-2021-h3-level-4.gpkg```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-h3-level-4.gpkg), [```euroappa-nuts-2021-h3-level-6.gpkg```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-h3-level-6.gpkg) and [```euroappa-nuts-2021.gpkg```](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021.gpkg) related (bigish dataset ~500MiB) data products. 
 
 P2.F6. data products (parquet files) are compatible with commercial data exploration platforms such as ArcGIS, MotherDuck, and have support for integration into R and Python.   
 
@@ -168,10 +168,10 @@ P2.F7. data products (csv files) are compatible with Excel and Google Sheet etc.
 
  interaction data corpus | geospatial scheme | taxonomic scheme | products | 
  --- | --- | --- | ---
- GloBI 2026 [[6]](#ref6) | [NUTS 2021](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics ) [euroappa-nuts-2021.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021.gpkg) | GBIF Taxonomic Backbone [[1]](#ref1) | [euroappa-nuts-2021-gbif.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.tsv) / [.parquet](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-gbif.parquet)
- GloBI 2026 [[6]](#ref6) | [CNTR 2024](https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries) [euroappa-cntr-2024.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024.gpkg) | GBIF Taxonomic Backbone [[1]](#ref1) | [euroappa-cntr-2024-gbif.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-gbif.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-gbif.tsv) / [.parquet](dist/euroappa-cntr-2024-gbif.tsv)
- GloBI 2026 [[6]](#ref6) | [NUTS 2021](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics ) [euroappa-nuts-2021.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021.gpkg) | Catalogue of Life [[2]](#ref2) | [euroappa-nuts-2021-col.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.tsv) / [.parquet](dist/euroappa-nuts-2021-col.parquet)
- GloBI 2026 [[6]](#ref6) | [CNTR 2024](https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries) [euroappa-cntr-2024.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024.gpkg) | Catalogue of Life [[2]](#ref2) | [euroappa-cntr-2024-col.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.tsv) / [.parquet](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.parquet)
+ GloBI 2026 [[6]](#ref6) | [NUTS 2021](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics ) [euroappa-nuts-2021.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021.gpkg) | GBIF Taxonomic Backbone [[1]](#ref1) | [euroappa-nuts-2021-gbif.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-gbif.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-gbif.tsv) / [.parquet](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-gbif.parquet)
+ GloBI 2026 [[6]](#ref6) | [CNTR 2024](https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries) [euroappa-cntr-2024.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-cntr-2024.gpkg) | GBIF Taxonomic Backbone [[1]](#ref1) | [euroappa-cntr-2024-gbif.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-cntr-2024-gbif.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-cntr-2024-gbif.tsv) / [.parquet](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-cntr-2024-gbif.tsv)
+ GloBI 2026 [[6]](#ref6) | [NUTS 2021](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics ) [euroappa-nuts-2021.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021.gpkg) | Catalogue of Life [[2]](#ref2) | [euroappa-nuts-2021-col.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-col.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-col.tsv) / [.parquet](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-col.parquet)
+ GloBI 2026 [[6]](#ref6) | [CNTR 2024](https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/countries) [euroappa-cntr-2024.gpkg](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-cntr-2024.gpkg) | Catalogue of Life [[2]](#ref2) | [euroappa-cntr-2024-col.csv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-cntr-2024-col.csv) / [.tsv](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-cntr-2024-col.tsv) / [.parquet](https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-cntr-2024-col.parquet)
 
 ## Data Schemas 
 
@@ -182,75 +182,98 @@ As generated from
 ```
 duckdb \
  -markdown \
- -c "describe 'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.parquet';"
+ -c "describe 'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-col.parquet';"
 ```
-
-|       column_name       | column_type | null | key  | default | extra |
-|-------------------------|-------------|------|------|---------|-------|
-| decimalLatitude         | DOUBLE      | YES  | NULL | NULL    | NULL  |
-| decimalLongitude        | DOUBLE      | YES  | NULL | NULL    | NULL  |
-| sourceTaxonId           | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| sourceTaxonName         | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| sourceTaxonAuthorship   | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| sourceTaxonFamilyId     | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| sourceTaxonFamilyName   | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| sourceTaxonPathIds      | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| sourceTaxonPathNames    | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| sourceTaxonNameRelation | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| interactionTypeName     | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonId           | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonName         | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonAuthorship   | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonFamilyId     | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonFamilyName   | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonPathIds      | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonPathNames    | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonNameRelation | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| eventDate               | TIMESTAMP   | YES  | NULL | NULL    | NULL  |
-| referenceCitation       | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| citation                | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| namespace               | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| lastSeenAt              | TIMESTAMP   | YES  | NULL | NULL    | NULL  |
-| CNTR_CODE               | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| NUTS_ID                 | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| NUTS_NAME               | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| LEVL_CODE               | BIGINT      | YES  | NULL | NULL    | NULL  |
+| column_name | column_type | null | key | default | extra |
+| --- | --- | --- | --- | --- | --- |
+| decimalLatitude | DOUBLE | YES | NULL | NULL | NULL |
+| decimalLongitude | DOUBLE | YES | NULL | NULL | NULL |
+| sourceVerbatimTaxonId | VARCHAR | YES | NULL | NULL | NULL |
+| sourceVerbatimTaxonName | VARCHAR | YES | NULL | NULL | NULL |
+| sourceVerbatimTaxonPath | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonomicScope | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonNameRelation | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonId | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonName | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonAuthority | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonRank | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonFamilyId | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonFamilyName | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonPathIds | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonPath | VARCHAR | YES | NULL | NULL | NULL |
+| interactionTypeId | VARCHAR | YES | NULL | NULL | NULL |
+| interactionTypeName | VARCHAR | YES | NULL | NULL | NULL |
+| targetVerbatimTaxonId | VARCHAR | YES | NULL | NULL | NULL |
+| targetVerbatimTaxonName | VARCHAR | YES | NULL | NULL | NULL |
+| targetVerbatimTaxonPath | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonomicScope | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonNameRelation | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonId | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonName | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonAuthority | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonRank | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonFamilyId | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonFamilyName | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonPathIds | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonPath | VARCHAR | YES | NULL | NULL | NULL |
+| eventDate | TIMESTAMP | YES | NULL | NULL | NULL |
+| referenceCitation | VARCHAR | YES | NULL | NULL | NULL |
+| citation | VARCHAR | YES | NULL | NULL | NULL |
+| namespace | VARCHAR | YES | NULL | NULL | NULL |
+| datasetReviewUrl | VARCHAR | YES | NULL | NULL | NULL |
+| lastSeenAt | TIMESTAMP | YES | NULL | NULL | NULL |
+| CNTR_CODE | VARCHAR | YES | NULL | NULL | NULL |
+| NUTS_ID | VARCHAR | YES | NULL | NULL | NULL |
+| NUTS_NAME | VARCHAR | YES | NULL | NULL | NULL |
+| LEVL_CODE | BIGINT | YES | NULL | NULL | NULL |
 
 with an example record from NUTS ID PT200 (Região Autónoma dos Açores) shown below as generated via
 
 ```
 duckdb \
  -csv \
- -c "select * from 'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-nuts-2021-col.parquet' WHERE NUTS_ID = 'PT200' limit 1;" \
+ -c "select * from 'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-col.parquet' WHERE NUTS_ID = 'PT200' limit 1;" \
   | mlr --icsv --oxtab cat
 ```
 
 yielding
 
 ```
-decimalLatitude         38.6747398333
-decimalLongitude        -27.2511157778
-sourceTaxonId           COL:4YRBX
-sourceTaxonName         Sphaerophoria scripta
-sourceTaxonAuthorship    (Linnaeus, 1758)
-sourceTaxonFamilyId     COL:GVS
-sourceTaxonFamilyName   Syrphidae
-sourceTaxonPathIds      COL:CS5HF   COL:N   COL:RT   COL:L2655   COL:H6   COL:D2P   COL:GVS   COL:87CNM   COL:87CZ8   COL:BY4GV   COL:BY4GW   COL:4YRBX
-sourceTaxonPathNames    Eukaryota   Animalia   Arthropoda   Hexapoda   Insecta   Diptera   Syrphidae   Syrphinae   Syrphini   Sphaerophoria   Sphaerophoria (Sphaerophoria)   Sphaerophoria scripta
+decimalLatitude         38.5416407112
+decimalLongitude        -28.449280411
+sourceVerbatimTaxonId   https://www.inaturalist.org/taxa/469701
+sourceVerbatimTaxonName Attalus lusitanicus
+sourceVerbatimTaxonPath Animalia | Arthropoda | Insecta | Coleoptera | Melyridae | Attalus
+sourceTaxonomicScope    Animalia
 sourceTaxonNameRelation HAS_ACCEPTED_NAME
+sourceTaxonId           COL:LNN3T
+sourceTaxonName         Attalus lusitanicus
+sourceTaxonAuthority    Erichson, 1840
+sourceTaxonRank         species
+sourceTaxonFamilyId     COL:KVJMP
+sourceTaxonFamilyName   Melyridae
+sourceTaxonPathIds      COL:CS5HF | COL:N | COL:RT | COL:L2655 | COL:H6 | COL:C2L | COL:DDHNW | COL:KZYT4 | COL:KV5BM | COL:KVJMP | COL:DDNFL | COL:DDNFZ | COL:DDNGH | COL:LNN3T
+sourceTaxonPath         Eukaryota | Animalia | Arthropoda | Hexapoda | Insecta | Coleoptera | Polyphaga | Cucujiformia | Cleroidea | Melyridae | Malachiinae | Malachiini | Attalus | Attalus lusitanicus
+interactionTypeId       http://purl.obolibrary.org/obo/RO_0002622
 interactionTypeName     visitsFlowersOf
-targetTaxonId           COL:622TP
-targetTaxonName         Asteraceae
-targetTaxonAuthorship    Dumort.
+targetVerbatimTaxonId   https://www.inaturalist.org/taxa/64114
+targetVerbatimTaxonName Ageratina adenophora
+targetVerbatimTaxonPath Plantae | Tracheophyta | Magnoliopsida | Asterales | Asteraceae | Ageratina | Ageratina adenophora
+targetTaxonomicScope    Plantae
+targetTaxonNameRelation HAS_ACCEPTED_NAME
+targetTaxonId           COL:65RW9
+targetTaxonName         Ageratina adenophora
+targetTaxonAuthority    (Spreng.) R.M.King & H.Rob.
+targetTaxonRank         species
 targetTaxonFamilyId     COL:622TP
 targetTaxonFamilyName   Asteraceae
-targetTaxonPathIds      COL:CS5HF   COL:P   COL:CMQ8S   COL:TP   COL:MG   COL:ST   COL:622TP
-targetTaxonPathNames    Eukaryota   Plantae   Pteridobiotina   Tracheophyta   Magnoliopsida   Asterales   Asteraceae
-targetTaxonNameRelation HAS_ACCEPTED_NAME
-eventDate               2025-06-11 15:20:24
-referenceCitation       https://www.inaturalist.org/observations/289117707
+targetTaxonPathIds      COL:CS5HF | COL:P | COL:CMQ8S | COL:TP | COL:MG | COL:ST | COL:622TP | COL:J6T | COL:KV97G | COL:KVM35 | COL:QPD | COL:65RW9
+targetTaxonPath         Eukaryota | Plantae | Pteridobiotina | Tracheophyta | Magnoliopsida | Asterales | Asteraceae | Asteroideae | Eupatorieae | Oxylobinae | Ageratina | Ageratina adenophora
+eventDate               2024-03-28 13:54:00
+referenceCitation       https://www.inaturalist.org/observations/204811374
 citation                http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world.
 namespace               globalbioticinteractions/inaturalist
+datasetReviewUrl        https://zenodo.org/search?q=%22hash://md5/84769ffbbd03f0580b2adbde67a621e4%22
 lastSeenAt              2026-05-06 15:48:15.203
 CNTR_CODE               PT
 NUTS_ID                 PT200
@@ -265,74 +288,99 @@ As generated from
 ```
 duckdb \
  -markdown \
- -c "describe 'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.parquet';"
+ -c "describe 'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-cntr-2024-col.parquet';"
 ```
 
-|       column_name       | column_type | null | key  | default | extra |
-|-------------------------|-------------|------|------|---------|-------|
-| decimalLatitude         | DOUBLE      | YES  | NULL | NULL    | NULL  |
-| decimalLongitude        | DOUBLE      | YES  | NULL | NULL    | NULL  |
-| sourceTaxonId           | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| sourceTaxonName         | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| sourceTaxonAuthorship   | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| sourceTaxonFamilyId     | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| sourceTaxonFamilyName   | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| sourceTaxonPathIds      | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| sourceTaxonPathNames    | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| sourceTaxonNameRelation | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| interactionTypeName     | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonId           | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonName         | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonAuthorship   | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonFamilyId     | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonFamilyName   | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonPathIds      | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonPathNames    | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| targetTaxonNameRelation | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| eventDate               | TIMESTAMP   | YES  | NULL | NULL    | NULL  |
-| referenceCitation       | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| citation                | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| namespace               | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| lastSeenAt              | TIMESTAMP   | YES  | NULL | NULL    | NULL  |
-| ISO3_CODE               | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| CNTR_ID                 | VARCHAR     | YES  | NULL | NULL    | NULL  |
-| NAME_ENGL               | VARCHAR     | YES  | NULL | NULL    | NULL  |
+| column_name | column_type | null | key | default | extra |
+| --- | --- | --- | --- | --- | --- |
+| decimalLatitude | DOUBLE | YES | NULL | NULL | NULL |
+| decimalLongitude | DOUBLE | YES | NULL | NULL | NULL |
+| sourceVerbatimTaxonId | VARCHAR | YES | NULL | NULL | NULL |
+| sourceVerbatimTaxonName | VARCHAR | YES | NULL | NULL | NULL |
+| sourceVerbatimTaxonPath | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonomicScope | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonNameRelation | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonId | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonName | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonAuthority | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonRank | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonFamilyId | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonFamilyName | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonPathIds | VARCHAR | YES | NULL | NULL | NULL |
+| sourceTaxonPath | VARCHAR | YES | NULL | NULL | NULL |
+| interactionTypeId | VARCHAR | YES | NULL | NULL | NULL |
+| interactionTypeName | VARCHAR | YES | NULL | NULL | NULL |
+| targetVerbatimTaxonId | VARCHAR | YES | NULL | NULL | NULL |
+| targetVerbatimTaxonName | VARCHAR | YES | NULL | NULL | NULL |
+| targetVerbatimTaxonPath | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonomicScope | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonNameRelation | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonId | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonName | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonAuthority | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonRank | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonFamilyId | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonFamilyName | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonPathIds | VARCHAR | YES | NULL | NULL | NULL |
+| targetTaxonPath | VARCHAR | YES | NULL | NULL | NULL |
+| eventDate | TIMESTAMP | YES | NULL | NULL | NULL |
+| referenceCitation | VARCHAR | YES | NULL | NULL | NULL |
+| citation | VARCHAR | YES | NULL | NULL | NULL |
+| namespace | VARCHAR | YES | NULL | NULL | NULL |
+| datasetReviewUrl | VARCHAR | YES | NULL | NULL | NULL |
+| lastSeenAt | TIMESTAMP | YES | NULL | NULL | NULL |
+| ISO3_CODE | VARCHAR | YES | NULL | NULL | NULL |
+| CNTR_ID | VARCHAR | YES | NULL | NULL | NULL |
+| NAME_ENGL | VARCHAR | YES | NULL | NULL | NULL |
+
 
 With example record from country code ```IRL``` (Ireland) generated via: 
 
 ```
 duckdb \
  -csv \
- -c "SELECT * from 'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p2/euroappa-cntr-2024-col.parquet' WHERE ISO3_CODE = 'IRL' limit 1;" \
+ -c "SELECT * from 'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-cntr-2024-col.parquet' WHERE ISO3_CODE = 'IRL' limit 1;" \
   | mlr --icsv --oxtab cat
 ```
 
 yielding
 
 ```
-decimalLatitude         53.13666534423828
-decimalLongitude        -9.114999771118164
-sourceTaxonId           COL:MFLX
-sourceTaxonName         Bombus jonellus
-sourceTaxonAuthority    (Kirby, 1802)
+decimalLatitude         53.016666412353516
+decimalLongitude        -9.071666717529297
+sourceVerbatimTaxonId   NULL
+sourceVerbatimTaxonName Bombus hortorum
+sourceVerbatimTaxonPath Hymenoptera | Apidae | Bombus
+sourceTaxonomicScope    Animalia
+sourceTaxonNameRelation HOMONYM_OF
+sourceTaxonId           COL:MFKV
+sourceTaxonName         Bombus hortorum
+sourceTaxonAuthority    (Linnaeus, 1761)
+sourceTaxonRank         species
 sourceTaxonFamilyId     COL:6KD
 sourceTaxonFamilyName   Apidae
-sourceTaxonPathIds      COL:CS5HF   COL:N   COL:RT   COL:L2655   COL:H6   COL:HYM   COL:KZPW7   COL:KZMNP   COL:625GP   COL:6KD   COL:J5V   COL:KN5   COL:62H8K   COL:MFLX
-sourceTaxonPathNames    Eukaryota   Animalia   Arthropoda   Hexapoda   Insecta   Hymenoptera   Apocrita   Aculeata   Apoidea   Apidae   Apinae   Bombini   Bombus   Bombus jonellus
-sourceTaxonNameRelation HAS_ACCEPTED_NAME
+sourceTaxonPathIds      COL:CS5HF | COL:N | COL:RT | COL:L2655 | COL:H6 | COL:HYM | COL:KZPW7 | COL:KZMNP | COL:625GP | COL:6KD | COL:J5V | COL:KN5 | COL:62H8K | COL:MFKV
+sourceTaxonPath         Eukaryota | Animalia | Arthropoda | Hexapoda | Insecta | Hymenoptera | Apocrita | Aculeata | Apoidea | Apidae | Apinae | Bombini | Bombus | Bombus hortorum
+interactionTypeId       http://purl.obolibrary.org/obo/RO_0002455
 interactionTypeName     pollinates
-targetTaxonId           COL:768LJ
-targetTaxonName         Pedicularis sylvatica
+targetVerbatimTaxonId   NULL
+targetVerbatimTaxonName Centaurea nigra
+targetVerbatimTaxonPath Asterales | Asteraceae | Centaurea
+targetTaxonomicScope    Plantae
+targetTaxonNameRelation HOMONYM_OF
+targetTaxonId           COL:S73C
+targetTaxonName         Centaurea nigra
 targetTaxonAuthority    L.
-targetTaxonFamilyId     COL:DQG
-targetTaxonFamilyName   Orobanchaceae
-targetTaxonPathIds      COL:CS5HF   COL:P   COL:CMQ8S   COL:TP   COL:MG   COL:3F4   COL:DQG   COL:KVNJK   COL:6JYZ   COL:768LJ
-targetTaxonPathNames    Eukaryota   Plantae   Pteridobiotina   Tracheophyta   Magnoliopsida   Lamiales   Orobanchaceae   Pedicularideae   Pedicularis   Pedicularis sylvatica
-targetTaxonNameRelation HAS_ACCEPTED_NAME
-eventDate               2017-06-02 00:00:00
+targetTaxonRank         species
+targetTaxonFamilyId     COL:622TP
+targetTaxonFamilyName   Asteraceae
+targetTaxonPathIds      COL:CS5HF | COL:P | COL:CMQ8S | COL:TP | COL:MG | COL:ST | COL:622TP | COL:B3HBG | COL:KV3QN | COL:KV4DC | COL:3K5Z | COL:S73C
+targetTaxonPath         Eukaryota | Plantae | Pteridobiotina | Tracheophyta | Magnoliopsida | Asterales | Asteraceae | Carduoideae | Cardueae | Centaureinae | Centaurea | Centaurea nigra
+eventDate               2017-08-04 00:00:00
 referenceCitation       doi:10.1111/1365-2664.13990
 citation                Lanuza et al. (2025), EuPPollNet: A European Database of Plant-Pollinator Networks. Global Ecol Biogeogr, 34: e70000. https://doi.org/10.1111/geb.70000
 namespace               JoseBSL/EuPPollNet
+datasetReviewUrl        https://zenodo.org/search?q=%22hash://md5/1d657817b5537587ce94beeea1af48ef%22
 lastSeenAt              2026-05-06 22:50:55.128
 ISO3_CODE               IRL
 CNTR_ID                 IE
