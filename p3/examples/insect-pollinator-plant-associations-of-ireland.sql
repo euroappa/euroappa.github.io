@@ -4,7 +4,7 @@ SELECT DISTINCT
   targetTaxonFamilyName as plantFamily,
   targetTaxonName as plantName,
 FROM 
-  'dist/euroappa-nuts-2021-col.parquet'
+  'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-col.parquet'
 WHERE
   sourceTaxonPath ~ '.*[^A-Z]Insecta[ ].*'
   AND sourceTaxonFamilyName NOT NULL 
