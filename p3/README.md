@@ -34,9 +34,9 @@ curl -L1 https://github.com/euroappa/euroappa.github.io/releases/download/euroap
  | head 
 ```
 
-<a href="examples/euroappa.p3-qgis-screenshot-2026-05-11.png"><img src="examples/euroappa.p3-qgis-screenshot-2026-05-11.png" style="width: 33%"/></a>
+<a href="examples/euroappa.p2-qgis-screenshot-2026-05-11.png"><img src="examples/euroappa.p2-qgis-screenshot-2026-05-11.png" style="width: 33%"/></a>
 
-<a href="examples/euroappa.p3-qgis-screenshot-closeup-2026-05-11.png"><img src="examples/euroappa.p3-qgis-screenshot-closeup-2026-05-11.png" style="width: 33%"/></a> 
+<a href="examples/euroappa.p2-qgis-screenshot-closeup-2026-05-11.png"><img src="examples/euroappa.p2-qgis-screenshot-closeup-2026-05-11.png" style="width: 33%"/></a> 
 
 Screenshots of EuroAPPA record density as generated using QGIS 3.34 and EuroAPPA p2 data products and NUTS 2021.
 
