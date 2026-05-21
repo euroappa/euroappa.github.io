@@ -184,6 +184,7 @@ duckdb \
  -markdown \
  -c "describe 'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-col.parquet';"
 ```
+
 | column_name | column_type | null | key | default | extra |
 | --- | --- | --- | --- | --- | --- |
 | decimalLatitude | DOUBLE | YES | NULL | NULL | NULL |
