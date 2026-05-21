@@ -44,7 +44,11 @@ See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa
 
 ## Changes
 
-Where [Prototype 1 (P1)](../p1) used verbatim taxonomic names and provided decimal coordinates, P2 applies specific taxonomic perspectives (i.e., GBIF taxonomic backbone [[1]](#ref1), Catalogue of Life [[2]](#ref2) as versioned in Nomer's Corpus of Taxonomic Resources [[3]](#ref3)) and specific geospatial units (i.e., administrative country boundaries [[4]](#ref4), statistical zones[[5]](#ref5)). 
+The following changes were facilitated by [p2](../p2) feedback of Andrea (!), Cala, Jeff, and Noa.
+
+ * apply taxonomic name parsing to allow  ```Eupeodes sp.``` to be replace by ```Eupeodes```
+ * include verbatim taxon names (e.g., sourceVerbatimTaxonName, targetVerbatimTaxonName) along with aligned taxon names (e.g., sourceTaxonName, targetTaxonName)
+ * make checklist of Ireland more prominent
 
 ## Requirements
 

@@ -15,8 +15,8 @@ AS SELECT
   CAST(decimalLongitude as DOUBLE) as decimalLongitude,
   sourceTaxonId as sourceVerbatimTaxonId,
   sourceTaxonName as sourceVerbatimTaxonName,
-  sourceTaxonPathIds as sourceVerbatimTaxonPathIds,
   sourceTaxonPath as sourceVerbatimTaxonPath,
+  'Animalia' as sourceTaxonomicScope,
   '' as sourceTaxonNameRelation,
   '' as sourceTaxonId,
   '' as sourceTaxonName,
@@ -30,8 +30,8 @@ AS SELECT
   interactionTypeName,
   targetTaxonId as targetVerbatimTaxonId,
   targetTaxonName as targetVerbatimTaxonName,
-  targetTaxonPathIds as targetVerbatimTaxonPathIds,
   targetTaxonPath as targetVerbatimTaxonPath,
+  'Plantae' as targetTaxonomicScope,
   '' as targetTaxonNameRelation,
   '' as targetTaxonId,
   '' as targetTaxonName,
@@ -57,10 +57,10 @@ UNION SELECT
   ST_POINT(CAST(decimalLongitude as DOUBLE),CAST(decimalLatitude as DOUBLE)) as location, 
   CAST(decimalLatitude as DOUBLE) as decimalLatitude,
   CAST(decimalLongitude as DOUBLE) as decimalLongitude,
-  sourceTaxonId as sourceVerbatimTaxonId,
-  sourceTaxonName as sourceVerbatimTaxonName,
-  sourceTaxonPathIds as sourceVerbatimTaxonPathIds,
-  sourceTaxonPath as sourceVerbatimTaxonPath,
+  targetTaxonId as sourceVerbatimTaxonId,
+  targetTaxonName as sourceVerbatimTaxonName,
+  targetTaxonPath as sourceVerbatimTaxonPath,
+  'Animalia' as sourceTaxonomicScope,
   '' as sourceTaxonNameRelation,
   '' as sourceTaxonId,
   '' as sourceTaxonName,
@@ -70,12 +70,20 @@ UNION SELECT
   '' as sourceTaxonFamilyName,
   '' as sourceTaxonPathIds, 
   '' as sourceTaxonPath,
-  interactionTypeId,
-  interactionTypeName,
-  targetTaxonId as targetVerbatimTaxonId,
-  targetTaxonName as targetVerbatimTaxonName,
-  targetTaxonPathIds as targetVerbatimTaxonPathIds,
-  targetTaxonPath as targetVerbatimTaxonPath,
+  CASE 
+  WHEN interactionTypeId = 'http://purl.obolibrary.org/obo/RO_0002456' THEN 'http://purl.obolibrary.org/obo/RO_0002455'
+  WHEN interactionTypeId = 'http://purl.obolibrary.org/obo/RO_0002623' THEN 'http://purl.obolibrary.org/obo/RO_0002623'
+  ELSE interactionTypeId
+  END as interactionTypeId,
+  CASE 
+  WHEN interactionTypeId = 'http://purl.obolibrary.org/obo/RO_0002456' THEN 'pollinates'
+  WHEN interactionTypeId = 'http://purl.obolibrary.org/obo/RO_0002623' THEN 'visitsFlowersOf'
+  ELSE interactionTypeName
+  END as interactionTypeName,
+  sourceTaxonId as targetVerbatimTaxonId,
+  sourceTaxonName as targetVerbatimTaxonName,
+  sourceTaxonPath as targetVerbatimTaxonPath,
+  'Plantae' as targetTaxonomicScope,
   '' as targetTaxonNameRelation,
   '' as targetTaxonId,
   '' as targetTaxonName,

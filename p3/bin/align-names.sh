@@ -12,7 +12,7 @@ SCRIPT_DIR=$(dirname $0)
 
 taxonomy=${1:-col}
 schema_parse=${2:-${SCRIPT_DIR}/source-taxon-parse.properties}
-schema_align=${2:-${SCRIPT_DIR}/source-taxon.properties}
+schema_align=${3:-${SCRIPT_DIR}/source-taxon.properties}
 
 align() {
   nomer replace --properties ${schema_parse} globi-correct \
