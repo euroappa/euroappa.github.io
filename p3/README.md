@@ -1,8 +1,8 @@
-2026-05-20
+2026-05-20/2026-05-21
 
 ! This is a work in progress !
 
-Got questions? See [https://globalbioticinteractions.org/euroappa](https://globalbioticinteractions.org/euroappa) for more information, or reach out to Jorrit or Cala. 
+Got questions? See [https://globalbioticinteractions.org/euroappa](https://globalbioticinteractions.org/euroappa) for information, [open an issue](https://github.com/euroappa/euroappa.github.io/issues) and share your comments/questions, or reach out to Jorrit or Cala directly. 
 
 # EuroAPPA prototype P3
 
