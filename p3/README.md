@@ -46,7 +46,7 @@ The changes were facilitated by [p2](../p2) feedback of Andrea, Ivan, Cala, Jeff
 
  * apply taxonomic name parsing to allow  ```Eupeodes sp.``` to be replace by ```Eupeodes```. Similarly, allow ```Taraxacum agg.``` to be replaced with ```Taraxacum``` using [Nomer v0.6.5](https://github.com/globalbioticinteractions/nomer/releases/tag/0.6.5).
  * include verbatim taxon names (e.g., sourceVerbatimTaxonName, targetVerbatimTaxonName) along with aligned taxon names (e.g., sourceTaxonName, targetTaxonName)
- * make checklist of Ireland more prominent
+ * make [checklist of Ireland](examples/insect-pollinators-of-ireland.csv) more prominent
  * reduce ambiguous name alignment by setting taxonomic range of pollinators to "Animalia" and plants to "Plantae" 
 
 ## Requirements
