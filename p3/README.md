@@ -46,7 +46,7 @@ The changes were facilitated by [p2](../p2) feedback of Andrea, Ivan, Cala, Jeff
 
  * apply taxonomic name parsing to allow  ```Eupeodes sp.``` to be replace by ```Eupeodes```. Similarly, allow ```Taraxacum agg.``` to be replaced with ```Taraxacum``` using [Nomer v0.6.5](https://github.com/globalbioticinteractions/nomer/releases/tag/0.6.5).
  * include verbatim taxon names (e.g., sourceVerbatimTaxonName, targetVerbatimTaxonName) along with aligned taxon names (e.g., sourceTaxonName, targetTaxonName)
- * make [checklist of Ireland](examples/insect-pollinators-of-ireland.csv) more prominent
+ * make [checklist of Ireland](examples/insect-pollinators-of-west-ireland.csv) more prominent
  * reduce ambiguous name alignment by setting taxonomic range of pollinators to "Animalia" and plants to "Plantae" 
 
 ## Requirements
@@ -80,7 +80,7 @@ highlevel workflow:
 ```
 
 P2.F2. offers data workflows and data products for generating of insect pollinators by country using SQL and [DuckDB](https://duckdb.org) 
- * [insect-pollinators-of-ireland.sql](examples/insect-pollinators-of-ireland.sql) ```-[generated]->``` [insect-pollinators-of-ireland.csv](examples/insect-pollinators-of-ireland.csv) 
+ * [insect-pollinators-of-west-ireland.sql](examples/insect-pollinators-of-west-ireland.sql) ```-[generated]->``` [insect-pollinators-of-west-ireland.csv](examples/insect-pollinators-of-west-ireland.csv) 
 
 Example query:
 ```
@@ -110,7 +110,7 @@ first 5 records:
 | Andrenidae | Andrena minutula |
 
 P2.F3. offers data products containing country specific pollinator-plant association record datasets:
- * [insect-pollinators-of-ireland.sql](examples/insect-pollinator-plant-associations-of-ireland.sql) ```-[:generated]->``` [insect-pollinators-of-ireland.csv](examples/insect-pollinator-plant-associations-of-ireland.csv)
+ * [insect-pollinators-of-west-ireland.sql](examples/insect-pollinator-plant-associations-of-west-ireland.sql) ```-[:generated]->``` [insect-pollinators-of-west-ireland.csv](examples/insect-pollinator-plant-associations-of-west-ireland.csv)
 
 Example query:
 
