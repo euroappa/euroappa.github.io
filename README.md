@@ -8,4 +8,4 @@ work in progress.
 
 [euroappa.p2](p2/) - 2026-05-07/2026-05-20 P2 prototypes
 
-[euroappa.p3](p3/) - 2026-05-20 P3 prototypes in progress...
+[euroappa.p3](p3/) - 2026-05-20/2026-05-25 P3 prototypes

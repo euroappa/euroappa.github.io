@@ -1,6 +1,4 @@
-2026-05-20/2026-05-21
-
-! This is a work in progress !
+2026-05-20/2026-05-25
 
 Got questions? See [https://globalbioticinteractions.org/euroappa](https://globalbioticinteractions.org/euroappa) for information, [open an issue](https://github.com/euroappa/euroappa.github.io/issues) and share your comments/questions, or reach out to Jorrit or Cala directly. 
 
@@ -46,7 +44,7 @@ See [https://github.com/euroappa/euroappa.github.io](https://github.com/euroappa
 
 The following changes were facilitated by [p2](../p2) feedback of Andrea (!), Cala, Jeff, and Noa.
 
- * apply taxonomic name parsing to allow  ```Eupeodes sp.``` to be replace by ```Eupeodes```
+ * apply taxonomic name parsing to allow  ```Eupeodes sp.``` to be replace by ```Eupeodes```. Similarly, allow ```Taraxacum agg.``` to be replaced with ```Taraxacum``` using [Nomer v0.6.5](https://github.com/globalbioticinteractions/nomer/releases/tag/0.6.5).
  * include verbatim taxon names (e.g., sourceVerbatimTaxonName, targetVerbatimTaxonName) along with aligned taxon names (e.g., sourceTaxonName, targetTaxonName)
  * make checklist of Ireland more prominent
 
