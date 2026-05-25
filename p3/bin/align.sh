@@ -20,8 +20,8 @@ cat <(cat ${DIST_DIR}/euroappa-${geospatial}.csv.gz \
  | gunzip \
  | mlr --icsv --otsvlite cat \
  | tail -n+2 \
- | bash ${SCRIPT_DIR}/align-names.sh ${catalog} ${SCRIPT_DIR}/source-taxon-parse.properties ${SCRIPT_DIR}/source-taxon.properties \
- | bash ${SCRIPT_DIR}/align-names.sh ${catalog} ${SCRIPT_DIR}/target-taxon-parse.properties ${SCRIPT_DIR}/target-taxon.properties \
+ | bash ${SCRIPT_DIR}/align-names.sh ${catalog} ${SCRIPT_DIR}/source-taxon-correct.properties ${SCRIPT_DIR}/source-taxon-parse.properties ${SCRIPT_DIR}/source-taxon.properties \
+ | bash ${SCRIPT_DIR}/align-names.sh ${catalog} ${SCRIPT_DIR}/target-taxon-correct.properties ${SCRIPT_DIR}/target-taxon-parse.properties ${SCRIPT_DIR}/target-taxon.properties \
  ) \
  | tee ${DIST_DIR}/euroappa-${geospatial}-${catalog}.tsv \
  | mlr --itsvlite --ocsv cat \
