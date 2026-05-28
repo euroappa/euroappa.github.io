@@ -1,0 +1,10 @@
+digraph compile_checklist {
+  browser[label="web browser"];
+  duckdb[label="duckdb\ndatabase\nengine"];
+  remote_file[label="remote\nparquet\nfile"];
+  browser -> duckdb [label="(1) install"];
+  browser -> duckdb [label="(2) request checklist\nusing SQL"];
+  duckdb -> remote_file [label="(4) access"];
+  duckdb -> duckdb [label="(3) run query"];
+  duckdb -> browser [label="(5) provide checklist\nas CSV"];
+}

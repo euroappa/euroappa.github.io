@@ -3,11 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>EuroAPPA Prototype P4</title>
   </head>
   <body>
+    <h1>EuroAPPA Prototype P4: Checklist Generator</h1>
+    <p>2026-05-28 by Jorrit Poelen</p>
+    This page dynamically generates an insect pollinator checklist for a specific NUTS region. This checklist is made available as a downloadable csv file using in-browser <a href="https://duckdb.org/docs/current/clients/wasm/overview">DuckDB</a> database queries and a remote EuroAPPA parquet file. So, no server side database needed, just a place to put a single parquet file for download (e.g., <a href="https://euroappa.github.io/p3/dist/euroappa-nuts-2021-col.parquet">euroappa-nuts-2021-col.parquet</a>). <b>This prototype demonstrates that checklists can be dynamically generated with minimal infrastructure and commonly used technology (e.g., HTML, JavaScript, and SQL) and EuroAPPA data products provided via <a href="../p3">Prototype P3</a></b>.
+    <h2>status</h2>
+    <div id="status">initializing...</div> 
+    <br/>
+    <div id="download"></div>
+
+    <h2>checklist examples</h2>
+    The checklists are generated based on level 3 NUTS ids such as:
+    <div id="checklists">
+       <ul>
+          <li><a href="?localityId=PT150">PT150 (Algarve, Portugal) </a></li>
+          <li><a href="?localityId=IE042">IE042 (West Ireland)</a></li>
+          <li>...</li>
+       </ul>
+    </div>
+    <h2>methods</h2>
+    On loading this webpage, the browser installs (1) DuckDB as a <a href="https://developer.mozilla.org/en-US/docs/WebAssembly">WebAssembly module</a>. Following, the webpage instructs the browser to send a <a href="https://en.wikipedia.org/wiki/SQL">SQL</a> query to the DuckDB module (2) to compile a checklist. This query is executed by DuckDB (3) using a remote parquet file (4) containing a EuroAPPA data product prototype in the parquet format. The DuckDB module now returns the <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> file to the browser. Following, the generated checklist is made available as a CSV file (5). All this, using <a href="https://github.com/euroappa/euroappa.github.io/blob/main/p4/index.html">this single webpage</a> containing HTML and JavaScript.
+    <div>
+    <a href="compile_checklist.dot">
+      <img src="compile_checklist.png"/>
+    </a>
+    </div>
     <script>
+      const setStatus = (status) => document.querySelector('#status').textContent = status;
+      const startTime = Date.now();
       const getDb = async () => {
+        setStatus('installing in-browser database...');
         const duckdb = window.duckdbduckdbWasm;
         // @ts-ignore
         if (window._db) return window._db;
@@ -24,7 +51,6 @@
 
         // Instantiate the asynchronous version of DuckDB-wasm
         const worker = new Worker(worker_url);
-        // const logger = null //new duckdb.ConsoleLogger();
         const logger = new duckdb.ConsoleLogger();
         const db = new duckdb.AsyncDuckDB(logger, worker);
         await db.instantiate(bundle.mainModule, bundle.pthreadWorker);
@@ -38,14 +64,16 @@
       window.duckdbduckdbWasm = duckdbduckdbWasm;
       getDb().then(async (db) => {
         // Create a new connection
+        setStatus('connecting to in-browser database...');
         const conn = await db.connect();
+        setStatus('compiling checklist...');
   	const compileChecklist = `
-SELECT DISTINCT 
+COPY( SELECT DISTINCT 
   sourceTaxonFamilyName, 
   sourceTaxonName 
 FROM 
   --'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-col.parquet'
-  '../p3/dist/euroappa-nuts-2021-col.parquet'
+  'https://euroappa.github.io/p3/dist/euroappa-nuts-2021-col.parquet'
 WHERE
   sourceTaxonPath ~ '.*[^A-Z]Insecta[ ].*'
   AND sourceTaxonFamilyName NOT NULL
@@ -53,14 +81,32 @@ WHERE
   -- NUTS Level 3 West: IE042 
   AND NUTS_ID = ?
 GROUP BY sourceTaxonFamilyName, sourceTaxonName 
-ORDER BY sourceTaxonFamilyName, sourceTaxonName;
-`;
+ORDER BY sourceTaxonFamilyName, sourceTaxonName
+) TO 'checklist.csv' (FORMAT csv);
+`
         // Prepare query
         const stmt = await conn.prepare(
            compileChecklist
         );
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const locality = urlParams.get('localityId');
+
+        const nutsId = locality || 'IE042';
         // ... and run the query with materialized results
-        console.log((await stmt.query('IE042')).toArray());
+        stmt.send(nutsId);
+
+        const buffer = await db.copyFileToBuffer('checklist.csv');
+
+        // Generate a download link
+        const link = URL.createObjectURL(new Blob([buffer]));
+        const downloadElem = document.querySelector('#download').appendChild(document.createElement('a'));
+	downloadElem.setAttribute('href', link);
+	downloadElem.setAttribute('download', 'checklist.csv');
+        downloadElem.textContent = 'download checklist for [' + nutsId + ']';
+        conn.close();
+        
+        setStatus('checklist for [' + nutsId + '] compiled in [' + (Date.now() - startTime) + 'ms]');
       });
     </script>
   </body>
