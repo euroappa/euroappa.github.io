@@ -34,17 +34,33 @@
       };
     </script>
     <script type="module">
-      import * as duckdbduckdbWasm from "https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.28.1-dev106.0/+esm";
+      import * as duckdbduckdbWasm from "https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.33.1-dev45.0/+esm";
       window.duckdbduckdbWasm = duckdbduckdbWasm;
       getDb().then(async (db) => {
         // Create a new connection
         const conn = await db.connect();
+  	const compileChecklist = `
+SELECT DISTINCT 
+  sourceTaxonFamilyName, 
+  sourceTaxonName 
+FROM 
+  --'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-col.parquet'
+  '../p3/dist/euroappa-nuts-2021-col.parquet'
+WHERE
+  sourceTaxonPath ~ '.*[^A-Z]Insecta[ ].*'
+  AND sourceTaxonFamilyName NOT NULL
+  -- Ireland Statistical Regions https://en.wikipedia.org/wiki/NUTS_statistical_regions_of_Ireland
+  -- NUTS Level 3 West: IE042 
+  AND NUTS_ID = ?
+GROUP BY sourceTaxonFamilyName, sourceTaxonName 
+ORDER BY sourceTaxonFamilyName, sourceTaxonName;
+`;
         // Prepare query
         const stmt = await conn.prepare(
-          `SELECT v + ? FROM generate_series(0, 10000) AS t(v);`
+           compileChecklist
         );
         // ... and run the query with materialized results
-        console.log((await stmt.query(234)).toArray());
+        console.log((await stmt.query('IE042')).toArray());
       });
     </script>
   </body>

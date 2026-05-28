@@ -4,3 +4,4 @@ p1/euroappa.gpkg
 p2/dist/euroappa-nuts-2021.gpkg
 p2/dist/euroappa-cntr-2024.gpkg
 p3/dist/*
+!p3/dist/*parquet
