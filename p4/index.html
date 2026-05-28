@@ -8,7 +8,8 @@
   <body>
     <h1>EuroAPPA Prototype P4: Checklist Generator</h1>
     <p>2026-05-28 by Jorrit Poelen</p>
-    This page dynamically generates an insect pollinator checklist for a specific NUTS region. This checklist is made available as a downloadable csv file using in-browser <a href="https://duckdb.org/docs/current/clients/wasm/overview">DuckDB</a> database queries and a remote EuroAPPA parquet file. So, no server side database needed, just a place to put a single parquet file for download (e.g., <a href="https://euroappa.github.io/p3/dist/euroappa-nuts-2021-col.parquet">euroappa-nuts-2021-col.parquet</a>). <b>This prototype demonstrates that checklists can be dynamically generated with minimal infrastructure and commonly used technology (e.g., HTML, JavaScript, and SQL) and EuroAPPA data products provided via <a href="../p3">Prototype P3</a></b>.
+    This page dynamically generates an insect pollinator checklist for a specific NUTS region. This checklist is made available as a downloadable csv file using in-browser <a href="https://duckdb.org/docs/current/clients/wasm/overview">DuckDB</a> database queries and a remote EuroAPPA parquet file. So, no server side database needed, just a place to put a single parquet file for download (e.g., <a href="https://euroappa.github.io/p3/dist/euroappa-nuts-2021-col.parquet">euroappa-nuts-2021-col.parquet</a>). <b>This prototype demonstrates that checklists can be dynamically generated with minimal infrastructure (e.g., remote database server like mysql/mariadb needed) and commonly used technology (e.g., HTML, JavaScript, and SQL) and EuroAPPA data products provided via <a href="../p3">Prototype P3</a></b>.
+
     <h2>status</h2>
     <div id="status">initializing...</div> 
     <br/>
