@@ -85,7 +85,7 @@ GROUP BY sourceTaxonFamilyName, sourceTaxonName
 ORDER BY sourceTaxonFamilyName, sourceTaxonName
 ) TO 'checklist.csv' (FORMAT csv);
 `
-        // Prepare query
+        // prepare query
         const stmt = await conn.prepare(
            compileChecklist
         );
@@ -94,7 +94,7 @@ ORDER BY sourceTaxonFamilyName, sourceTaxonName
         const locality = urlParams.get('localityId');
 
         const nutsId = locality || 'IE042';
-        // ... and run the query with materialized results
+        // ... and run the query
         stmt.send(nutsId);
 
         const buffer = await db.copyFileToBuffer('checklist.csv');
@@ -102,12 +102,12 @@ ORDER BY sourceTaxonFamilyName, sourceTaxonName
         // Generate a download link
         const link = URL.createObjectURL(new Blob([buffer]));
         const downloadElem = document.querySelector('#download').appendChild(document.createElement('a'));
-	downloadElem.setAttribute('href', link);
-	downloadElem.setAttribute('download', 'checklist.csv');
+        downloadElem.setAttribute('href', link);
+        downloadElem.setAttribute('download', 'checklist.csv');
         downloadElem.textContent = 'download checklist for [' + nutsId + ']';
         conn.close();
         
-        setStatus('checklist for [' + nutsId + '] compiled in [' + (Date.now() - startTime) + 'ms]');
+        setStatus('checklist for [' + nutsId + '] compiled in [' + (Date.now() - startTime) + 'ms]. Reported time reported includes installing and starting a in-browser database engine and accessing remote data, as well as running the SQL query that produced the checklist, and exporting it to a CSV file.');
       });
     </script>
   </body>
