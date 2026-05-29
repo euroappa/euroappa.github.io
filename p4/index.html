@@ -68,12 +68,11 @@
         setStatus('connecting to in-browser database...');
         const conn = await db.connect();
         setStatus('compiling checklist...');
-  	const compileChecklist = `
+        const compileChecklist = `
 COPY( SELECT DISTINCT 
   sourceTaxonFamilyName, 
   sourceTaxonName 
 FROM 
-  --'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-col.parquet'
   'https://euroappa.github.io/p3/dist/euroappa-nuts-2021-col.parquet'
 WHERE
   sourceTaxonPath ~ '.*[^A-Z]Insecta[ ].*'
