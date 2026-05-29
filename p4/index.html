@@ -106,7 +106,7 @@ ORDER BY sourceTaxonFamilyName, sourceTaxonName
         downloadElem.textContent = 'download checklist for [' + nutsId + ']';
         conn.close();
         
-        setStatus('checklist for [' + nutsId + '] compiled in [' + (Date.now() - startTime) + 'ms]. Reported time reported includes installing and starting a in-browser database engine and accessing remote data, as well as running the SQL query that produced the checklist, and exporting it to a CSV file.');
+        setStatus(`checklist for [${nutsId}] compiled in [${(Date.now() - startTime)} ms]`);
       });
     </script>
   </body>
