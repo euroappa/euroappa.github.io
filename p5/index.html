@@ -75,7 +75,6 @@ TODO add a clickable map.
         // Create a new connection
         setStatus('connecting to in-browser database...');
         const conn = await db.connect();
-        setStatus('compiling checklist...');
         const compileChecklist = `
 COPY( SELECT DISTINCT 
   sourceTaxonFamilyName, 
@@ -100,20 +99,25 @@ ORDER BY sourceTaxonFamilyName, sourceTaxonName
         const urlParams = new URLSearchParams(window.location.search);
         const locality = urlParams.get('localityId');
 
-        const nutsId = locality || 'IE042';
-        // ... and run the query
-        stmt.send(nutsId);
+        if (!locality) {
+          setStatus('click on a region to generate a checklist');
+        } else {
+          setStatus('compiling checklist...');
+          const nutsId = locality || 'IE042';
+          // ... and run the query
+          stmt.send(nutsId);
 
-        const buffer = await db.copyFileToBuffer('checklist.csv');
+          const buffer = await db.copyFileToBuffer('checklist.csv');
 
-        // Generate a download link
-        const link = URL.createObjectURL(new Blob([buffer]));
-        const downloadElem = document.querySelector('#download').appendChild(document.createElement('a'));
-        downloadElem.setAttribute('href', link);
-        downloadElem.setAttribute('download', 'checklist.csv');
-        downloadElem.textContent = 'download checklist';
-        conn.close();
-        setStatus('');
+          // Generate a download link
+          const link = URL.createObjectURL(new Blob([buffer]));
+          const downloadElem = document.querySelector('#download').appendChild(document.createElement('a'));
+          downloadElem.setAttribute('href', link);
+          downloadElem.setAttribute('download', 'checklist.csv');
+          downloadElem.textContent = 'download checklist';
+          conn.close();
+          setStatus('');
+        }
       });
     </script>
   </body>
