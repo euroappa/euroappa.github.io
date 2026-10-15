@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EuroAPPA Prototype P5</title>
+  </head>
+  <body>
+    <h1>EuroAPPA Prototype P5</h1>
+    <p>2026-10-15/... by Jorrit, Jeff, Cala, et al.</p>
+    <p>! prototype under development !</p>
+    <h1>Discover Europe's flower visitors and pollinators</h1>
+    <p>Explore the relationships between plants and the animals that visit their flowers across Europe.</p>
+    <p>Bees, butterflies, hoverflies, moths and many other animals visit flowers, often transferring pollen between them. Understanding these relationships helps us protect biodiversity and the natural processes that support wild plants and crops.</p>
+ <p> EuroAPPA (the European Atlas of Plant–Pollinator Associations) brings together scientific records of these interactions, making them easier to explore and use.</p>
+<p>Find out which flower-visiting insects have been recorded in different parts of Europe.</p>
+
+<p>Choose one of the regions below to see an example list. You can also download the results for your own use.</p>
+    
+
+Explore a region:
+
+TODO add a clickable map.
+
+<div id="checklists">
+       <ul>
+          <li><a href="?localityId=PT150">Algarve, Portugal</a></li>
+          <li><a href="?localityId=IE042">Western Ireland</a></li>
+          <li>...</li>
+       </ul>
+    </div>
+
+<div><span id="download"></span><span id="status">initializing...</span></div> 
+
+<h2>Where does this information come from?</h2>
+
+<p>EuroAPPA brings together existing information about flower-visiting animals and the plants they interact with. These records come from scientific studies and other biodiversity datasets. We organise the records by geographical region and use recognised scientific names to make the information easier to compare.</p>
+
+<p>The information can help researchers, conservationists and other users understand which flower-visiting insects have been recorded in different areas of Europe.</p>
+<p>Important: The lists reflect currently available records, rather than every insect that occurs in a region. Some areas have been studied much more thoroughly than others, and not every insect visiting a flower necessarily pollinates it.</p>
+
+    <script>
+      const setStatus = (status) => document.querySelector('#status').textContent = status;
+      const startTime = Date.now();
+      const getDb = async () => {
+        setStatus('installing in-browser database...');
+        const duckdb = window.duckdbduckdbWasm;
+        // @ts-ignore
+        if (window._db) return window._db;
+        const JSDELIVR_BUNDLES = duckdb.getJsDelivrBundles();
+
+        // Select a bundle based on browser checks
+        const bundle = await duckdb.selectBundle(JSDELIVR_BUNDLES);
+
+        const worker_url = URL.createObjectURL(
+          new Blob([`importScripts("${bundle.mainWorker}");`], {
+            type: "text/javascript",
+          })
+        );
+
+        // Instantiate the asynchronous version of DuckDB-wasm
+        const worker = new Worker(worker_url);
+        const logger = new duckdb.ConsoleLogger();
+        const db = new duckdb.AsyncDuckDB(logger, worker);
+        await db.instantiate(bundle.mainModule, bundle.pthreadWorker);
+        URL.revokeObjectURL(worker_url);
+        window._db = db;
+        return db;
+      };
+    </script>
+    <script type="module">
+      import * as duckdbduckdbWasm from "https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.33.1-dev45.0/+esm";
+      window.duckdbduckdbWasm = duckdbduckdbWasm;
+      getDb().then(async (db) => {
+        // Create a new connection
+        setStatus('connecting to in-browser database...');
+        const conn = await db.connect();
+        setStatus('compiling checklist...');
+        const compileChecklist = `
+COPY( SELECT DISTINCT 
+  sourceTaxonFamilyName, 
+  sourceTaxonName 
+FROM 
+  'https://euroappa.github.io/p3/dist/euroappa-nuts-2021-col.parquet'
+WHERE
+  sourceTaxonPath ~ '.*[^A-Z]Insecta[ ].*'
+  AND sourceTaxonFamilyName NOT NULL
+  -- Ireland Statistical Regions https://en.wikipedia.org/wiki/NUTS_statistical_regions_of_Ireland
+  -- NUTS Level 3 West: IE042 
+  AND NUTS_ID = ?
+GROUP BY sourceTaxonFamilyName, sourceTaxonName 
+ORDER BY sourceTaxonFamilyName, sourceTaxonName
+) TO 'checklist.csv' (FORMAT csv);
+`
+        // prepare query
+        const stmt = await conn.prepare(
+           compileChecklist
+        );
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const locality = urlParams.get('localityId');
+
+        const nutsId = locality || 'IE042';
+        // ... and run the query
+        stmt.send(nutsId);
+
+        const buffer = await db.copyFileToBuffer('checklist.csv');
+
+        // Generate a download link
+        const link = URL.createObjectURL(new Blob([buffer]));
+        const downloadElem = document.querySelector('#download').appendChild(document.createElement('a'));
+        downloadElem.setAttribute('href', link);
+        downloadElem.setAttribute('download', 'checklist.csv');
+        downloadElem.textContent = 'download checklist';
+        conn.close();
+        setStatus('');
+      });
+    </script>
+  </body>
+</html>
