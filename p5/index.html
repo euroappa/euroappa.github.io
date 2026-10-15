@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>EuroAPPA Prototype P5</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EuroAPPA Prototype P5</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!--link rel="stylesheet" href="/examples/site.css" /-->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/flatgeobuf@4.6.0/dist/flatgeobuf-geojson.min.js"></script>
+    <script src="https://unpkg.com/json-formatter-js@2.5.23/dist/json-formatter.umd.js"></script>
+
   </head>
   <body>
     <h1>EuroAPPA Prototype P5</h1>
@@ -20,8 +26,6 @@
 
 Explore a region:
 
-TODO add a clickable map.
-
 <div id="checklists">
        <ul>
           <li><a href="?localityId=PT150&localityName=Alvarve,%20Portugal">Algarve, Portugal</a></li>
@@ -32,6 +36,10 @@ TODO add a clickable map.
 
 <div><span id="download"></span><span id="status">initializing...</span></div> 
 
+<style>
+        #map { height: 20em; }
+</style>
+<div id="map"></div>
 <h2>Where does this information come from?</h2>
 
 <p>EuroAPPA brings together existing information about flower-visiting animals and the plants they interact with. These records come from scientific studies and other biodiversity datasets. We organise the records by geographical region and use recognised scientific names to make the information easier to compare.</p>
@@ -67,14 +75,11 @@ TODO add a clickable map.
         window._db = db;
         return db;
       };
-    </script>
-    <script type="module">
-      import * as duckdbduckdbWasm from "https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.33.1-dev45.0/+esm";
-      window.duckdbduckdbWasm = duckdbduckdbWasm;
-      getDb().then(async (db) => {
+      
+      const compileChecklist = async (db) => {
         // Create a new connection
         const conn = await db.connect();
-        const compileChecklist = `
+        const compileChecklistQuery = `
 COPY( SELECT DISTINCT 
   sourceTaxonFamilyName, 
   sourceTaxonName 
@@ -85,14 +90,14 @@ WHERE
   AND sourceTaxonFamilyName NOT NULL
   -- Ireland Statistical Regions https://en.wikipedia.org/wiki/NUTS_statistical_regions_of_Ireland
   -- NUTS Level 3 West: IE042 
-  AND NUTS_ID = ?
+  AND NUTS_ID LIKE ?
 GROUP BY sourceTaxonFamilyName, sourceTaxonName 
 ORDER BY sourceTaxonFamilyName, sourceTaxonName
 ) TO 'checklist.csv' (FORMAT csv);
 `
         // prepare query
         const stmt = await conn.prepare(
-           compileChecklist
+           compileChecklistQuery
         );
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -104,22 +109,97 @@ ORDER BY sourceTaxonFamilyName, sourceTaxonName
           setStatus('compiling checklist...');
           const nutsId = locality || 'IE042';
           // ... and run the query
-          stmt.send(nutsId);
+          stmt.send(nutsId + '%');
 
-          const buffer = await db.copyFileToBuffer('checklist.csv');
+          const filename = 'checklist.csv';
+          const buffer = await db.copyFileToBuffer(filename);
 
           // Generate a download link
           const link = URL.createObjectURL(new Blob([buffer]));
           const downloadElem = document.querySelector('#download').appendChild(document.createElement('a'));
           downloadElem.setAttribute('href', link);
-          downloadElem.setAttribute('download', 'checklist.csv');
+          downloadElem.setAttribute('download', filename);
           const localityName = urlParams.get('localityName');
           const downloadMessageSuffix = localityName ? (' for [' + localityName + ']') : '';
-          downloadElem.textContent = 'download checklist' + downloadMessageSuffix;
+          downloadElem.textContent = 'download checklist ' + nutsId + downloadMessageSuffix;
           conn.close();
           setStatus('');
         }
-      });
+      };
+    </script>
+    <script type="module">
+      import * as duckdbduckdbWasm from "https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.33.1-dev45.0/+esm";
+      window.duckdbduckdbWasm = duckdbduckdbWasm;
+      getDb().then(compileChecklist);
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => { 
+            // basic OSM Leaflet map
+            const map = L.map('map').setView([53.75,-3.21], 3);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            
+            const density = await fetch('data/euroappa-nuts-2021-h3-level-4.fgb');
+            for await (const feature of flatgeobuf.deserialize(density.body, { })) {
+                // Leaflet styling
+                const defaultStyle = { 
+                    color: 'yellow', 
+                    weight: 1, 
+                    fillOpacity: 0.3*feature.properties.ln_number_of_records,
+                };
+
+                // Add the feature to the map
+                L.geoJSON(feature, { 
+                    style: defaultStyle 
+                })
+                .addTo(map);
+            }
+            
+            const nutsRegions = await fetch('data/NUTS_RG_01M_2021_4326.fgb');
+            for await (const feature of flatgeobuf.deserialize(nutsRegions.body, { })) {
+                // Leaflet styling
+                const defaultStyle = { 
+                    color: 'purple', 
+                    weight: 0.3, 
+                    fillOpacity: 0.0,
+                };
+
+                // Add the feature to the map
+                L.geoJSON(feature, { 
+                    style: defaultStyle 
+                }).on({
+                    // highlight on hover
+                    'mouseover': (e) => {
+                        const layer = e.target;
+                        layer.setStyle({
+                            color: 'purple',
+                            weight: 1,
+                            fillOpacity: 0.3,
+                        });
+                        layer.bringToFront();
+                    },
+                    // remove highlight when hover stops
+                    'mouseout': (e) => {
+                        const layer = e.target;
+                        layer.setStyle(defaultStyle);
+                    },
+                    'click': (e) => {
+                        const url = new URL(window.location.href);
+                        url.searchParams.set('localityId', feature.properties.NUTS_ID);
+                        url.searchParams.set('localityName', feature.properties.NUTS_NAME);
+                        url.searchParams.set('countryCode', feature.properties.CNTR_CODE);
+                        // window.history.pushState(null, '', url.toString());
+                        window.location = url.toString();
+                    }
+                })
+                // show some per-feature properties when clicking on the feature
+                .bindPopup(`<h1>${feature.properties.CNTR_CODE} ${feature.properties.NUTS_ID}, ${feature.properties.NUTS_NAME}</h1>`)
+                .addTo(map);
+            }
+
+        });
     </script>
   </body>
 </html>
