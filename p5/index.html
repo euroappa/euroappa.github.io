@@ -22,24 +22,12 @@
 <p>Find out which flower-visiting insects have been recorded in different parts of Europe.</p>
 
 <p>Choose one of the regions below to see an example list. You can also download the results for your own use.</p>
-    
-
-Explore a region:
-
-<div id="checklists">
-       <ul>
-          <li><a href="?localityId=PT150&localityName=Alvarve,%20Portugal">Algarve, Portugal</a></li>
-          <li><a href="?localityId=IE042&localityName=Western%20Ireland">Western Ireland</a></li>
-          <li>...</li>
-       </ul>
-    </div>
-
-<div><span id="download"></span><span id="status">initializing...</span></div> 
 
 <style>
         #map { height: 20em; }
 </style>
 <div id="map"></div>
+<div><span id="status">initializing...</span></div> 
 <h2>Where does this information come from?</h2>
 
 <p>EuroAPPA brings together existing information about flower-visiting animals and the plants they interact with. These records come from scientific studies and other biodiversity datasets. We organise the records by geographical region and use recognised scientific names to make the information easier to compare.</p>
@@ -105,7 +93,8 @@ ORDER BY sourceTaxonFamilyName, sourceTaxonName
 
         if (!locality) {
           setStatus('click on a region to generate a checklist');
-        } else {
+        } else if (document.querySelector("#download")) {
+          document.querySelectorAll("#download > a").forEach(a => document.querySelector("#download").removeChild(a))
           setStatus('compiling checklist...');
           const nutsId = locality || 'IE042';
           // ... and run the query
@@ -190,12 +179,12 @@ ORDER BY sourceTaxonFamilyName, sourceTaxonName
                         url.searchParams.set('localityId', feature.properties.NUTS_ID);
                         url.searchParams.set('localityName', feature.properties.NUTS_NAME);
                         url.searchParams.set('countryCode', feature.properties.CNTR_CODE);
-                        // window.history.pushState(null, '', url.toString());
-                        window.location = url.toString();
+                        window.history.pushState(null, '', url.toString());
+                        getDb().then(compileChecklist);
                     }
                 })
                 // show some per-feature properties when clicking on the feature
-                .bindPopup(`<h1>${feature.properties.CNTR_CODE} ${feature.properties.NUTS_ID}, ${feature.properties.NUTS_NAME}</h1>`)
+                .bindPopup(`<h1>${feature.properties.CNTR_CODE} ${feature.properties.NUTS_ID}, ${feature.properties.NUTS_NAME}</h1> <span id='download'></span>`)
                 .addTo(map);
             }
 
