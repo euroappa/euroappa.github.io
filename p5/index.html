@@ -94,8 +94,10 @@ ORDER BY sourceTaxonFamilyName, sourceTaxonName
         if (!locality) {
           setStatus('click on a region to generate a checklist');
         } else if (document.querySelector("#download")) {
-          document.querySelectorAll("#download > a").forEach(a => document.querySelector("#download").removeChild(a))
+          document.querySelectorAll("#download > a, #download > span").forEach(a => document.querySelector("#download").removeChild(a))
           setStatus('compiling checklist...');
+          const downloadInfo = document.querySelector('#download').appendChild(document.createElement('span'));
+          downloadInfo.textContent = 'compiling checklist...';
           const nutsId = locality || 'IE042';
           // ... and run the query
           stmt.send(nutsId + '%');
@@ -113,6 +115,7 @@ ORDER BY sourceTaxonFamilyName, sourceTaxonName
           downloadElem.textContent = 'download checklist ' + nutsId + downloadMessageSuffix;
           conn.close();
           setStatus('');
+          downloadInfo.textContent = '';
         }
       };
     </script>
