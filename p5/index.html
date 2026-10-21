@@ -39,7 +39,7 @@
       const setStatus = (status) => document.querySelector('#status').textContent = status;
       const startTime = Date.now();
       const getDb = async () => {
-        setStatus('initializing checklist generator...');
+        setStatus('initializing...');
         const duckdb = window.duckdbduckdbWasm;
         // @ts-ignore
         if (window._db) return window._db;
@@ -61,6 +61,7 @@
         await db.instantiate(bundle.mainModule, bundle.pthreadWorker);
         URL.revokeObjectURL(worker_url);
         window._db = db;
+        setStatus('initializing... done.');
         return db;
       };
       
@@ -78,10 +79,10 @@ WHERE
   AND sourceTaxonFamilyName NOT NULL
   -- Ireland Statistical Regions https://en.wikipedia.org/wiki/NUTS_statistical_regions_of_Ireland
   -- NUTS Level 3 West: IE042 
-  AND NUTS_ID LIKE ?
+  AND NUTS_ID LIKE $1
 GROUP BY sourceTaxonFamilyName, sourceTaxonName 
 ORDER BY sourceTaxonFamilyName, sourceTaxonName
-) TO 'checklist.csv' (FORMAT csv);
+) TO $2 (FORMAT csv);
 `
         // prepare query
         const stmt = await conn.prepare(
@@ -94,14 +95,14 @@ ORDER BY sourceTaxonFamilyName, sourceTaxonName
         if (!locality) {
           setStatus('click on a region to generate a checklist');
         } else if (document.querySelector("#download")) {
-          document.querySelectorAll("#download > a, #download > span").forEach(a => document.querySelector("#download").removeChild(a))
+          document.querySelectorAll("#download > a, #download > span").forEach(a => document.querySelector("#download").removeChild(a));
           setStatus('compiling checklist...');
           const downloadInfo = document.querySelector('#download').appendChild(document.createElement('span'));
           downloadInfo.textContent = 'compiling checklist...';
           const nutsId = locality || 'IE042';
-          const filename = 'checklist.csv';
+          const filename = 'euroappa-p5-flowervisitor-checklist-' + nutsId + '.csv';
           // ... and run the query
-          await stmt.send(nutsId + '%');
+          await stmt.send(nutsId + '%', filename);
 
           const buffer = await db.copyFileToBuffer(filename);
 
