@@ -99,28 +99,31 @@ ORDER BY sourceTaxonFamilyName, sourceTaxonName
           const downloadInfo = document.querySelector('#download').appendChild(document.createElement('span'));
           downloadInfo.textContent = 'compiling checklist...';
           const nutsId = locality || 'IE042';
-          // ... and run the query
-          stmt.send(nutsId + '%');
-
           const filename = 'checklist.csv';
+          // ... and run the query
+          await stmt.send(nutsId + '%');
+
           const buffer = await db.copyFileToBuffer(filename);
 
           // Generate a download link
           const link = URL.createObjectURL(new Blob([buffer]));
+          console.log('created' + link);
           const downloadElem = document.querySelector('#download').appendChild(document.createElement('a'));
           downloadElem.setAttribute('href', link);
           downloadElem.setAttribute('download', filename);
           const localityName = urlParams.get('localityName');
           const downloadMessageSuffix = localityName ? (' for [' + localityName + ']') : '';
           downloadElem.textContent = 'download checklist ' + nutsId + downloadMessageSuffix;
-          conn.close();
+          await stmt.close();
+          await conn.close();
+          await db.dropFiles();
           setStatus('');
           downloadInfo.textContent = '';
         }
       };
     </script>
     <script type="module">
-      import * as duckdbduckdbWasm from "https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.33.1-dev45.0/+esm";
+      import * as duckdbduckdbWasm from "https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.33.1-dev57.0/+esm";
       window.duckdbduckdbWasm = duckdbduckdbWasm;
       getDb().then(compileChecklist);
     </script>
