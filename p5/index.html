@@ -73,7 +73,7 @@ COPY( SELECT DISTINCT
   sourceTaxonFamilyName, 
   sourceTaxonName 
 FROM 
-  'https://euroappa.github.io/p3/dist/euroappa-nuts-2021-col.parquet'
+  'https://euroappa.github.io/p5/dist/euroappa-nuts-2021-col.parquet'
 WHERE
   sourceTaxonPath ~ '.*[^A-Z]Insecta[ ].*'
   AND sourceTaxonFamilyName NOT NULL
