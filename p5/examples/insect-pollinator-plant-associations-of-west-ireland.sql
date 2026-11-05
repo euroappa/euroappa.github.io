@@ -4,10 +4,12 @@ SELECT DISTINCT
   targetTaxonFamilyName as plantFamily,
   targetTaxonName as plantName,
 FROM 
-  'euroappa.parquet'
+  'https://github.com/euroappa/euroappa.github.io/releases/download/euroappa.p3/euroappa-nuts-2021-col.parquet'
 WHERE
-  sourceTaxonPathNames ~ '.*[^A-Z]Insecta[ ].*'
+  sourceTaxonPath ~ '.*[^A-Z]Insecta[ ].*'
   AND sourceTaxonFamilyName NOT NULL 
-  AND ISO3_CODE = 'NLD'
+  -- Ireland Statistical Regions https://en.wikipedia.org/wiki/NUTS_statistical_regions_of_Ireland
+  -- NUTS Level 3 West: IE042 
+  AND NUTS_ID = 'IE042'
 GROUP BY sourceTaxonFamilyName, sourceTaxonName, targetTaxonFamilyName, targetTaxonName
 ORDER BY sourceTaxonFamilyName, targetTaxonFamilyName, sourceTaxonName, targetTaxonName;
