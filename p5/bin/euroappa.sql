@@ -1,4 +1,6 @@
--- EuroAPPA Prototype 2 (p2) 2026-05-07/2026-05-11
+-- EuroAPPA Prototype 5 (p5) 2026-10-05/2026-11-05
+--
+-- inspired by EuroAPPA Prototype 3 (p3)
 -- 
 -- To generate the euroappa data products, run the following bash script
 -- against after installing duckdb v1.2+: 
@@ -100,9 +102,9 @@ UNION SELECT
   CONCAT('https://zenodo.org/search?q=%22', contentHash, '%22') AS datasetReviewUrl,
   lastSeenAt
 FROM
-  -- Poelen, J. H., & Global Biotic Interactions Community. (2026). Global Biotic Interactions (GloBI) Review Dataset Corpus hash://md5/9f9f111af19f657e31ce04b9d422eed4 hash://sha256/8467e21bf1194cbbcb201b3ee2bbee0e2d657a772b4e3ce62fc63afe9116c626 [Data set]. Zenodo. https://doi.org/10.5281/zenodo.20072186
-  -- 'https://linker.bio/hash://md5/ba2109369961995e5583180d47a60d70'
-  -- 'https://zenodo.org/records/20072186/files/interactions.parquet'
+  -- Poelen, J. H., & Global Biotic Interactions Community. (2026). Global Biotic Interactions (GloBI) Review Dataset Corpus hash://md5/f2053ee42fb70c29ca8a8743aa5482e4 hash://sha256/8f54805770463989dfec734767df514ba2b1d9f584760ed5f4c665526a9876bf [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.23986908
+  -- 'https://linker.bio/hash://md5/0062acc2e43b5a2ab199f470c54efe1e'
+  -- 'https://zenodo.org/records/23986908/files/interactions.parquet'
   'lib/interactions.parquet'
 WHERE
   interactionTypeName IN ('flowersVisitedBy', 'pollinatedBy')
