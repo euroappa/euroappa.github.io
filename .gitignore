@@ -7,4 +7,5 @@ p3/dist/*
 !p3/dist/*parquet
 p5/dist/*
 !p5/dist/*parquet
+!p5/dist/*-h3-level-6.gpkg
 **/_site
