@@ -11,3 +11,5 @@ work in progress.
 [euroappa.p3](p3/) - 2026-05-20/2026-05-25 P3 prototypes - integrated data products with taxonomic and geospatial alignment incorporating feedback on p2.
 
 [euroappa.p4](p4/) - 2026-05-28 P4 prototypes - taxonomic checklist generator using a versioned integrated EuroAPPA data product similar to those used in p3. 
+
+[euroappa.p5](p5/) - 2026-10-15/2026-11-05 p5 prototypes - taxonomic checklist generator *via clickable map* using a versioned integrated EuroAPPA data product 
